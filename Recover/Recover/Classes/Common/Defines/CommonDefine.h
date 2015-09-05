@@ -98,10 +98,6 @@ typedef void(^CommonBlock)(void);
 //从bundle中加载cell
 #define mLoadNib(name)                          [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] lastObject]
 
-//注册nib
-#define mRegisterNib_TableView(view,name)       [view registerNib:[UINib nibWithNibName:name bundle:nil] forCellReuseIdentifier:name]
-#define mRegisterNib_CollectionView(view,name)  [view registerNib:[UINib nibWithNibName:name bundle:nil] forCellWithReuseIdentifier:name]
-
 
 //加载故事板
 #define mLoadStoryboard(storyboardName)         [UIStoryboard storyboardWithName:storyboardName bundle:nil]

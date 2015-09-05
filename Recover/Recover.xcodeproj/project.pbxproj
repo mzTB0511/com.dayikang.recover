@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		293CAB0FAF5F0E530FE249AB /* libPods-Recover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D1F2211E472C78D2A781A /* libPods-Recover.a */; };
 		E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9331B9B21DA006B330B /* LXCircleImageView.m */; };
+		E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */; };
+		E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */; };
@@ -29,7 +31,6 @@
 		E984EAAC1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E984EA9C1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari@2x.png */; };
 		E984EAAD1B9B0C4500FF7B88 /* SVWebViewControllerActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E984EA9E1B9B0C4500FF7B88 /* SVWebViewControllerActivity.m */; };
 		E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E984EAAF1B9B0CD800FF7B88 /* MoudleUserLoginViewController.m */; };
-		E984EAB41B9B115000FF7B88 /* IndexViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E984EAB31B9B115000FF7B88 /* IndexViewCollectionViewCell.m */; };
 		E99A8FE31B935E8000299B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A8FE21B935E8000299B60 /* main.m */; };
 		E99A8FE61B935E8000299B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A8FE51B935E8000299B60 /* AppDelegate.m */; };
 		E99A90001B935E8100299B60 /* RecoverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A8FFF1B935E8100299B60 /* RecoverTests.m */; };
@@ -124,6 +125,9 @@
 		C48D1F2211E472C78D2A781A /* libPods-Recover.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Recover.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91CC9321B9B21DA006B330B /* LXCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCircleImageView.h; sourceTree = "<group>"; };
 		E91CC9331B9B21DA006B330B /* LXCircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCircleImageView.m; sourceTree = "<group>"; };
+		E91CC9351B9B2686006B330B /* ServiceItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceItemCollectionViewCell.h; sourceTree = "<group>"; };
+		E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceItemCollectionViewCell.m; sourceTree = "<group>"; };
+		E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
@@ -160,8 +164,6 @@
 		E984EAA01B9B0C4500FF7B88 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
 		E984EAAE1B9B0CD800FF7B88 /* MoudleUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoudleUserLoginViewController.h; sourceTree = "<group>"; };
 		E984EAAF1B9B0CD800FF7B88 /* MoudleUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoudleUserLoginViewController.m; sourceTree = "<group>"; };
-		E984EAB21B9B115000FF7B88 /* IndexViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewCollectionViewCell.h; sourceTree = "<group>"; };
-		E984EAB31B9B115000FF7B88 /* IndexViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewCollectionViewCell.m; sourceTree = "<group>"; };
 		E99A8FDD1B935E8000299B60 /* Recover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99A8FE11B935E8000299B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E99A8FE21B935E8000299B60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -408,8 +410,9 @@
 		E984EAB11B9B10CF00FF7B88 /* IndexMoudleCustomersObj */ = {
 			isa = PBXGroup;
 			children = (
-				E984EAB21B9B115000FF7B88 /* IndexViewCollectionViewCell.h */,
-				E984EAB31B9B115000FF7B88 /* IndexViewCollectionViewCell.m */,
+				E91CC9351B9B2686006B330B /* ServiceItemCollectionViewCell.h */,
+				E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */,
+				E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */,
 			);
 			path = IndexMoudleCustomersObj;
 			sourceTree = "<group>";
@@ -1205,6 +1208,7 @@
 				E99A91B41B9362A900299B60 /* UMSShareListController.xib in Resources */,
 				E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */,
 				E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */,
+				E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */,
 				E99A91B51B9362A900299B60 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				E984EAA61B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				E99A90101B935F7C00299B60 /* Images.xcassets in Resources */,
@@ -1302,6 +1306,7 @@
 				E99A91681B9362A900299B60 /* MJRefreshConst.m in Sources */,
 				E99A91601B9362A900299B60 /* AMapFunction.m in Sources */,
 				E984EAA21B9B0C4500FF7B88 /* SVModalWebViewController.m in Sources */,
+				E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */,
 				E99A905A1B93624900299B60 /* CommonHUD.m in Sources */,
 				E99A90651B93624900299B60 /* RootViewController.m in Sources */,
 				E99A916A1B9362A900299B60 /* MJRefreshHeaderView.m in Sources */,
@@ -1309,7 +1314,6 @@
 				E99A91731B9362A900299B60 /* NSDateFormatter+Category.m in Sources */,
 				E99A905B1B93624900299B60 /* CommonIO.m in Sources */,
 				E984EAA71B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome.m in Sources */,
-				E984EAB41B9B115000FF7B88 /* IndexViewCollectionViewCell.m in Sources */,
 				E99A91A41B9362A900299B60 /* UIActionSheet+Blocks.m in Sources */,
 				E99A90661B93624900299B60 /* ViewController.m in Sources */,
 				E99A91631B9362A900299B60 /* BabysanteRemindBannerView.m in Sources */,

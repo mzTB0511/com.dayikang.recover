@@ -111,6 +111,10 @@ retStr;\
  */
 #define mRegisterNib_HearderFooter_TabelView(view,Class)    [view registerNib:[UINib nibWithNibName:NSStringFromClass([Class class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([Class class])];
 
+//注册nib
+#define mRegisterNib_TableView(view,Class)       [view registerNib:[UINib nibWithNibName:NSStringFromClass([Class class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([Class class])]
+
+#define mRegisterNib_CollectionView(view,Class)  [view registerNib:[UINib nibWithNibName:NSStringFromClass([Class class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([Class class])]
 
 
 /*

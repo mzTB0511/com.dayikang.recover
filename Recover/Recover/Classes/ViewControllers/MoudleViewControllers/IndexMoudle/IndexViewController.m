@@ -11,7 +11,7 @@
 #import "CommonWebView.h"
 #import "LXCycleScrollView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "IndexViewCollectionViewCell.h"
+#import "ServiceItemCollectionViewCell.h"
 #import <BlocksKit/UIView+BlocksKit.h>
 
 
@@ -154,7 +154,7 @@
 
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    IndexViewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IndexViewCollectionViewCell" forIndexPath:indexPath];
+    ServiceItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ServiceItemCollectionViewCell" forIndexPath:indexPath];
     
     [cell setCellData:_arrCtvDataSource[indexPath.row]];
     
@@ -184,6 +184,8 @@
                                  @{@"id":@"6",@"ico":@"",@"name":@"足跟痛"}];
     _arrCtvDataSource = [NSArray arrayWithArray:arrServiceItems];
     
+    
+    mRegisterNib_CollectionView(_ctv_ServiceItem, ServiceItemCollectionViewCell);
     
     //**亚健康人群，病后术后人群
     [self actionMainServerTapEvent];

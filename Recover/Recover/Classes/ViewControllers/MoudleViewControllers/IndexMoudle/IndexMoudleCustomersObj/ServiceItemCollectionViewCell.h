@@ -1,5 +1,5 @@
 //
-//  IndexViewCollectionViewCell.h
+//  ServiceItemCollectionViewCell.h
 //  Recover
 //
 //  Created by 刘轩 on 15/9/5.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IndexViewCollectionViewCell : UICollectionViewCell
+@interface ServiceItemCollectionViewCell : UICollectionViewCell
 
 @property(nonatomic,strong) NSDictionary *cellData;
 

@@ -1,14 +1,14 @@
 //
-//  IndexViewCollectionViewCell.m
+//  ServiceItemCollectionViewCell.m
 //  Recover
 //
 //  Created by 刘轩 on 15/9/5.
 //  Copyright (c) 2015年 刘轩. All rights reserved.
 //
 
-#import "IndexViewCollectionViewCell.h"
+#import "ServiceItemCollectionViewCell.h"
 
-@interface IndexViewCollectionViewCell()
+@interface ServiceItemCollectionViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *img_ItemIco;
 
@@ -18,12 +18,14 @@
 
 @end
 
-@implementation IndexViewCollectionViewCell
+@implementation ServiceItemCollectionViewCell
 
--(void)awakeFromNib{
-    [super awakeFromNib];
-    
+
+
+- (void)awakeFromNib {
+    // Initialization code
 }
+
 
 -(void)setCellData:(NSDictionary *)cellData{
     if (_cellData == cellData) {
@@ -34,6 +36,5 @@
     [_lb_ItemName setText:getValueFromDictionary(cellData, @"name")];
     
 }
-
 
 @end
