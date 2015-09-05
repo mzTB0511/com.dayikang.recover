@@ -134,9 +134,7 @@
 }
 
 
-#pragma mark --UICollectionViewDelegate//设置元素的的大小框
-
-
+#pragma mark --UICollectionViewDelegate
 //设置元素大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     

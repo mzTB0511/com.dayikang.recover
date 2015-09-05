@@ -11,6 +11,9 @@
 		E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9331B9B21DA006B330B /* LXCircleImageView.m */; };
 		E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */; };
 		E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */; };
+		E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC93C1B9B2E55006B330B /* OrderListTableViewCell.m */; };
+		E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */; };
+		E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */; };
@@ -128,6 +131,11 @@
 		E91CC9351B9B2686006B330B /* ServiceItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceItemCollectionViewCell.h; sourceTree = "<group>"; };
 		E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceItemCollectionViewCell.m; sourceTree = "<group>"; };
 		E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		E91CC93B1B9B2E55006B330B /* OrderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListTableViewCell.h; sourceTree = "<group>"; };
+		E91CC93C1B9B2E55006B330B /* OrderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListTableViewCell.m; sourceTree = "<group>"; };
+		E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
+		E91CC9401B9B3803006B330B /* LXBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseTableViewCell.h; sourceTree = "<group>"; };
+		E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBaseTableViewCell.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
@@ -358,6 +366,16 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				E91CC93B1B9B2E55006B330B /* OrderListTableViewCell.h */,
+				E91CC93C1B9B2E55006B330B /* OrderListTableViewCell.m */,
+				E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */,
+			);
+			path = OrderListCustomCell;
+			sourceTree = "<group>";
+		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +440,8 @@
 			children = (
 				E91CC9321B9B21DA006B330B /* LXCircleImageView.h */,
 				E91CC9331B9B21DA006B330B /* LXCircleImageView.m */,
+				E91CC9401B9B3803006B330B /* LXBaseTableViewCell.h */,
+				E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */,
 			);
 			path = CustomersObj;
 			sourceTree = "<group>";
@@ -1060,6 +1080,7 @@
 		E99DFD191B94A79B000DEDCB /* OrderMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */,
 				E99DFD1F1B94A9FB000DEDCB /* OrderViewController.h */,
 				E99DFD201B94A9FB000DEDCB /* OrderViewController.m */,
 			);
@@ -1188,6 +1209,7 @@
 				E99A91B01B9362A900299B60 /* UMShareEditViewController.xib in Resources */,
 				E984EA7D1B9AE00A00FF7B88 /* SBReservation.storyboard in Resources */,
 				E99A90121B935F7C00299B60 /* Main.storyboard in Resources */,
+				E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */,
 				E99A91B21B9362A900299B60 /* UMSLoginViewController.xib in Resources */,
 				E984EAAA1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				E99A91AD1B9362A900299B60 /* UMSCommentDetailController.xib in Resources */,
@@ -1287,6 +1309,7 @@
 				E99A91A71B9362A900299B60 /* UINavigationBar+BackgroundColor.m in Sources */,
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
 				E99A90611B93624900299B60 /* UMTrack.m in Sources */,
+				E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */,
 				E99A90541B93624900299B60 /* BaseModel.m in Sources */,
 				E99A91641B9362A900299B60 /* LXCycleScrollView.m in Sources */,
 				E99A91C21B9362A900299B60 /* YXDFirstRemindView.m in Sources */,
@@ -1300,6 +1323,7 @@
 				E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */,
 				E99A90601B93624900299B60 /* UIImage+Tint.m in Sources */,
 				E99A91671B9362A900299B60 /* MJRefreshBaseView.m in Sources */,
+				E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */,
 				E99A91C01B9362A900299B60 /* YXDAddImageCollectionViewCell.m in Sources */,
 				E984EAAB1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari.m in Sources */,
 				E99A91BF1B9362A900299B60 /* YXDAddImageCollectionView.m in Sources */,
