@@ -14,8 +14,6 @@
 		E99A90101B935F7C00299B60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99A900B1B935F7C00299B60 /* Images.xcassets */; };
 		E99A90111B935F7C00299B60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99A900E1B935F7C00299B60 /* LaunchScreen.xib */; };
 		E99A90121B935F7C00299B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99A900F1B935F7C00299B60 /* Main.storyboard */; };
-		E99A90181B935F8100299B60 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A90151B935F8100299B60 /* FirstViewController.m */; };
-		E99A90191B935F8100299B60 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A90171B935F8100299B60 /* SecondViewController.m */; };
 		E99A90541B93624900299B60 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A901E1B93624900299B60 /* BaseModel.m */; };
 		E99A90551B93624900299B60 /* FoodModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A90211B93624900299B60 /* FoodModule.m */; };
 		E99A90561B93624900299B60 /* NaturtionItemModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A90231B93624900299B60 /* NaturtionItemModule.m */; };
@@ -81,6 +79,11 @@
 		E99A91C01B9362A900299B60 /* YXDAddImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A91581B9362A900299B60 /* YXDAddImageCollectionViewCell.m */; };
 		E99A91C11B9362A900299B60 /* YXDAddImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99A91591B9362A900299B60 /* YXDAddImageCollectionViewCell.xib */; };
 		E99A91C21B9362A900299B60 /* YXDFirstRemindView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99A915C1B9362A900299B60 /* YXDFirstRemindView.m */; };
+		E99DFD211B94A9FB000DEDCB /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD201B94A9FB000DEDCB /* OrderViewController.m */; };
+		E99DFD241B94AA10000DEDCB /* ReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD231B94AA10000DEDCB /* ReservationViewController.m */; };
+		E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */; };
+		E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD291B94AA43000DEDCB /* MoreViewController.m */; };
+		E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,10 +111,6 @@
 		E99A900B1B935F7C00299B60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E99A900E1B935F7C00299B60 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E99A900F1B935F7C00299B60 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E99A90141B935F8100299B60 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		E99A90151B935F8100299B60 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		E99A90161B935F8100299B60 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		E99A90171B935F8100299B60 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E99A901D1B93624900299B60 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		E99A901E1B93624900299B60 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		E99A90201B93624900299B60 /* FoodModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodModule.h; sourceTree = "<group>"; };
@@ -249,6 +248,16 @@
 		E99A915B1B9362A900299B60 /* YXDFirstRemindView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDFirstRemindView.h; sourceTree = "<group>"; };
 		E99A915C1B9362A900299B60 /* YXDFirstRemindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDFirstRemindView.m; sourceTree = "<group>"; };
 		E99A91C51B93679D00299B60 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E99DFD1F1B94A9FB000DEDCB /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		E99DFD201B94A9FB000DEDCB /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		E99DFD221B94AA10000DEDCB /* ReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationViewController.h; sourceTree = "<group>"; };
+		E99DFD231B94AA10000DEDCB /* ReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationViewController.m; sourceTree = "<group>"; };
+		E99DFD251B94AA31000DEDCB /* MyCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCenterViewController.h; sourceTree = "<group>"; };
+		E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCenterViewController.m; sourceTree = "<group>"; };
+		E99DFD281B94AA43000DEDCB /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		E99DFD291B94AA43000DEDCB /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		E99DFD2B1B94AA57000DEDCB /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,10 +390,6 @@
 			children = (
 				E99A901B1B93624900299B60 /* Common */,
 				E99A90431B93624900299B60 /* ViewControllers */,
-				E99A90141B935F8100299B60 /* FirstViewController.h */,
-				E99A90151B935F8100299B60 /* FirstViewController.m */,
-				E99A90161B935F8100299B60 /* SecondViewController.h */,
-				E99A90171B935F8100299B60 /* SecondViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -541,6 +546,12 @@
 		E99A90531B93624900299B60 /* MoudleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E99DFD1B1B94A7D3000DEDCB /* LoginRegisterMoudle */,
+				E99DFD161B94A79B000DEDCB /* IndexMoudle */,
+				E99DFD171B94A79B000DEDCB /* MoreMoudle */,
+				E99DFD181B94A79B000DEDCB /* MyMoudle */,
+				E99DFD191B94A79B000DEDCB /* OrderMoudle */,
+				E99DFD1A1B94A79B000DEDCB /* ReservationMoudle */,
 			);
 			path = MoudleViewControllers;
 			sourceTree = "<group>";
@@ -877,6 +888,58 @@
 			path = YXDFirstRemindView;
 			sourceTree = "<group>";
 		};
+		E99DFD161B94A79B000DEDCB /* IndexMoudle */ = {
+			isa = PBXGroup;
+			children = (
+				E99DFD2B1B94AA57000DEDCB /* IndexViewController.h */,
+				E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */,
+			);
+			path = IndexMoudle;
+			sourceTree = "<group>";
+		};
+		E99DFD171B94A79B000DEDCB /* MoreMoudle */ = {
+			isa = PBXGroup;
+			children = (
+				E99DFD281B94AA43000DEDCB /* MoreViewController.h */,
+				E99DFD291B94AA43000DEDCB /* MoreViewController.m */,
+			);
+			path = MoreMoudle;
+			sourceTree = "<group>";
+		};
+		E99DFD181B94A79B000DEDCB /* MyMoudle */ = {
+			isa = PBXGroup;
+			children = (
+				E99DFD251B94AA31000DEDCB /* MyCenterViewController.h */,
+				E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */,
+			);
+			path = MyMoudle;
+			sourceTree = "<group>";
+		};
+		E99DFD191B94A79B000DEDCB /* OrderMoudle */ = {
+			isa = PBXGroup;
+			children = (
+				E99DFD1F1B94A9FB000DEDCB /* OrderViewController.h */,
+				E99DFD201B94A9FB000DEDCB /* OrderViewController.m */,
+			);
+			path = OrderMoudle;
+			sourceTree = "<group>";
+		};
+		E99DFD1A1B94A79B000DEDCB /* ReservationMoudle */ = {
+			isa = PBXGroup;
+			children = (
+				E99DFD221B94AA10000DEDCB /* ReservationViewController.h */,
+				E99DFD231B94AA10000DEDCB /* ReservationViewController.m */,
+			);
+			path = ReservationMoudle;
+			sourceTree = "<group>";
+		};
+		E99DFD1B1B94A7D3000DEDCB /* LoginRegisterMoudle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginRegisterMoudle;
+			sourceTree = "<group>";
+		};
 		F20720064779F984E0304245 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1047,16 +1110,17 @@
 				E99A91A31B9362A900299B60 /* NSObject+RuntimeMethods.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,
-				E99A90191B935F8100299B60 /* SecondViewController.m in Sources */,
 				E99A905E1B93624900299B60 /* CommonFunc.m in Sources */,
 				E99A905C1B93624900299B60 /* CommonUser.m in Sources */,
 				E99A90591B93624900299B60 /* SignTool.m in Sources */,
 				E99A916B1B9362A900299B60 /* UIScrollView+Extension.m in Sources */,
+				E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */,
 				E99A8FE61B935E8000299B60 /* AppDelegate.m in Sources */,
-				E99A90181B935F8100299B60 /* FirstViewController.m in Sources */,
 				E99A90581B93624900299B60 /* NetworkHandle.m in Sources */,
 				E99A91A81B9362A900299B60 /* UIViewController+NavigationBarColor.m in Sources */,
 				E99A91A61B9362A900299B60 /* UIButton+Verify.m in Sources */,
+				E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */,
+				E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */,
 				E99A90551B93624900299B60 /* FoodModule.m in Sources */,
 				E99A905F1B93624900299B60 /* FormatData.m in Sources */,
 				E99A91A71B9362A900299B60 /* UINavigationBar+BackgroundColor.m in Sources */,
@@ -1066,6 +1130,7 @@
 				E99A91641B9362A900299B60 /* LXCycleScrollView.m in Sources */,
 				E99A91C21B9362A900299B60 /* YXDFirstRemindView.m in Sources */,
 				E99A916D1B9362A900299B60 /* UIView+Extension.m in Sources */,
+				E99DFD241B94AA10000DEDCB /* ReservationViewController.m in Sources */,
 				E99A91741B9362A900299B60 /* NSString+MD5.m in Sources */,
 				E99A916C1B9362A900299B60 /* UIScrollView+MJRefresh.m in Sources */,
 				E99A91BE1B9362A900299B60 /* VPImageCropperViewController.m in Sources */,
@@ -1094,6 +1159,7 @@
 				E99A91A51B9362A900299B60 /* UIAlertView+Blocks.m in Sources */,
 				E99A91721B9362A900299B60 /* NSDate+Category.m in Sources */,
 				E99A90561B93624900299B60 /* NaturtionItemModule.m in Sources */,
+				E99DFD211B94A9FB000DEDCB /* OrderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
