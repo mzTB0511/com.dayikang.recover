@@ -10,6 +10,10 @@
 
 @interface OrderViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UITableView *tbv_OrderList;
+
+
 @end
 
 @implementation OrderViewController
@@ -18,6 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"订单";
+    
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
 }
 
 - (void)didReceiveMemoryWarning {
