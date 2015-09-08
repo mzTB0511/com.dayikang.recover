@@ -60,7 +60,7 @@
      */
     if (self.navigationController && [self.navigationController.viewControllers firstObject] != self)
     {
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"img_nav_back"]
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                        style:UIBarButtonItemStylePlain
                                                                       target:self
                                                                       action:@selector(backToPrivousViewController)];
