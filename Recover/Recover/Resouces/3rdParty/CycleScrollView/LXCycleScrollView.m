@@ -81,7 +81,7 @@
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(handleTap:)];
         [v addGestureRecognizer:singleTap];
-        v.contentMode = UIViewContentModeScaleAspectFill;
+      //  v.contentMode = UIViewContentModeScaleAspectFill;
         v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
         [_scrollView addSubview:v];
     }
@@ -133,7 +133,7 @@
             UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                         action:@selector(handleTap:)];
             [v addGestureRecognizer:singleTap];
-             v.contentMode = UIViewContentModeScaleAspectFill;
+           //  v.contentMode = UIViewContentModeScaleAspectFill;
             
             v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
             [_scrollView addSubview:v];

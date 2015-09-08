@@ -95,7 +95,7 @@
     
     NSDictionary *dict = [_arrBanner objectAtIndex:index];
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
-    image.contentMode  = UIViewContentModeScaleAspectFill;
+    //image.contentMode  = UIViewContentModeScaleAspectFill;
     [image sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"imgurl"]] placeholderImage:nil];
     
     return  image;
