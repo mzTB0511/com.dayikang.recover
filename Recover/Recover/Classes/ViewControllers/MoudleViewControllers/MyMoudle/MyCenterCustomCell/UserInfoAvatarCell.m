@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 Amesante. All rights reserved.
 //
 
-#import "MoudleFourthUserInfoAvatarCell.h"
+#import "UserInfoAvatarCell.h"
 #import <UIImageView+WebCache.h>
 
-@interface MoudleFourthUserInfoAvatarCell ()
+@interface UserInfoAvatarCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation MoudleFourthUserInfoAvatarCell
+@implementation UserInfoAvatarCell
 
 -(void)action_setupCellWithTitle:(NSString *)title imageUrl:(NSString *)imageUrl {
     
@@ -25,9 +25,9 @@
     
     _lbl_title.text = title;
     
-   // if (imageUrl.length) {
-        [_imv_image sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:default_Image_UserIco];
-   // }
+    if (imageUrl.length) {
+        [_imv_image sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil];
+    }
 }
 
 -(void)action_setImage:(UIImage *)image {

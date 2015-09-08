@@ -52,6 +52,9 @@
     // Do any additional setup after loading the view.
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
+    //** 自定义View背景视图
+    [self.view setBackgroundColor:Color_System_View_bgColor];
+    
     /**
      *  自定义返回按钮
      */

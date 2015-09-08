@@ -14,6 +14,8 @@
 		E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC93C1B9B2E55006B330B /* OrderListTableViewCell.m */; };
 		E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */; };
 		E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */; };
+		E91CC9471B9B439D006B330B /* UserInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9451B9B439D006B330B /* UserInfoAvatarCell.m */; };
+		E91CC9481B9B439D006B330B /* UserInfoAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC9461B9B439D006B330B /* UserInfoAvatarCell.xib */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */; };
@@ -136,6 +138,9 @@
 		E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
 		E91CC9401B9B3803006B330B /* LXBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseTableViewCell.h; sourceTree = "<group>"; };
 		E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBaseTableViewCell.m; sourceTree = "<group>"; };
+		E91CC9441B9B439D006B330B /* UserInfoAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoAvatarCell.h; sourceTree = "<group>"; };
+		E91CC9451B9B439D006B330B /* UserInfoAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoAvatarCell.m; sourceTree = "<group>"; };
+		E91CC9461B9B439D006B330B /* UserInfoAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoAvatarCell.xib; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
@@ -374,6 +379,16 @@
 				E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */,
 			);
 			path = OrderListCustomCell;
+			sourceTree = "<group>";
+		};
+		E91CC9431B9B4384006B330B /* MyCenterCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				E91CC9441B9B439D006B330B /* UserInfoAvatarCell.h */,
+				E91CC9451B9B439D006B330B /* UserInfoAvatarCell.m */,
+				E91CC9461B9B439D006B330B /* UserInfoAvatarCell.xib */,
+			);
+			path = MyCenterCustomCell;
 			sourceTree = "<group>";
 		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
@@ -1071,6 +1086,7 @@
 		E99DFD181B94A79B000DEDCB /* MyMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E91CC9431B9B4384006B330B /* MyCenterCustomCell */,
 				E99DFD251B94AA31000DEDCB /* MyCenterViewController.h */,
 				E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */,
 			);
@@ -1217,6 +1233,7 @@
 				E99A91AE1B9362A900299B60 /* UMSCommentInputController.xib in Resources */,
 				E984EAA11B9B0C4500FF7B88 /* SVWebViewController.strings in Resources */,
 				E99A91AF1B9362A900299B60 /* UMSCommentInputControlleriPad.xib in Resources */,
+				E91CC9481B9B439D006B330B /* UserInfoAvatarCell.xib in Resources */,
 				E984EAA31B9B0C4500FF7B88 /* SVWebViewController.bundle in Resources */,
 				E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */,
 				E99A91C11B9362A900299B60 /* YXDAddImageCollectionViewCell.xib in Resources */,
@@ -1343,6 +1360,7 @@
 				E99A91631B9362A900299B60 /* BabysanteRemindBannerView.m in Sources */,
 				E99A91A91B9362A900299B60 /* UIViewController+ImagePicker.m in Sources */,
 				E99A91831B9362A900299B60 /* MZTimerLabel.m in Sources */,
+				E91CC9471B9B439D006B330B /* UserInfoAvatarCell.m in Sources */,
 				E99A916E1B9362A900299B60 /* MLBlackTransition.m in Sources */,
 				E99A91611B9362A900299B60 /* BabySanteDatePicker.m in Sources */,
 				E99A90641B93624900299B60 /* BaseViewController.m in Sources */,

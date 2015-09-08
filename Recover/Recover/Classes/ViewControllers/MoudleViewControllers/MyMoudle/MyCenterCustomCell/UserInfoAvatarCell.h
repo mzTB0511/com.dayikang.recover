@@ -1,5 +1,5 @@
 //
-//  MoudleFourthUserInfoAvatarCell.h
+//  UserInfoAvatarCell.h
 //  BabySante
 //
 //  Created by dd on 15/4/28.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoudleFourthUserInfoAvatarCell : UITableViewCell
+@interface UserInfoAvatarCell : UITableViewCell
 
 /**
  *  配置cell 两种方法任选其一

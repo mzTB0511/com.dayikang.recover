@@ -10,15 +10,128 @@
 
 @interface MoreViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tbv_MoreTableView;
+
+@property (nonatomic, strong) NSMutableArray *arr_dataSource;
 @end
 
 @implementation MoreViewController
 
+
+#pragma mark -- UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _arr_dataSource.count;
+}
+
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return [[_arr_dataSource objectAtIndex:section] count];
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+    
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 20;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 44;
+}
+
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MoreModuleIndexViewCell" forIndexPath:indexPath];
+    
+    NSDictionary *cellDict = [[_arr_dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    [cell.textLabel setText:[cellDict objectForKey:@"itemTitle"]];
+    [cell.imageView setImage:getImageWithRes([cellDict objectForKey:@"itemIco"])];
+    return cell;
+    
+}
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    switch (indexPath.section) {
+        case 0:
+        {
+            //康复师傅入住
+        }
+            break;
+        case 1:{
+            //** 服务范围
+            
+        }
+            break;
+        case 2:{
+            //** 当前版本
+        }
+            break;
+        case 3:{
+            //** 关于我们
+            
+        }
+            break;
+        case 4:{
+            //** 为app投票
+        }
+            break;
+
+    }
+    
+    //** 取消Cell高亮效果
+    [_tbv_MoreTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
+
+-(void)makeTBVDataSource{
+    
+    //** 组合数据格式
+    NSArray *listRecord = @[@{@"itemIco":@"",@"itemTitle":@"康复师入住"}];
+    NSArray *listYhq = @[@{@"itemIco":@"",@"itemTitle":@"服务范围"}];
+    NSArray *listFavourite= @[@{@"itemIco":@"",@"itemTitle":@"当前版本"}];
+    NSArray *listCash = @[@{@"itemIco":@"",@"itemTitle":@"关于我们"}];
+    NSArray *listDoc = @[@{@"itemIco":@"",@"itemTitle":@"为App投票"}];
+    
+    [_arr_dataSource addObject:listRecord];
+    [_arr_dataSource addObject:listYhq];
+    [_arr_dataSource addObject:listFavourite];
+    [_arr_dataSource addObject:listCash];
+    [_arr_dataSource addObject:listDoc];
+    [_tbv_MoreTableView reloadData];
+    
+    
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     self.navigationItem.title = @"更多";
+    
+    _arr_dataSource = [NSMutableArray array];
+    
+    
+    [self makeTBVDataSource];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
