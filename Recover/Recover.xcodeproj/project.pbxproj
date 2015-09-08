@@ -8,14 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		293CAB0FAF5F0E530FE249AB /* libPods-Recover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48D1F2211E472C78D2A781A /* libPods-Recover.a */; };
+		E90EA7251B9F35CB006FE8E6 /* MyWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90EA7241B9F35CB006FE8E6 /* MyWalletViewController.m */; };
+		E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90EA7291B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m */; };
+		E90EA72C1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90EA72A1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib */; };
 		E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9331B9B21DA006B330B /* LXCircleImageView.m */; };
 		E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */; };
 		E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */; };
 		E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC93C1B9B2E55006B330B /* OrderListTableViewCell.m */; };
 		E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */; };
 		E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */; };
-		E91CC9471B9B439D006B330B /* UserInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9451B9B439D006B330B /* UserInfoAvatarCell.m */; };
-		E91CC9481B9B439D006B330B /* UserInfoAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC9461B9B439D006B330B /* UserInfoAvatarCell.xib */; };
+		E935BF471B9F2FB9002D6BE6 /* UserInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */; };
+		E935BF481B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */; };
+		E935BF4B1B9F3052002D6BE6 /* MyCouponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4A1B9F3052002D6BE6 /* MyCouponsViewController.m */; };
+		E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4D1B9F3078002D6BE6 /* MyDoctorsViewController.m */; };
+		E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */; };
+		E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */; };
@@ -128,6 +135,11 @@
 		55F8FF62C70BBB01902CA259 /* Pods-Recover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recover.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recover/Pods-Recover.release.xcconfig"; sourceTree = "<group>"; };
 		953D4F3F3052C028F366A25F /* Pods-Recover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recover/Pods-Recover.debug.xcconfig"; sourceTree = "<group>"; };
 		C48D1F2211E472C78D2A781A /* libPods-Recover.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Recover.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90EA7231B9F35CB006FE8E6 /* MyWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletViewController.h; sourceTree = "<group>"; };
+		E90EA7241B9F35CB006FE8E6 /* MyWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletViewController.m; sourceTree = "<group>"; };
+		E90EA7281B9F3B8C006FE8E6 /* MyCouponsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCouponsTableViewCell.h; sourceTree = "<group>"; };
+		E90EA7291B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCouponsTableViewCell.m; sourceTree = "<group>"; };
+		E90EA72A1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCouponsTableViewCell.xib; sourceTree = "<group>"; };
 		E91CC9321B9B21DA006B330B /* LXCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCircleImageView.h; sourceTree = "<group>"; };
 		E91CC9331B9B21DA006B330B /* LXCircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCircleImageView.m; sourceTree = "<group>"; };
 		E91CC9351B9B2686006B330B /* ServiceItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceItemCollectionViewCell.h; sourceTree = "<group>"; };
@@ -138,9 +150,17 @@
 		E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
 		E91CC9401B9B3803006B330B /* LXBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseTableViewCell.h; sourceTree = "<group>"; };
 		E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBaseTableViewCell.m; sourceTree = "<group>"; };
-		E91CC9441B9B439D006B330B /* UserInfoAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoAvatarCell.h; sourceTree = "<group>"; };
-		E91CC9451B9B439D006B330B /* UserInfoAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoAvatarCell.m; sourceTree = "<group>"; };
-		E91CC9461B9B439D006B330B /* UserInfoAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoAvatarCell.xib; sourceTree = "<group>"; };
+		E935BF441B9F2FB9002D6BE6 /* UserInfoAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoAvatarCell.h; sourceTree = "<group>"; };
+		E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoAvatarCell.m; sourceTree = "<group>"; };
+		E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoAvatarCell.xib; sourceTree = "<group>"; };
+		E935BF491B9F3052002D6BE6 /* MyCouponsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCouponsViewController.h; sourceTree = "<group>"; };
+		E935BF4A1B9F3052002D6BE6 /* MyCouponsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCouponsViewController.m; sourceTree = "<group>"; };
+		E935BF4C1B9F3078002D6BE6 /* MyDoctorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoctorsViewController.h; sourceTree = "<group>"; };
+		E935BF4D1B9F3078002D6BE6 /* MyDoctorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoctorsViewController.m; sourceTree = "<group>"; };
+		E935BF4F1B9F3089002D6BE6 /* MyFavouriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavouriteViewController.h; sourceTree = "<group>"; };
+		E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavouriteViewController.m; sourceTree = "<group>"; };
+		E935BF521B9F3097002D6BE6 /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
+		E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
@@ -371,6 +391,23 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		E90EA7271B9F3B42006FE8E6 /* MyCouponsCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E90EA7281B9F3B8C006FE8E6 /* MyCouponsTableViewCell.h */,
+				E90EA7291B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m */,
+				E90EA72A1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib */,
+			);
+			path = MyCouponsCustomObj;
+			sourceTree = "<group>";
+		};
+		E90EA72D1B9F3C3E006FE8E6 /* MyRecordCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyRecordCustomObj;
+			sourceTree = "<group>";
+		};
 		E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,14 +418,61 @@
 			path = OrderListCustomCell;
 			sourceTree = "<group>";
 		};
-		E91CC9431B9B4384006B330B /* MyCenterCustomCell */ = {
+		E935BF3C1B9F2F85002D6BE6 /* MyCoupons */ = {
 			isa = PBXGroup;
 			children = (
-				E91CC9441B9B439D006B330B /* UserInfoAvatarCell.h */,
-				E91CC9451B9B439D006B330B /* UserInfoAvatarCell.m */,
-				E91CC9461B9B439D006B330B /* UserInfoAvatarCell.xib */,
+				E90EA7271B9F3B42006FE8E6 /* MyCouponsCustomObj */,
+				E935BF491B9F3052002D6BE6 /* MyCouponsViewController.h */,
+				E935BF4A1B9F3052002D6BE6 /* MyCouponsViewController.m */,
 			);
-			path = MyCenterCustomCell;
+			path = MyCoupons;
+			sourceTree = "<group>";
+		};
+		E935BF3D1B9F2F85002D6BE6 /* MyDoctors */ = {
+			isa = PBXGroup;
+			children = (
+				E935BF4C1B9F3078002D6BE6 /* MyDoctorsViewController.h */,
+				E935BF4D1B9F3078002D6BE6 /* MyDoctorsViewController.m */,
+			);
+			path = MyDoctors;
+			sourceTree = "<group>";
+		};
+		E935BF3E1B9F2F85002D6BE6 /* MyFavourite */ = {
+			isa = PBXGroup;
+			children = (
+				E935BF4F1B9F3089002D6BE6 /* MyFavouriteViewController.h */,
+				E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */,
+			);
+			path = MyFavourite;
+			sourceTree = "<group>";
+		};
+		E935BF3F1B9F2F85002D6BE6 /* MyRecord */ = {
+			isa = PBXGroup;
+			children = (
+				E90EA72D1B9F3C3E006FE8E6 /* MyRecordCustomObj */,
+				E935BF521B9F3097002D6BE6 /* MyRecordViewController.h */,
+				E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */,
+			);
+			path = MyRecord;
+			sourceTree = "<group>";
+		};
+		E935BF401B9F2F85002D6BE6 /* MyWallet */ = {
+			isa = PBXGroup;
+			children = (
+				E90EA7231B9F35CB006FE8E6 /* MyWalletViewController.h */,
+				E90EA7241B9F35CB006FE8E6 /* MyWalletViewController.m */,
+			);
+			path = MyWallet;
+			sourceTree = "<group>";
+		};
+		E935BF431B9F2FB9002D6BE6 /* MyCenterCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E935BF441B9F2FB9002D6BE6 /* UserInfoAvatarCell.h */,
+				E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */,
+				E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */,
+			);
+			path = MyCenterCustomObj;
 			sourceTree = "<group>";
 		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
@@ -1086,7 +1170,12 @@
 		E99DFD181B94A79B000DEDCB /* MyMoudle */ = {
 			isa = PBXGroup;
 			children = (
-				E91CC9431B9B4384006B330B /* MyCenterCustomCell */,
+				E935BF3C1B9F2F85002D6BE6 /* MyCoupons */,
+				E935BF3D1B9F2F85002D6BE6 /* MyDoctors */,
+				E935BF3E1B9F2F85002D6BE6 /* MyFavourite */,
+				E935BF3F1B9F2F85002D6BE6 /* MyRecord */,
+				E935BF401B9F2F85002D6BE6 /* MyWallet */,
+				E935BF431B9F2FB9002D6BE6 /* MyCenterCustomObj */,
 				E99DFD251B94AA31000DEDCB /* MyCenterViewController.h */,
 				E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */,
 			);
@@ -1233,11 +1322,11 @@
 				E99A91AE1B9362A900299B60 /* UMSCommentInputController.xib in Resources */,
 				E984EAA11B9B0C4500FF7B88 /* SVWebViewController.strings in Resources */,
 				E99A91AF1B9362A900299B60 /* UMSCommentInputControlleriPad.xib in Resources */,
-				E91CC9481B9B439D006B330B /* UserInfoAvatarCell.xib in Resources */,
 				E984EAA31B9B0C4500FF7B88 /* SVWebViewController.bundle in Resources */,
 				E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */,
 				E99A91C11B9362A900299B60 /* YXDAddImageCollectionViewCell.xib in Resources */,
 				E984EAA81B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome@2x.png in Resources */,
+				E935BF481B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib in Resources */,
 				E99A90111B935F7C00299B60 /* LaunchScreen.xib in Resources */,
 				E984EAA51B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
 				E99A91661B9362A900299B60 /* MJRefresh.bundle in Resources */,
@@ -1248,6 +1337,7 @@
 				E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */,
 				E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */,
 				E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */,
+				E90EA72C1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib in Resources */,
 				E99A91B51B9362A900299B60 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				E984EAA61B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				E99A90101B935F7C00299B60 /* Images.xcassets in Resources */,
@@ -1304,12 +1394,15 @@
 			files = (
 				E99A91691B9362A900299B60 /* MJRefreshFooterView.m in Sources */,
 				E99A90631B93624900299B60 /* BaseTableViewCell.m in Sources */,
+				E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */,
 				E99A91A31B9362A900299B60 /* NSObject+RuntimeMethods.m in Sources */,
 				E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */,
+				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,
 				E99A905E1B93624900299B60 /* CommonFunc.m in Sources */,
 				E99A905C1B93624900299B60 /* CommonUser.m in Sources */,
+				E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */,
 				E99A90591B93624900299B60 /* SignTool.m in Sources */,
 				E99A916B1B9362A900299B60 /* UIScrollView+Extension.m in Sources */,
 				E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */,
@@ -1318,6 +1411,7 @@
 				E99A91A81B9362A900299B60 /* UIViewController+NavigationBarColor.m in Sources */,
 				E984EAAD1B9B0C4500FF7B88 /* SVWebViewControllerActivity.m in Sources */,
 				E99A91A61B9362A900299B60 /* UIButton+Verify.m in Sources */,
+				E935BF471B9F2FB9002D6BE6 /* UserInfoAvatarCell.m in Sources */,
 				E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */,
 				E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */,
 				E984EAA41B9B0C4500FF7B88 /* SVWebViewController.m in Sources */,
@@ -1345,6 +1439,7 @@
 				E984EAAB1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari.m in Sources */,
 				E99A91BF1B9362A900299B60 /* YXDAddImageCollectionView.m in Sources */,
 				E99A91681B9362A900299B60 /* MJRefreshConst.m in Sources */,
+				E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */,
 				E99A91601B9362A900299B60 /* AMapFunction.m in Sources */,
 				E984EAA21B9B0C4500FF7B88 /* SVModalWebViewController.m in Sources */,
 				E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */,
@@ -1353,14 +1448,15 @@
 				E99A916A1B9362A900299B60 /* MJRefreshHeaderView.m in Sources */,
 				E99A90671B93624900299B60 /* MainViewController.m in Sources */,
 				E99A91731B9362A900299B60 /* NSDateFormatter+Category.m in Sources */,
+				E935BF4B1B9F3052002D6BE6 /* MyCouponsViewController.m in Sources */,
 				E99A905B1B93624900299B60 /* CommonIO.m in Sources */,
+				E90EA7251B9F35CB006FE8E6 /* MyWalletViewController.m in Sources */,
 				E984EAA71B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome.m in Sources */,
 				E99A91A41B9362A900299B60 /* UIActionSheet+Blocks.m in Sources */,
 				E99A90661B93624900299B60 /* ViewController.m in Sources */,
 				E99A91631B9362A900299B60 /* BabysanteRemindBannerView.m in Sources */,
 				E99A91A91B9362A900299B60 /* UIViewController+ImagePicker.m in Sources */,
 				E99A91831B9362A900299B60 /* MZTimerLabel.m in Sources */,
-				E91CC9471B9B439D006B330B /* UserInfoAvatarCell.m in Sources */,
 				E99A916E1B9362A900299B60 /* MLBlackTransition.m in Sources */,
 				E99A91611B9362A900299B60 /* BabySanteDatePicker.m in Sources */,
 				E99A90641B93624900299B60 /* BaseViewController.m in Sources */,
