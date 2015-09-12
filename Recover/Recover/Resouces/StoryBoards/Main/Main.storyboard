@@ -207,10 +207,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oB-Rn-VYd">
-                                <rect key="frame" x="0.0" y="64" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="LxW-iv-YQD"/>
+                                    <constraint firstAttribute="height" constant="44" id="LxW-iv-YQD"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bKo-NU-I6G">
@@ -225,13 +225,14 @@
                             <constraint firstItem="bKo-NU-I6G" firstAttribute="leading" secondItem="Vkq-jV-vmF" secondAttribute="leading" id="HJY-ab-4Pg"/>
                             <constraint firstAttribute="bottom" secondItem="bKo-NU-I6G" secondAttribute="bottom" constant="49" id="bxy-M4-rYt"/>
                             <constraint firstAttribute="trailing" secondItem="bKo-NU-I6G" secondAttribute="trailing" id="fSh-ic-PiJ"/>
-                            <constraint firstItem="bKo-NU-I6G" firstAttribute="top" secondItem="5oB-Rn-VYd" secondAttribute="bottom" constant="8" id="n7H-Tw-Yvj"/>
+                            <constraint firstItem="bKo-NU-I6G" firstAttribute="top" secondItem="5oB-Rn-VYd" secondAttribute="bottom" constant="9" id="n7H-Tw-Yvj"/>
                             <constraint firstAttribute="trailing" secondItem="5oB-Rn-VYd" secondAttribute="trailing" id="uMp-AP-Yab"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BNk-Rd-vqd"/>
                     <connections>
                         <outlet property="tbv_OrderListView" destination="bKo-NU-I6G" id="8bP-zu-Vdb"/>
+                        <outlet property="vSegmentView" destination="5oB-Rn-VYd" id="LtF-VP-8fY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7s-Om-vXw" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,9 @@
 		E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4D1B9F3078002D6BE6 /* MyDoctorsViewController.m */; };
 		E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */; };
 		E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */; };
+		E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */; };
+		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
+		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */; };
@@ -161,6 +164,13 @@
 		E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavouriteViewController.m; sourceTree = "<group>"; };
 		E935BF521B9F3097002D6BE6 /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
 		E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
+		E94E5BDD1BA46A71003EA7F8 /* BabysanteSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegment.h; sourceTree = "<group>"; };
+		E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabysanteSegment.m; sourceTree = "<group>"; };
+		E94E5BDF1BA46A71003EA7F8 /* BabysanteSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegmentView.h; sourceTree = "<group>"; };
+		E94E5BE01BA46A71003EA7F8 /* SegmentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentItem.h; sourceTree = "<group>"; };
+		E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentItem.m; sourceTree = "<group>"; };
+		E94E5BE21BA46A71003EA7F8 /* UIButton+block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+block.h"; sourceTree = "<group>"; };
+		E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+block.m"; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
@@ -473,6 +483,20 @@
 				E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */,
 			);
 			path = MyCenterCustomObj;
+			sourceTree = "<group>";
+		};
+		E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */ = {
+			isa = PBXGroup;
+			children = (
+				E94E5BDD1BA46A71003EA7F8 /* BabysanteSegment.h */,
+				E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */,
+				E94E5BDF1BA46A71003EA7F8 /* BabysanteSegmentView.h */,
+				E94E5BE01BA46A71003EA7F8 /* SegmentItem.h */,
+				E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */,
+				E94E5BE21BA46A71003EA7F8 /* UIButton+block.h */,
+				E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */,
+			);
+			path = BabysanteSegment;
 			sourceTree = "<group>";
 		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
@@ -818,6 +842,7 @@
 		E99A90681B9362A900299B60 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */,
 				E99A90691B9362A900299B60 /* AMapFunction */,
 				E99A906C1B9362A900299B60 /* BabySanteDatePicker */,
 				E99A906F1B9362A900299B60 /* BabysanteRemindBannerView */,
@@ -1417,6 +1442,7 @@
 				E984EAA41B9B0C4500FF7B88 /* SVWebViewController.m in Sources */,
 				E99A90551B93624900299B60 /* FoodModule.m in Sources */,
 				E99A905F1B93624900299B60 /* FormatData.m in Sources */,
+				E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */,
 				E99A91A71B9362A900299B60 /* UINavigationBar+BackgroundColor.m in Sources */,
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
 				E99A90611B93624900299B60 /* UMTrack.m in Sources */,
@@ -1434,9 +1460,11 @@
 				E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */,
 				E99A90601B93624900299B60 /* UIImage+Tint.m in Sources */,
 				E99A91671B9362A900299B60 /* MJRefreshBaseView.m in Sources */,
+				E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */,
 				E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */,
 				E99A91C01B9362A900299B60 /* YXDAddImageCollectionViewCell.m in Sources */,
 				E984EAAB1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari.m in Sources */,
+				E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */,
 				E99A91BF1B9362A900299B60 /* YXDAddImageCollectionView.m in Sources */,
 				E99A91681B9362A900299B60 /* MJRefreshConst.m in Sources */,
 				E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */,
