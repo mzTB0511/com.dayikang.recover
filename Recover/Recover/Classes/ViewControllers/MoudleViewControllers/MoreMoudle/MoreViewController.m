@@ -7,6 +7,10 @@
 //
 
 #import "MoreViewController.h"
+#import "DoctroJoinViewController.h"
+#import "ServiceAreaViewController.h"
+#import "CopyrightViewController.h"
+
 
 @interface MoreViewController ()
 
@@ -68,24 +72,27 @@
         case 0:
         {
             //康复师傅入住
+            pushViewControllerWith(StoryBoard_More, DoctroJoinViewController, nil);
         }
             break;
         case 1:{
             //** 服务范围
-            
+             pushViewControllerWith(StoryBoard_More, ServiceAreaViewController, nil);
         }
             break;
         case 2:{
             //** 当前版本
+            
         }
             break;
         case 3:{
             //** 关于我们
-            
+             pushViewControllerWith(StoryBoard_More, CopyrightViewController, nil);
         }
             break;
         case 4:{
             //** 为app投票
+            //itms-apps://itunes.apple.com/app/idYOUR_APP_ID
         }
             break;
 

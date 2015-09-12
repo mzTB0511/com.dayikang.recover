@@ -26,6 +26,9 @@
 		E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */; };
 		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
 		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
+		E94E5BE91BA486A4003EA7F8 /* DoctroJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE81BA486A4003EA7F8 /* DoctroJoinViewController.m */; };
+		E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */; };
+		E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */; };
@@ -171,6 +174,12 @@
 		E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentItem.m; sourceTree = "<group>"; };
 		E94E5BE21BA46A71003EA7F8 /* UIButton+block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+block.h"; sourceTree = "<group>"; };
 		E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+block.m"; sourceTree = "<group>"; };
+		E94E5BE71BA486A4003EA7F8 /* DoctroJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctroJoinViewController.h; sourceTree = "<group>"; };
+		E94E5BE81BA486A4003EA7F8 /* DoctroJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctroJoinViewController.m; sourceTree = "<group>"; };
+		E94E5BEA1BA486B3003EA7F8 /* ServiceAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAreaViewController.h; sourceTree = "<group>"; };
+		E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaViewController.m; sourceTree = "<group>"; };
+		E94E5BED1BA486C9003EA7F8 /* CopyrightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyrightViewController.h; sourceTree = "<group>"; };
+		E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyrightViewController.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
@@ -831,10 +840,10 @@
 			children = (
 				E99DFD1B1B94A7D3000DEDCB /* LoginRegisterMoudle */,
 				E99DFD161B94A79B000DEDCB /* IndexMoudle */,
-				E99DFD171B94A79B000DEDCB /* MoreMoudle */,
-				E99DFD181B94A79B000DEDCB /* MyMoudle */,
 				E99DFD191B94A79B000DEDCB /* OrderMoudle */,
 				E99DFD1A1B94A79B000DEDCB /* ReservationMoudle */,
+				E99DFD181B94A79B000DEDCB /* MyMoudle */,
+				E99DFD171B94A79B000DEDCB /* MoreMoudle */,
 			);
 			path = MoudleViewControllers;
 			sourceTree = "<group>";
@@ -1188,6 +1197,12 @@
 			children = (
 				E99DFD281B94AA43000DEDCB /* MoreViewController.h */,
 				E99DFD291B94AA43000DEDCB /* MoreViewController.m */,
+				E94E5BE71BA486A4003EA7F8 /* DoctroJoinViewController.h */,
+				E94E5BE81BA486A4003EA7F8 /* DoctroJoinViewController.m */,
+				E94E5BEA1BA486B3003EA7F8 /* ServiceAreaViewController.h */,
+				E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */,
+				E94E5BED1BA486C9003EA7F8 /* CopyrightViewController.h */,
+				E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */,
 			);
 			path = MoreMoudle;
 			sourceTree = "<group>";
@@ -1424,7 +1439,9 @@
 				E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */,
 				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
+				E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,
+				E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */,
 				E99A905E1B93624900299B60 /* CommonFunc.m in Sources */,
 				E99A905C1B93624900299B60 /* CommonUser.m in Sources */,
 				E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */,
@@ -1438,6 +1455,7 @@
 				E99A91A61B9362A900299B60 /* UIButton+Verify.m in Sources */,
 				E935BF471B9F2FB9002D6BE6 /* UserInfoAvatarCell.m in Sources */,
 				E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */,
+				E94E5BE91BA486A4003EA7F8 /* DoctroJoinViewController.m in Sources */,
 				E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */,
 				E984EAA41B9B0C4500FF7B88 /* SVWebViewController.m in Sources */,
 				E99A90551B93624900299B60 /* FoodModule.m in Sources */,
