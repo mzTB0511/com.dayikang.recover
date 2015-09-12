@@ -27,8 +27,8 @@
 		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
 		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
-		E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */; };
-		E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */; };
+		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
+		E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */; };
 		E984EA7B1B9ADFF500FF7B88 /* SBOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA7A1B9ADFF500FF7B88 /* SBOrder.storyboard */; };
 		E984EA7D1B9AE00A00FF7B88 /* SBReservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA7C1B9AE00A00FF7B88 /* SBReservation.storyboard */; };
 		E984EA801B9B0BEE00FF7B88 /* CommonWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E984EA7F1B9B0BEE00FF7B88 /* CommonWebView.m */; };
@@ -172,8 +172,8 @@
 		E94E5BE21BA46A71003EA7F8 /* UIButton+block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+block.h"; sourceTree = "<group>"; };
 		E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+block.m"; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
-		E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
-		E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
+		E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
+		E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
 		E984EA7A1B9ADFF500FF7B88 /* SBOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBOrder.storyboard; sourceTree = "<group>"; };
 		E984EA7C1B9AE00A00FF7B88 /* SBReservation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBReservation.storyboard; sourceTree = "<group>"; };
 		E984EA7E1B9B0BEE00FF7B88 /* CommonWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonWebView.h; sourceTree = "<group>"; };
@@ -648,8 +648,8 @@
 			children = (
 				E99A900D1B935F7C00299B60 /* Main */,
 				E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */,
-				E984EA761B9ADFCE00FF7B88 /* SBMore.storyboard */,
-				E984EA781B9ADFE400FF7B88 /* SBMySelf.storyboard */,
+				E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */,
+				E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */,
 				E984EA7A1B9ADFF500FF7B88 /* SBOrder.storyboard */,
 				E984EA7C1B9AE00A00FF7B88 /* SBReservation.storyboard */,
 			);
@@ -1359,8 +1359,8 @@
 				E99A91AB1B9362A900299B60 /* UMSocialLocalizable.strings in Resources */,
 				E99A91B11B9362A900299B60 /* UMShareEditViewControlleriPad.xib in Resources */,
 				E99A91B41B9362A900299B60 /* UMSShareListController.xib in Resources */,
-				E984EA771B9ADFCE00FF7B88 /* SBMore.storyboard in Resources */,
-				E984EA791B9ADFE400FF7B88 /* SBMySelf.storyboard in Resources */,
+				E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */,
+				E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */,
 				E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */,
 				E90EA72C1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib in Resources */,
 				E99A91B51B9362A900299B60 /* UMSocialSDKResourcesNew.bundle in Resources */,

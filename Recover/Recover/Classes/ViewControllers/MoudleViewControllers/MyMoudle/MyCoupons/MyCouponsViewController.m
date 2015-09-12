@@ -78,7 +78,7 @@
         
     }];
     
-    [tabelView headerBeginRefreshing];
+  //  [tabelView headerBeginRefreshing];
 }
 
 

@@ -10,6 +10,9 @@
 
 @interface BaseViewController : UIViewController
 
+//** 页面传递对象
+@property(nonatomic ,strong)NSObject *viewObject;
+
 /**
  *  设置没有记录时现实默认图片
  */

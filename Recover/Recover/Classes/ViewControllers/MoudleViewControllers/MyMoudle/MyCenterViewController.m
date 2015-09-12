@@ -11,6 +11,12 @@
 #import "NetworkHandle.h"
 #import "UIViewController+ImagePicker.h"
 
+#import "MyCouponsViewController.h"
+#import "MyDoctorsViewController.h"
+#import "MyFavouriteViewController.h"
+#import "MyRecordViewController.h"
+#import "MyWalletViewController.h"
+
 
 @interface MyCenterViewController ()
 
@@ -106,25 +112,27 @@
             break;
         case 1:{
             //** 我的档案
-            
+            pushViewControllerWith(StoryBoard_MySelf, MyRecordViewController, nil);
         }
             break;
         case 2:{
             //** 我的优惠券
+            pushViewControllerWith(StoryBoard_MySelf, MyCouponsViewController, nil);
         }
             break;
         case 3:{
             //** 我的收藏
-            
+            pushViewControllerWith(StoryBoard_MySelf, MyFavouriteViewController, nil);
         }
             break;
         case 4:{
             //** 我的钱包
+            pushViewControllerWith(StoryBoard_MySelf, MyWalletViewController, nil);
         }
             break;
         case 5:{
             //** 我的康复师
-            
+            pushViewControllerWith(StoryBoard_MySelf, MyDoctorsViewController, nil);
         }
             break;
     }

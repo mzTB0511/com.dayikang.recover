@@ -50,23 +50,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    //[self setAutomaticallyAdjustsScrollViewInsets:NO];
     
     //** 自定义View背景视图
     [self.view setBackgroundColor:Color_System_View_bgColor];
     
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     /**
      *  自定义返回按钮
      */
-    if (self.navigationController && [self.navigationController.viewControllers firstObject] != self)
-    {
+   // if (self.navigationController && [self.navigationController.viewControllers firstObject] != self)
+   // {
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                        style:UIBarButtonItemStylePlain
                                                                       target:self
                                                                       action:@selector(backToPrivousViewController)];
         
-        [self.navigationItem setLeftBarButtonItem:backButton];
-    }
+        [self.navigationItem setBackBarButtonItem:backButton];
+   // }
+    
 }
 
 
