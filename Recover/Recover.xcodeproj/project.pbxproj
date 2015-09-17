@@ -11,12 +11,20 @@
 		E90EA7251B9F35CB006FE8E6 /* MyWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90EA7241B9F35CB006FE8E6 /* MyWalletViewController.m */; };
 		E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90EA7291B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m */; };
 		E90EA72C1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E90EA72A1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib */; };
+		E919443C1BA70B9600D58A4A /* ReservationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E919443B1BA70B9600D58A4A /* ReservationInfoViewController.m */; };
+		E919443F1BA70BC200D58A4A /* ChoooseAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E919443E1BA70BC200D58A4A /* ChoooseAddressViewController.m */; };
 		E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9331B9B21DA006B330B /* LXCircleImageView.m */; };
 		E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9361B9B2686006B330B /* ServiceItemCollectionViewCell.m */; };
 		E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC9371B9B2686006B330B /* ServiceItemCollectionViewCell.xib */; };
 		E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC93C1B9B2E55006B330B /* OrderListTableViewCell.m */; };
 		E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */; };
 		E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */; };
+		E92A77321BA864BB00A48B08 /* ChooseAddressCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E92A77301BA864BB00A48B08 /* ChooseAddressCustomCell.m */; };
+		E92A77331BA864BB00A48B08 /* ChooseAddressCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92A77311BA864BB00A48B08 /* ChooseAddressCustomCell.xib */; };
+		E92A77361BA866F800A48B08 /* ChooseAddressCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = E92A77351BA866F800A48B08 /* ChooseAddressCustomView.m */; };
+		E92A77381BA8670600A48B08 /* ChooseAddressCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92A77371BA8670600A48B08 /* ChooseAddressCustomView.xib */; };
+		E92A773C1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E92A773A1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m */; };
+		E92A773D1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92A773B1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib */; };
 		E935BF471B9F2FB9002D6BE6 /* UserInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */; };
 		E935BF481B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */; };
 		E935BF4B1B9F3052002D6BE6 /* MyCouponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4A1B9F3052002D6BE6 /* MyCouponsViewController.m */; };
@@ -146,6 +154,10 @@
 		E90EA7281B9F3B8C006FE8E6 /* MyCouponsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCouponsTableViewCell.h; sourceTree = "<group>"; };
 		E90EA7291B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCouponsTableViewCell.m; sourceTree = "<group>"; };
 		E90EA72A1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCouponsTableViewCell.xib; sourceTree = "<group>"; };
+		E919443A1BA70B9600D58A4A /* ReservationInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationInfoViewController.h; sourceTree = "<group>"; };
+		E919443B1BA70B9600D58A4A /* ReservationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationInfoViewController.m; sourceTree = "<group>"; };
+		E919443D1BA70BC200D58A4A /* ChoooseAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoooseAddressViewController.h; sourceTree = "<group>"; };
+		E919443E1BA70BC200D58A4A /* ChoooseAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoooseAddressViewController.m; sourceTree = "<group>"; };
 		E91CC9321B9B21DA006B330B /* LXCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCircleImageView.h; sourceTree = "<group>"; };
 		E91CC9331B9B21DA006B330B /* LXCircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCircleImageView.m; sourceTree = "<group>"; };
 		E91CC9351B9B2686006B330B /* ServiceItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceItemCollectionViewCell.h; sourceTree = "<group>"; };
@@ -156,6 +168,15 @@
 		E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
 		E91CC9401B9B3803006B330B /* LXBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseTableViewCell.h; sourceTree = "<group>"; };
 		E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBaseTableViewCell.m; sourceTree = "<group>"; };
+		E92A772F1BA864BB00A48B08 /* ChooseAddressCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseAddressCustomCell.h; sourceTree = "<group>"; };
+		E92A77301BA864BB00A48B08 /* ChooseAddressCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseAddressCustomCell.m; sourceTree = "<group>"; };
+		E92A77311BA864BB00A48B08 /* ChooseAddressCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAddressCustomCell.xib; sourceTree = "<group>"; };
+		E92A77341BA866F800A48B08 /* ChooseAddressCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseAddressCustomView.h; sourceTree = "<group>"; };
+		E92A77351BA866F800A48B08 /* ChooseAddressCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseAddressCustomView.m; sourceTree = "<group>"; };
+		E92A77371BA8670600A48B08 /* ChooseAddressCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAddressCustomView.xib; sourceTree = "<group>"; };
+		E92A77391BA86B2C00A48B08 /* ChooseAddressHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseAddressHistoryCell.h; sourceTree = "<group>"; };
+		E92A773A1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseAddressHistoryCell.m; sourceTree = "<group>"; };
+		E92A773B1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAddressHistoryCell.xib; sourceTree = "<group>"; };
 		E935BF441B9F2FB9002D6BE6 /* UserInfoAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoAvatarCell.h; sourceTree = "<group>"; };
 		E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoAvatarCell.m; sourceTree = "<group>"; };
 		E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoAvatarCell.xib; sourceTree = "<group>"; };
@@ -427,6 +448,32 @@
 			path = MyRecordCustomObj;
 			sourceTree = "<group>";
 		};
+		E91944371BA70B6000D58A4A /* ChooseAddressInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E92A772E1BA864BB00A48B08 /* ChooseAddressCustomObj */,
+				E919443D1BA70BC200D58A4A /* ChoooseAddressViewController.h */,
+				E919443E1BA70BC200D58A4A /* ChoooseAddressViewController.m */,
+			);
+			path = ChooseAddressInfo;
+			sourceTree = "<group>";
+		};
+		E91944381BA70B6000D58A4A /* ChooseReservatioInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E919443A1BA70B9600D58A4A /* ReservationInfoViewController.h */,
+				E919443B1BA70B9600D58A4A /* ReservationInfoViewController.m */,
+			);
+			path = ChooseReservatioInfo;
+			sourceTree = "<group>";
+		};
+		E91944391BA70B6000D58A4A /* MakeReservationOrder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MakeReservationOrder;
+			sourceTree = "<group>";
+		};
 		E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +482,22 @@
 				E91CC93D1B9B2E55006B330B /* OrderListTableViewCell.xib */,
 			);
 			path = OrderListCustomCell;
+			sourceTree = "<group>";
+		};
+		E92A772E1BA864BB00A48B08 /* ChooseAddressCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E92A772F1BA864BB00A48B08 /* ChooseAddressCustomCell.h */,
+				E92A77301BA864BB00A48B08 /* ChooseAddressCustomCell.m */,
+				E92A77311BA864BB00A48B08 /* ChooseAddressCustomCell.xib */,
+				E92A77341BA866F800A48B08 /* ChooseAddressCustomView.h */,
+				E92A77351BA866F800A48B08 /* ChooseAddressCustomView.m */,
+				E92A77371BA8670600A48B08 /* ChooseAddressCustomView.xib */,
+				E92A77391BA86B2C00A48B08 /* ChooseAddressHistoryCell.h */,
+				E92A773A1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m */,
+				E92A773B1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib */,
+			);
+			path = ChooseAddressCustomObj;
 			sourceTree = "<group>";
 		};
 		E935BF3C1B9F2F85002D6BE6 /* MyCoupons */ = {
@@ -1235,6 +1298,9 @@
 		E99DFD1A1B94A79B000DEDCB /* ReservationMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E91944381BA70B6000D58A4A /* ChooseReservatioInfo */,
+				E91944371BA70B6000D58A4A /* ChooseAddressInfo */,
+				E91944391BA70B6000D58A4A /* MakeReservationOrder */,
 				E99DFD221B94AA10000DEDCB /* ReservationViewController.h */,
 				E99DFD231B94AA10000DEDCB /* ReservationViewController.m */,
 			);
@@ -1359,11 +1425,13 @@
 				E984EAAA1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				E99A91AD1B9362A900299B60 /* UMSCommentDetailController.xib in Resources */,
 				E99A91B31B9362A900299B60 /* UMSnsAccountViewController.xib in Resources */,
+				E92A77331BA864BB00A48B08 /* ChooseAddressCustomCell.xib in Resources */,
 				E99A91AE1B9362A900299B60 /* UMSCommentInputController.xib in Resources */,
 				E984EAA11B9B0C4500FF7B88 /* SVWebViewController.strings in Resources */,
 				E99A91AF1B9362A900299B60 /* UMSCommentInputControlleriPad.xib in Resources */,
 				E984EAA31B9B0C4500FF7B88 /* SVWebViewController.bundle in Resources */,
 				E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */,
+				E92A77381BA8670600A48B08 /* ChooseAddressCustomView.xib in Resources */,
 				E99A91C11B9362A900299B60 /* YXDAddImageCollectionViewCell.xib in Resources */,
 				E984EAA81B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome@2x.png in Resources */,
 				E935BF481B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib in Resources */,
@@ -1374,6 +1442,7 @@
 				E99A91AB1B9362A900299B60 /* UMSocialLocalizable.strings in Resources */,
 				E99A91B11B9362A900299B60 /* UMShareEditViewControlleriPad.xib in Resources */,
 				E99A91B41B9362A900299B60 /* UMSShareListController.xib in Resources */,
+				E92A773D1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib in Resources */,
 				E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */,
 				E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */,
 				E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */,
@@ -1436,14 +1505,17 @@
 				E99A90631B93624900299B60 /* BaseTableViewCell.m in Sources */,
 				E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */,
 				E99A91A31B9362A900299B60 /* NSObject+RuntimeMethods.m in Sources */,
+				E919443F1BA70BC200D58A4A /* ChoooseAddressViewController.m in Sources */,
 				E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */,
 				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
+				E919443C1BA70B9600D58A4A /* ReservationInfoViewController.m in Sources */,
 				E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,
 				E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */,
 				E99A905E1B93624900299B60 /* CommonFunc.m in Sources */,
 				E99A905C1B93624900299B60 /* CommonUser.m in Sources */,
+				E92A77321BA864BB00A48B08 /* ChooseAddressCustomCell.m in Sources */,
 				E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */,
 				E99A90591B93624900299B60 /* SignTool.m in Sources */,
 				E99A916B1B9362A900299B60 /* UIScrollView+Extension.m in Sources */,
@@ -1455,6 +1527,7 @@
 				E99A91A61B9362A900299B60 /* UIButton+Verify.m in Sources */,
 				E935BF471B9F2FB9002D6BE6 /* UserInfoAvatarCell.m in Sources */,
 				E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */,
+				E92A773C1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m in Sources */,
 				E94E5BE91BA486A4003EA7F8 /* DoctroJoinViewController.m in Sources */,
 				E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */,
 				E984EAA41B9B0C4500FF7B88 /* SVWebViewController.m in Sources */,
@@ -1489,6 +1562,7 @@
 				E99A91601B9362A900299B60 /* AMapFunction.m in Sources */,
 				E984EAA21B9B0C4500FF7B88 /* SVModalWebViewController.m in Sources */,
 				E91CC9381B9B2686006B330B /* ServiceItemCollectionViewCell.m in Sources */,
+				E92A77361BA866F800A48B08 /* ChooseAddressCustomView.m in Sources */,
 				E99A905A1B93624900299B60 /* CommonHUD.m in Sources */,
 				E99A90651B93624900299B60 /* RootViewController.m in Sources */,
 				E99A916A1B9362A900299B60 /* MJRefreshHeaderView.m in Sources */,

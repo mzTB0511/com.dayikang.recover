@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ChooseAddressHistoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqG-kj-kxO">
+                        <rect key="frame" x="8" y="13" width="247" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="1C8-jO-THC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffJ-a6-mDv">
+                        <rect key="frame" x="253" y="7" width="59" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="59" id="8aV-Q0-Ptn"/>
+                            <constraint firstAttribute="height" constant="30" id="nxX-dm-S9B"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="使用">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ffJ-a6-mDv" secondAttribute="trailing" constant="8" id="1HD-r3-bKA"/>
+                    <constraint firstAttribute="trailing" secondItem="vqG-kj-kxO" secondAttribute="trailing" constant="65" id="bH0-OM-7MM"/>
+                    <constraint firstItem="vqG-kj-kxO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="iTk-mN-vSl"/>
+                    <constraint firstItem="vqG-kj-kxO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="oPi-mC-YKm"/>
+                    <constraint firstItem="ffJ-a6-mDv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="scK-tn-Svy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnUsed" destination="ffJ-a6-mDv" id="mt4-MR-4Hp"/>
+                <outlet property="lbItemName" destination="vqG-kj-kxO" id="0SE-dB-D3V"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

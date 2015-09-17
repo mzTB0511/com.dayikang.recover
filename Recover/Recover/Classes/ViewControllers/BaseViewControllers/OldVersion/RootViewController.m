@@ -84,7 +84,7 @@
     UIButton *btn_Right = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn_Right setTag:2];
     
-    [btn_Right setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
+    [btn_Right setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
     
     [btn_Right setFrame:CGRectMake(0, 0, 50, 40)];
    // [btn_Right setBackgroundColor:[UIColor redColor]];

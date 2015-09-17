@@ -140,7 +140,7 @@ retStr;\
  *  @Class   xib 类文件
  *  @owner   所有者
  */
-#define getViewByNib(Class, owner) [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([Class class]) owner:owner options:nil] lastObject]
+#define getViewByNib(Class, own) [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([Class class]) owner:own options:nil] lastObject]
 
 
 

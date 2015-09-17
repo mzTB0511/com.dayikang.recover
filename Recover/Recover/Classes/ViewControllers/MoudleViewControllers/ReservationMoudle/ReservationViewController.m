@@ -9,7 +9,7 @@
 #import "ReservationViewController.h"
 #import "NetworkHandle.h"
 #import "ServiceItemCollectionViewCell.h"
-
+#import "ReservationInfoViewController.h"
 
 @interface ReservationViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -51,8 +51,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    [CommonHUD showHudWithMessage:@"不知道哪里..." delay:1.0f completion:nil];
-    
+    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, nil);
     
 }
 - (void)viewDidLoad {
