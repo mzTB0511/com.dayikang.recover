@@ -9,7 +9,7 @@
 #import "ReservationInfoViewController.h"
 #import "NetworkHandle.h"
 #import "BabySanteDatePicker.h"
-
+#import "ChoooseAddressViewController.h"
 @interface ReservationInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
@@ -59,7 +59,7 @@
         }
             break;
         case 1:{// goto选择康复地址
-            
+            pushViewControllerWith(StoryBoard_Reservation, ChoooseAddressViewController, nil);
         }
             break;
         case 2:{// goto康复师选择

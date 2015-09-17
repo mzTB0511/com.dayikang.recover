@@ -37,6 +37,7 @@
 		E94E5BE91BA486A4003EA7F8 /* DoctroJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE81BA486A4003EA7F8 /* DoctroJoinViewController.m */; };
 		E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */; };
 		E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */; };
+		E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */; };
@@ -201,6 +202,8 @@
 		E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaViewController.m; sourceTree = "<group>"; };
 		E94E5BED1BA486C9003EA7F8 /* CopyrightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyrightViewController.h; sourceTree = "<group>"; };
 		E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyrightViewController.m; sourceTree = "<group>"; };
+		E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRelevantPickView.h; sourceTree = "<group>"; };
+		E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRelevantPickView.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
@@ -954,6 +957,8 @@
 			children = (
 				E99A906D1B9362A900299B60 /* BabySanteDatePicker.h */,
 				E99A906E1B9362A900299B60 /* BabySanteDatePicker.m */,
+				E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */,
+				E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */,
 			);
 			path = BabySanteDatePicker;
 			sourceTree = "<group>";
@@ -1538,6 +1543,7 @@
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
 				E99A90611B93624900299B60 /* UMTrack.m in Sources */,
 				E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */,
+				E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */,
 				E99A90541B93624900299B60 /* BaseModel.m in Sources */,
 				E99A91641B9362A900299B60 /* LXCycleScrollView.m in Sources */,
 				E99A91C21B9362A900299B60 /* YXDFirstRemindView.m in Sources */,

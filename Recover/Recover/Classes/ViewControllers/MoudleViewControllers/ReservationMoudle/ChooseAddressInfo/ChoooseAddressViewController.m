@@ -11,6 +11,8 @@
 #import "ChooseAddressCustomView.h"
 #import "ChooseAddressHistoryCell.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
+#import "LXRelevantPickView.h"
+
 
 @interface ChoooseAddressViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -65,11 +67,11 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return _muArrDataList.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _muArrDataList.count;
+    return [_muArrDataList[section] count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -106,7 +108,8 @@
             }
 
             [cell action_setupCellWithTitle:cellData[@"title"] detail:cellData[@"subtitle"] canEdit:!(indexPath.section == 0 && indexPath.row == 2)];
-            
+           
+            return cell;
         }
             break;
         case 1:{
@@ -135,8 +138,53 @@
     switch (indexPath.section) {
         case 0:{
             switch (indexPath.row) {
-                case 0: {
+                case 2: {
+                    //**造数据
+                    PickerMoudle *pmProvience = [PickerMoudle new];
+                    pmProvience.selfID = @"1";
+                    pmProvience.name = @"上海";
+                    
+                    PickerMoudle *pmProvience1 = [PickerMoudle new];
+                    pmProvience1.selfID = @"2";
+                    pmProvience1.name = @"北京";
+                    
+                    PickerMoudle *pmCity = [PickerMoudle new];
+                    pmCity.parentID = @"1";
+                    pmCity.selfID = @"1";
+                    pmCity.name = @"上海市";
+                    
+                    PickerMoudle *pmCity1 = [PickerMoudle new];
+                    pmCity1.parentID = @"2";
+                    pmCity1.selfID = @"2";
+                    pmCity1.name = @"北京市";
+                    
+                    
+                    PickerMoudle *pmArea = [PickerMoudle new];
+                    pmArea.parentID = @"1";
+                    pmArea.selfID = @"1";
+                    pmArea.name = @"长宁区";
+                    
+                    PickerMoudle *pmArea2 = [PickerMoudle new];
+                    pmArea2.parentID = @"1";
+                    pmArea2.selfID = @"1";
+                    pmArea2.name = @"普陀区";
+                    
+                    PickerMoudle *pmArea3 = [PickerMoudle new];
+                    pmArea3.parentID = @"2";
+                    pmArea3.selfID = @"1";
+                    pmArea3.name = @"海淀区";
+                    
+                    PickerMoudle *pmArea4 = [PickerMoudle new];
+                    pmArea4.parentID = @"2";
+                    pmArea4.selfID = @"1";
+                    pmArea4.name = @"丰台区";
+                    
+                    
                     //省市信息选择器
+                    [LXRelevantPickView showPickerWithData:@[@[pmProvience,pmProvience1],@[pmCity,pmCity1],
+                                                             @[pmArea,pmArea2,pmArea3,pmArea4]] defaultIndex:nil withPickerMoudle:DataPickerMoudleRelevant block:^(NSArray *chooseObj) {
+                        
+                    }];
                     
                 }
                     break;
