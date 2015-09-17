@@ -11,7 +11,7 @@
 #import "BabySanteDatePicker.h"
 #import "ChoooseAddressViewController.h"
 #import "LXRelevantPickView.h"
-
+#import "DoctorListViewController.h"
 
 @interface ReservationInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -96,7 +96,10 @@
             break;
         case 2:{// goto康复师选择
          
+            DoctorListViewController *addressView = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorListViewController);
             
+            addressView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:addressView animated:YES];
             
             [weakSelf.tbvReservationInfo reloadData];
         }

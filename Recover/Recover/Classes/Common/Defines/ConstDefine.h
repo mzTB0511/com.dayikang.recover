@@ -65,6 +65,8 @@
 #define StoryBoard_Order       @"SBOrder"
 //【预约】模块
 #define StoryBoard_Reservation @"SBReservation"
+//【康复师】模块
+#define StoryBoard_Doctor      @"SBDoctor"
 
 
 

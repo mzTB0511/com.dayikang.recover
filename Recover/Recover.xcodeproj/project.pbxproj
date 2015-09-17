@@ -134,6 +134,10 @@
 		E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */; };
 		E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD291B94AA43000DEDCB /* MoreViewController.m */; };
 		E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */; };
+		E9F978451BAB150D003EA35B /* DoctorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F978441BAB150D003EA35B /* DoctorListViewController.m */; };
+		E9F9784A1BAB1559003EA35B /* DoctorListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F978481BAB1559003EA35B /* DoctorListTableViewCell.m */; };
+		E9F9784B1BAB1559003EA35B /* DoctorListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F978491BAB1559003EA35B /* DoctorListTableViewCell.xib */; };
+		E9F9784D1BAB1582003EA35B /* SBDoctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -398,6 +402,12 @@
 		E99DFD291B94AA43000DEDCB /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		E99DFD2B1B94AA57000DEDCB /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		E9F978431BAB150D003EA35B /* DoctorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListViewController.h; sourceTree = "<group>"; };
+		E9F978441BAB150D003EA35B /* DoctorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListViewController.m; sourceTree = "<group>"; };
+		E9F978471BAB1559003EA35B /* DoctorListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListTableViewCell.h; sourceTree = "<group>"; };
+		E9F978481BAB1559003EA35B /* DoctorListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListTableViewCell.m; sourceTree = "<group>"; };
+		E9F978491BAB1559003EA35B /* DoctorListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorListTableViewCell.xib; sourceTree = "<group>"; };
+		E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBDoctor.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,6 +737,7 @@
 				E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */,
 				E984EA7A1B9ADFF500FF7B88 /* SBOrder.storyboard */,
 				E984EA7C1B9AE00A00FF7B88 /* SBReservation.storyboard */,
+				E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1303,6 +1314,7 @@
 		E99DFD1A1B94A79B000DEDCB /* ReservationMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E9F978421BAB14F0003EA35B /* DoctorInfo */,
 				E91944381BA70B6000D58A4A /* ChooseReservatioInfo */,
 				E91944371BA70B6000D58A4A /* ChooseAddressInfo */,
 				E91944391BA70B6000D58A4A /* MakeReservationOrder */,
@@ -1319,6 +1331,26 @@
 				E984EAAF1B9B0CD800FF7B88 /* MoudleUserLoginViewController.m */,
 			);
 			path = LoginRegisterMoudle;
+			sourceTree = "<group>";
+		};
+		E9F978421BAB14F0003EA35B /* DoctorInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E9F978461BAB152D003EA35B /* DoctorListCustomObj */,
+				E9F978431BAB150D003EA35B /* DoctorListViewController.h */,
+				E9F978441BAB150D003EA35B /* DoctorListViewController.m */,
+			);
+			path = DoctorInfo;
+			sourceTree = "<group>";
+		};
+		E9F978461BAB152D003EA35B /* DoctorListCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E9F978471BAB1559003EA35B /* DoctorListTableViewCell.h */,
+				E9F978481BAB1559003EA35B /* DoctorListTableViewCell.m */,
+				E9F978491BAB1559003EA35B /* DoctorListTableViewCell.xib */,
+			);
+			path = DoctorListCustomObj;
 			sourceTree = "<group>";
 		};
 		F20720064779F984E0304245 /* Frameworks */ = {
@@ -1423,6 +1455,7 @@
 			files = (
 				E984EA7B1B9ADFF500FF7B88 /* SBOrder.storyboard in Resources */,
 				E99A91B01B9362A900299B60 /* UMShareEditViewController.xib in Resources */,
+				E9F9784B1BAB1559003EA35B /* DoctorListTableViewCell.xib in Resources */,
 				E984EA7D1B9AE00A00FF7B88 /* SBReservation.storyboard in Resources */,
 				E99A90121B935F7C00299B60 /* Main.storyboard in Resources */,
 				E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */,
@@ -1447,6 +1480,7 @@
 				E99A91AB1B9362A900299B60 /* UMSocialLocalizable.strings in Resources */,
 				E99A91B11B9362A900299B60 /* UMShareEditViewControlleriPad.xib in Resources */,
 				E99A91B41B9362A900299B60 /* UMSShareListController.xib in Resources */,
+				E9F9784D1BAB1582003EA35B /* SBDoctor.storyboard in Resources */,
 				E92A773D1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib in Resources */,
 				E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */,
 				E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */,
@@ -1513,6 +1547,7 @@
 				E919443F1BA70BC200D58A4A /* ChoooseAddressViewController.m in Sources */,
 				E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */,
 				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
+				E9F978451BAB150D003EA35B /* DoctorListViewController.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
 				E919443C1BA70B9600D58A4A /* ReservationInfoViewController.m in Sources */,
 				E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */,
@@ -1564,6 +1599,7 @@
 				E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */,
 				E99A91BF1B9362A900299B60 /* YXDAddImageCollectionView.m in Sources */,
 				E99A91681B9362A900299B60 /* MJRefreshConst.m in Sources */,
+				E9F9784A1BAB1559003EA35B /* DoctorListTableViewCell.m in Sources */,
 				E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */,
 				E99A91601B9362A900299B60 /* AMapFunction.m in Sources */,
 				E984EAA21B9B0C4500FF7B88 /* SVModalWebViewController.m in Sources */,

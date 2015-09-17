@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Doctor List View Controller-->
+        <scene sceneID="xio-wI-ttt">
+            <objects>
+                <viewController storyboardIdentifier="DoctorListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PVI-si-7hw" customClass="DoctorListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6ja-lb-bAg"/>
+                        <viewControllerLayoutGuide type="bottom" id="R3m-QS-zQ1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V4B-mG-B2g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CrI-0k-JUW">
+                                <rect key="frame" x="0.0" y="45" width="600" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PVI-si-7hw" id="cOv-sz-umi"/>
+                                    <outlet property="delegate" destination="PVI-si-7hw" id="3OY-XF-DmS"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jro-PW-DGZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0a8-1L-RLL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CrI-0k-JUW" firstAttribute="leading" secondItem="V4B-mG-B2g" secondAttribute="leading" id="5yH-zh-Zew"/>
+                            <constraint firstAttribute="trailing" secondItem="CrI-0k-JUW" secondAttribute="trailing" id="9ef-51-cRU"/>
+                            <constraint firstItem="Jro-PW-DGZ" firstAttribute="leading" secondItem="V4B-mG-B2g" secondAttribute="leading" id="ShZ-xz-tWx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="CrI-0k-JUW" secondAttribute="bottom" id="T2n-QI-Z9z"/>
+                            <constraint firstAttribute="trailing" secondItem="Jro-PW-DGZ" secondAttribute="trailing" id="XNX-Ch-AcP"/>
+                            <constraint firstItem="CrI-0k-JUW" firstAttribute="top" secondItem="Jro-PW-DGZ" secondAttribute="bottom" id="YTX-wt-Yso"/>
+                            <constraint firstItem="Jro-PW-DGZ" firstAttribute="top" secondItem="V4B-mG-B2g" secondAttribute="top" id="ZsC-U8-xHf"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tbvDoctorListView" destination="CrI-0k-JUW" id="KTV-oN-O0Y"/>
+                        <outlet property="vSegmentView" destination="Jro-PW-DGZ" id="ghx-tQ-kpO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuE-GA-Tfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="464" y="329"/>
+        </scene>
+    </scenes>
+</document>

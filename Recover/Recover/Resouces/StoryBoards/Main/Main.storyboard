@@ -311,7 +311,6 @@
         <!--我的-->
         <scene sceneID="lLi-4L-kWQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hxo-Mw-mbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="zmO-H8-qzg" customClass="BaseNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" id="oRU-2l-JMw"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -327,6 +326,7 @@
                         <segue destination="uHo-1N-bN9" kind="relationship" relationship="rootViewController" id="3pC-nh-vDl"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxo-Mw-mbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="726" y="2001.9999999999998"/>
         </scene>
