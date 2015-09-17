@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+typedef void(^ChooseAddressViewReturnContactBlock)(NSString *contactID,NSString *addressDesc);
+
 @interface ChoooseAddressViewController : BaseViewController
+
+@property(nonatomic, copy)ChooseAddressViewReturnContactBlock returnContactBlock;
 
 @end

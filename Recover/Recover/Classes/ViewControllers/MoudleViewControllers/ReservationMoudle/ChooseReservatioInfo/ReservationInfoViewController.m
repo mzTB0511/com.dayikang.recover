@@ -10,6 +10,9 @@
 #import "NetworkHandle.h"
 #import "BabySanteDatePicker.h"
 #import "ChoooseAddressViewController.h"
+#import "LXRelevantPickView.h"
+
+
 @interface ReservationInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
@@ -48,22 +51,54 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    WEAKSELF
     switch (indexPath.row) {
         case 0:{// goto康复时间
            
-            [BabySanteDatePicker showPickerWithData:_muArrDataList defaultIndex:nil block:^(NSString *string) {
+            //省市信息选择器
+             [LXRelevantPickView showPickerWithData:@[_arrDateList,_arrTimeSecList] defaultIndex:nil withPickerMoudle:DataPickerMoudleNomal block:^(NSArray *chooseObj) {
                 
+                if (chooseObj.count > 0) {
+                    
+                    PickerMoudle *areaMoudle = chooseObj[0][@"seldata"];
+                    [_dictUploadData setObject:areaMoudle.name forKey:@"reservation_date"];
+                    
+                                                                         PickerMoudle *cMoudle = chooseObj[1][@"seldata"];
+                    
+                    NSArray *starEndTime = [cMoudle.name componentsSeparatedByString:@"-"];
+                    
+                    [_dictUploadData setObject:starEndTime[0] forKey:@"start_time"];
+                    [_dictUploadData setObject:starEndTime[1] forKey:@"end_time"];
+                    
+                    [_muArrDataList[indexPath.row] setObject:getStringAppendingStr(areaMoudle.name, (@[starEndTime[0],starEndTime[1]])) forKey:@"subtitle"];
+                    
+                    [weakSelf.tbvReservationInfo reloadData];
+                }
             }];
             
         }
             break;
         case 1:{// goto选择康复地址
-            pushViewControllerWith(StoryBoard_Reservation, ChoooseAddressViewController, nil);
+            
+            ChoooseAddressViewController *addressView = getViewControllFromStoryBoard(StoryBoard_Reservation, ChoooseAddressViewController);
+            addressView.returnContactBlock = ^(NSString *contactID,NSString *addressDesc){
+            
+                [_dictUploadData setObject:contactID forKey:@"contact_id"];
+                
+                [_muArrDataList[indexPath.row] setObject:addressDesc forKey:@"subtitle"];
+                [weakSelf.tbvReservationInfo reloadData];
+                
+            };
+            
+            addressView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:addressView animated:YES];
         }
             break;
         case 2:{// goto康复师选择
+         
             
+            
+            [weakSelf.tbvReservationInfo reloadData];
         }
             break;
         default:
@@ -92,7 +127,7 @@
             NSMutableArray *muArrTimeSecList = [NSMutableArray array];
             [dateList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSString *timeSec = obj[@"start_time"];
-                timeSec = [timeSec stringByAppendingString:obj[@"end_time"]];
+                timeSec = [timeSec stringByAppendingString:getStringAppendingStr(@"-", obj[@"end_time"]) ];
                 [muArrTimeSecList addObject:timeSec];
             }];
             
@@ -101,9 +136,7 @@
         
     };
     
-
-    
-    NSString *dicDoctor = doctorID ? doctorID : nil;
+    NSString *dicDoctor = doctorID ? doctorID : @"";
  
     [NetworkHandle loadDataFromServerWithParamDic:@{@"d_id":dicDoctor}
                                           signDic:nil
@@ -128,6 +161,41 @@
 }
 
 
+
+-(void)getDoctorServiceTimeFromServer{
+    
+    //**造数据
+    PickerMoudle *data1 = [PickerMoudle new];
+    data1.selfID = @"1";
+    data1.name = @"09-17 周四";
+    
+    PickerMoudle *data2 = [PickerMoudle new];
+    data2.selfID = @"2";
+    data2.name = @"09-18 周四";
+    
+    PickerMoudle *timeSec1 = [PickerMoudle new];
+    timeSec1.selfID = @"1";
+    timeSec1.name = @"09-10";
+    
+    PickerMoudle *timeSec2 = [PickerMoudle new];
+    timeSec2.selfID = @"1";
+    timeSec2.name = @"10-11";
+    
+    PickerMoudle *timeSec3 = [PickerMoudle new];
+    timeSec3.selfID = @"1";
+    timeSec3.name = @"11-12";
+    
+    _arrDateList = [NSMutableArray arrayWithArray:@[data1,data2]];
+    _arrTimeSecList = [NSMutableArray arrayWithArray:@[timeSec1,timeSec2,timeSec3]];
+    
+    [self getServiceTimeSectionWithDocID:nil];
+    
+}
+
+
+
+
+
 #pragma mark--CustomerUINavigationBarEvent
 -(void)navigationRightItemEvent{
     
@@ -142,11 +210,22 @@
     [self.tbvReservationInfo setTableFooterView:[UIView new]];
     
     [self customerRightNavigationBarItemWithTitle:@"确定" andImageRes:nil];
+
     
-    NSArray *arrDataSource = @[@{@"title":@"预约时间",@"subtitle":@"请选择康复时间"},
-                               @{@"title":@"预约地址",@"subtitle":@"联系人,联系方式,地址"},
-                               @{@"title":@"康复治疗师",@"subtitle":@"请选择康复治疗师"}];
+    NSArray *arrDataSource = @[[NSMutableDictionary dictionaryWithDictionary:@{@"title":@"预约时间",@"subtitle":@"请选择康复时间"}] ,
+                                [NSMutableDictionary dictionaryWithDictionary:@{@"title":@"预约地址",@"subtitle":@"联系人,联系方式,地址"}],
+                                [NSMutableDictionary dictionaryWithDictionary:@{@"title":@"康复治疗师",@"subtitle":@"请选择康复治疗师"}]];
+    
     _muArrDataList = [NSMutableArray arrayWithArray:arrDataSource];
+    
+    _dictUploadData = [NSMutableDictionary dictionary];
+    
+    // 设置服务项目ID 信息
+    [_dictUploadData setObject:(NSString *)self.viewObject forKey:@"service_id"];
+    
+    [self getDoctorServiceTimeFromServer];
+   
+    
     
 }
 

@@ -59,8 +59,8 @@
     lxDatePicker.dataSource = [NSMutableArray arrayWithArray:dataArray];
     
     [pickerView reloadAllComponents];
-
-    [lxDatePicker resetCompanDataWith:0 UIPickerView:pickerView];
+    
+    lxDatePicker.pickerMoudle == DataPickerMoudleRelevant ?([lxDatePicker resetCompanDataWith:0 UIPickerView:pickerView]) : nil;
     [mWindow addSubview:lxDatePicker];
     
     [lxDatePicker showBackgroundView];

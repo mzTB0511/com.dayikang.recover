@@ -51,7 +51,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, nil);
+    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, _muArr_ServiceItems[indexPath.row][@"id"]);
     
 }
 - (void)viewDidLoad {

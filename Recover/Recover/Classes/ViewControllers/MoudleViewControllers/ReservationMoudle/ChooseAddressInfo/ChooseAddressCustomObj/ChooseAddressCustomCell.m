@@ -23,6 +23,11 @@
 
 @implementation ChooseAddressCustomCell
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.text = @"";
+}
+
+
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     if ([string isEqualToString:@"\n"]) {

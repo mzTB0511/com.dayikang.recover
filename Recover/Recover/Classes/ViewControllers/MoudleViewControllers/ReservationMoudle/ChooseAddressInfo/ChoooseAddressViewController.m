@@ -12,7 +12,7 @@
 #import "ChooseAddressHistoryCell.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
 #import "LXRelevantPickView.h"
-
+#import "NetworkHandle.h"
 
 @interface ChoooseAddressViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -39,12 +39,13 @@
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+   WEAKSELF
     switch (section) {
         case 0:{
             ChooseAddressCustomView *view =  getViewByNib(ChooseAddressCustomView,self);
             [view.btn_Ok bk_addEventHandler:^(id sender) {
                 // 提交新增地址的操作
-                
+                [weakSelf uploadContactDataWithUserContactInfo:_muDictAddData];
                 
             } forControlEvents:UIControlEventTouchUpInside];
             return view;
@@ -66,6 +67,17 @@
     return 66;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return 66;
+            break;
+    }
+    
+    return 10;
+}
+
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return _muArrDataList.count;
 }
@@ -84,12 +96,14 @@
                 case 0:{
                     cell.EditCompletion = ^(NSString *value){
                         [_muDictAddData setObject:value forKey:@"name"];
+                        [_muArrDataList[indexPath.section][indexPath.row] setObject:value forKey:@"subtitle"];
                     };
                 }
                     break;
                 case 1:{
                     cell.EditCompletion = ^(NSString *value){
                         [_muDictAddData setObject:value forKey:@"phone"];
+                        [_muArrDataList[indexPath.section][indexPath.row] setObject:value forKey:@"subtitle"];
                     };
                 }
                     break;
@@ -100,6 +114,7 @@
                 case 3:{
                     cell.EditCompletion = ^(NSString *value){
                         [_muDictAddData setObject:value forKey:@"address"];
+                        [_muArrDataList[indexPath.section][indexPath.row] setObject:value forKey:@"subtitle"];
                     };
                 }
                     break;
@@ -179,11 +194,28 @@
                     pmArea4.selfID = @"1";
                     pmArea4.name = @"丰台区";
                     
-                    
                     //省市信息选择器
                     [LXRelevantPickView showPickerWithData:@[@[pmProvience,pmProvience1],@[pmCity,pmCity1],
                                                              @[pmArea,pmArea2,pmArea3,pmArea4]] defaultIndex:nil withPickerMoudle:DataPickerMoudleRelevant block:^(NSArray *chooseObj) {
                         
+                                                                 if (chooseObj.count > 0) {
+                                                                    
+                                                                     PickerMoudle *areaMoudle = chooseObj[2][@"seldata"];
+                                                                     [_muDictAddData setObject:areaMoudle.selfID forKey:@"area_id"];
+                                                                     
+                                                                     //** 显示省，市，区信息
+                                                                     PickerMoudle *pMoudle = chooseObj[0][@"seldata"];
+                                                                     PickerMoudle *cMoudle = chooseObj[1][@"seldata"];
+                                                                     PickerMoudle *aMoudle = chooseObj[2][@"seldata"];
+                                                                     
+                                                                     NSString *jg = @"";
+                                                                     jg = [jg stringByAppendingString:getStringAppendingStr(pMoudle.name,@",")];
+                                                                     jg = [jg stringByAppendingString:getStringAppendingStr(cMoudle.name,@",")];
+                                                                     jg = [jg stringByAppendingString:aMoudle.name];
+                                                                     
+                                                                     [_muArrDataList[indexPath.section][indexPath.row] setObject:jg forKey:@"subtitle"];
+                                                                     [weakSelf.tbvAddressInfo reloadData];
+                                                                 }
                     }];
                     
                 }
@@ -197,6 +229,84 @@
 
 
 
+-(void)uploadContactDataWithUserContactInfo:(NSDictionary *)info{
+    
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:info
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"reservation/addcontact")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              if ([responseDictionary objectForKey:@"return_data"]) {
+                                                  NSDictionary *dictTimeData = [responseDictionary objectForKey:@"return_data"];
+                                                  if (dictTimeData) {
+                                                      
+                                                      if (weakSelf.returnContactBlock) {
+                                                          weakSelf.returnContactBlock(dictTimeData[@"contact_id"],[_muArrDataList[0][2] objectForKey:@"subtitle"]);
+                                                      }
+                                                  }
+                                                  
+                                              }
+                                              
+                                          }
+                                          failure:nil
+                                   networkFailure:nil
+     ];
+    
+}
+
+
+
+-(void)getUserHistoryContactInfoFromServer{
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:nil
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"reservation/getcontact")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSArray *arrHis = [responseDictionary objectForKey:@"data"];
+                                                  if (arrHis) {
+                        // 如果有收货历史地址  加载重载数据
+                                                      [_muArrDataList setObject:arrHis atIndexedSubscript:1];
+                                                      [weakSelf.tbvAddressInfo reloadData];
+                                                  }
+                                                  
+                                              }
+                                              
+                                          }
+                                          failure:nil
+                                   networkFailure:nil
+     ];
+    
+}
+
+
+
+
+-(void)getProvienceCityAreaInfoFromServer{
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:nil
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"reservation/getcitylist")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              if ([responseDictionary objectForKey:@"addresslist"]) {
+                                                  NSArray *arrHis = [responseDictionary objectForKey:@"addresslist"];
+                                                  if (arrHis) {
+                                                      
+                                                      
+                                                  }
+                                                  
+                                              }
+                                              
+                                          }
+                                          failure:nil
+                                   networkFailure:nil
+     ];
+    
+}
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -206,13 +316,16 @@
     mRegisterNib_TableView(_tbvAddressInfo, ChooseAddressHistoryCell);
     
     _muArrDataList = [NSMutableArray array];
-    NSArray *arrAddressData = @[@{@"title":@"联系人",@"subtitle":@"请输入您的姓名"},
-                                @{@"title":@"联系方式",@"subtitle":@"请输入您的手机号"},
-                                @{@"title":@"省市,区县",@"subtitle":@"请选择所在的城市"},
-                                @{@"title":@"详细地址",@"subtitle":@"街道,楼道,单元,门牌号"}];
+    NSArray *arrAddressData = @[[NSMutableDictionary dictionaryWithDictionary:@{@"title":@"联系人",@"subtitle":@"请输入您的姓名"}] ,
+                                [NSMutableDictionary dictionaryWithDictionary:@{@"title":@"联系方式",@"subtitle":@"请输入您的手机号"}],
+                                [NSMutableDictionary dictionaryWithDictionary:@{@"title":@"省市,区县",@"subtitle":@"请选择所在的城市"}],
+                                [NSMutableDictionary dictionaryWithDictionary:@{@"title":@"详细地址",@"subtitle":@"街道,楼道,单元,门牌号"}]];
     [_muArrDataList addObject:arrAddressData];
     [_muArrDataList addObject:@[]];
     
+    [self getUserHistoryContactInfoFromServer];
+    
+    [self getProvienceCityAreaInfoFromServer];
     
     _muDictAddData = [NSMutableDictionary dictionary];
 }

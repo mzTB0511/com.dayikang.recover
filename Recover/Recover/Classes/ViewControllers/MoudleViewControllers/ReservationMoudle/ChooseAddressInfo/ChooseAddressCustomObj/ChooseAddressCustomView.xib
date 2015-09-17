@@ -11,9 +11,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idx-4q-UOE">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idx-4q-UOE">
                     <rect key="frame" x="18" y="13" width="283" height="41"/>
                     <color key="backgroundColor" red="0.1843137255" green="0.60392156860000001" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="283" id="dJe-BY-sWe"/>
+                        <constraint firstAttribute="height" constant="41" id="iej-fl-JSc"/>
+                    </constraints>
                     <state key="normal" title="确定">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -21,6 +25,10 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="idx-4q-UOE" secondAttribute="centerX" id="Bwh-go-8A6"/>
+                <constraint firstAttribute="centerY" secondItem="idx-4q-UOE" secondAttribute="centerY" id="TXc-a9-faj"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
