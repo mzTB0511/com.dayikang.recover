@@ -10,4 +10,8 @@
 
 @interface DoctorListTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *btnReservation;
+
+@property(nonatomic ,strong) NSDictionary *cellData;
+
 @end

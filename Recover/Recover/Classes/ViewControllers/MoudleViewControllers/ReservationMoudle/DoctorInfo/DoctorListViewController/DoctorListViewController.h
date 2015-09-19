@@ -12,4 +12,8 @@ typedef void(^DoctorListViewReturnDoctorInfoBlock)(NSDictionary *dicInfo);
 
 @interface DoctorListViewController : BaseViewController
 
+
+@property(copy,nonatomic) DoctorListViewReturnDoctorInfoBlock doctorViewBlock;
+
+
 @end

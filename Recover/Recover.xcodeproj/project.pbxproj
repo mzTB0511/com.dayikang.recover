@@ -31,6 +31,18 @@
 		E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4D1B9F3078002D6BE6 /* MyDoctorsViewController.m */; };
 		E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */; };
 		E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */; };
+		E9477C751BAD41FA00964348 /* DoctorListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C711BAD41FA00964348 /* DoctorListTableViewCell.m */; };
+		E9477C761BAD41FA00964348 /* DoctorListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477C721BAD41FA00964348 /* DoctorListTableViewCell.xib */; };
+		E9477C771BAD41FA00964348 /* DoctorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C741BAD41FA00964348 /* DoctorListViewController.m */; };
+		E9477C7D1BAD432D00964348 /* DoctorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C7C1BAD432D00964348 /* DoctorInfoViewController.m */; };
+		E9477C801BAD436B00964348 /* DoctorInfoTableHeardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C7F1BAD436B00964348 /* DoctorInfoTableHeardView.m */; };
+		E9477C821BAD437700964348 /* DoctorInfoTableHeardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477C811BAD437700964348 /* DoctorInfoTableHeardView.xib */; };
+		E9477C8D1BAD473100964348 /* DoctorInfoDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C8B1BAD473100964348 /* DoctorInfoDescCell.m */; };
+		E9477C8E1BAD473100964348 /* DoctorInfoDescCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477C8C1BAD473100964348 /* DoctorInfoDescCell.xib */; };
+		E9477C931BAD4C0F00964348 /* DoctorInfoZhengShuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C911BAD4C0F00964348 /* DoctorInfoZhengShuCell.m */; };
+		E9477C941BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477C921BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib */; };
+		E9477C981BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C961BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m */; };
+		E9477C991BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477C971BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib */; };
 		E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */; };
 		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
 		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
@@ -134,9 +146,6 @@
 		E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */; };
 		E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD291B94AA43000DEDCB /* MoreViewController.m */; };
 		E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */; };
-		E9F978451BAB150D003EA35B /* DoctorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F978441BAB150D003EA35B /* DoctorListViewController.m */; };
-		E9F9784A1BAB1559003EA35B /* DoctorListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F978481BAB1559003EA35B /* DoctorListTableViewCell.m */; };
-		E9F9784B1BAB1559003EA35B /* DoctorListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F978491BAB1559003EA35B /* DoctorListTableViewCell.xib */; };
 		E9F9784D1BAB1582003EA35B /* SBDoctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +202,25 @@
 		E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavouriteViewController.m; sourceTree = "<group>"; };
 		E935BF521B9F3097002D6BE6 /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
 		E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
+		E9477C701BAD41FA00964348 /* DoctorListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListTableViewCell.h; sourceTree = "<group>"; };
+		E9477C711BAD41FA00964348 /* DoctorListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListTableViewCell.m; sourceTree = "<group>"; };
+		E9477C721BAD41FA00964348 /* DoctorListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorListTableViewCell.xib; sourceTree = "<group>"; };
+		E9477C731BAD41FA00964348 /* DoctorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListViewController.h; sourceTree = "<group>"; };
+		E9477C741BAD41FA00964348 /* DoctorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListViewController.m; sourceTree = "<group>"; };
+		E9477C7B1BAD432D00964348 /* DoctorInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInfoViewController.h; sourceTree = "<group>"; };
+		E9477C7C1BAD432D00964348 /* DoctorInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInfoViewController.m; sourceTree = "<group>"; };
+		E9477C7E1BAD436B00964348 /* DoctorInfoTableHeardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInfoTableHeardView.h; sourceTree = "<group>"; };
+		E9477C7F1BAD436B00964348 /* DoctorInfoTableHeardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInfoTableHeardView.m; sourceTree = "<group>"; };
+		E9477C811BAD437700964348 /* DoctorInfoTableHeardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorInfoTableHeardView.xib; sourceTree = "<group>"; };
+		E9477C8A1BAD473100964348 /* DoctorInfoDescCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInfoDescCell.h; sourceTree = "<group>"; };
+		E9477C8B1BAD473100964348 /* DoctorInfoDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInfoDescCell.m; sourceTree = "<group>"; };
+		E9477C8C1BAD473100964348 /* DoctorInfoDescCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorInfoDescCell.xib; sourceTree = "<group>"; };
+		E9477C901BAD4C0F00964348 /* DoctorInfoZhengShuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInfoZhengShuCell.h; sourceTree = "<group>"; };
+		E9477C911BAD4C0F00964348 /* DoctorInfoZhengShuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInfoZhengShuCell.m; sourceTree = "<group>"; };
+		E9477C921BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorInfoZhengShuCell.xib; sourceTree = "<group>"; };
+		E9477C951BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorInfoZhengShuCollectionViewCell.h; sourceTree = "<group>"; };
+		E9477C961BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorInfoZhengShuCollectionViewCell.m; sourceTree = "<group>"; };
+		E9477C971BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorInfoZhengShuCollectionViewCell.xib; sourceTree = "<group>"; };
 		E94E5BDD1BA46A71003EA7F8 /* BabysanteSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegment.h; sourceTree = "<group>"; };
 		E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabysanteSegment.m; sourceTree = "<group>"; };
 		E94E5BDF1BA46A71003EA7F8 /* BabysanteSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegmentView.h; sourceTree = "<group>"; };
@@ -402,11 +430,6 @@
 		E99DFD291B94AA43000DEDCB /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		E99DFD2B1B94AA57000DEDCB /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
-		E9F978431BAB150D003EA35B /* DoctorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListViewController.h; sourceTree = "<group>"; };
-		E9F978441BAB150D003EA35B /* DoctorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListViewController.m; sourceTree = "<group>"; };
-		E9F978471BAB1559003EA35B /* DoctorListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListTableViewCell.h; sourceTree = "<group>"; };
-		E9F978481BAB1559003EA35B /* DoctorListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListTableViewCell.m; sourceTree = "<group>"; };
-		E9F978491BAB1559003EA35B /* DoctorListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorListTableViewCell.xib; sourceTree = "<group>"; };
 		E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBDoctor.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -568,6 +591,70 @@
 				E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */,
 			);
 			path = MyCenterCustomObj;
+			sourceTree = "<group>";
+		};
+		E9477C6E1BAD41FA00964348 /* DoctorListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9477C6F1BAD41FA00964348 /* DoctorListCustomObj */,
+				E9477C731BAD41FA00964348 /* DoctorListViewController.h */,
+				E9477C741BAD41FA00964348 /* DoctorListViewController.m */,
+			);
+			path = DoctorListViewController;
+			sourceTree = "<group>";
+		};
+		E9477C6F1BAD41FA00964348 /* DoctorListCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E9477C701BAD41FA00964348 /* DoctorListTableViewCell.h */,
+				E9477C711BAD41FA00964348 /* DoctorListTableViewCell.m */,
+				E9477C721BAD41FA00964348 /* DoctorListTableViewCell.xib */,
+			);
+			path = DoctorListCustomObj;
+			sourceTree = "<group>";
+		};
+		E9477C781BAD427500964348 /* DoctorCommendViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DoctorCommendViewController;
+			sourceTree = "<group>";
+		};
+		E9477C791BAD427500964348 /* DoctorInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9477C7A1BAD430500964348 /* DoctorInfoCustomObj */,
+				E9477C7B1BAD432D00964348 /* DoctorInfoViewController.h */,
+				E9477C7C1BAD432D00964348 /* DoctorInfoViewController.m */,
+			);
+			path = DoctorInfoViewController;
+			sourceTree = "<group>";
+		};
+		E9477C7A1BAD430500964348 /* DoctorInfoCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E9477C8F1BAD4C0F00964348 /* DoctorInfoZhengShuCell */,
+				E9477C7E1BAD436B00964348 /* DoctorInfoTableHeardView.h */,
+				E9477C7F1BAD436B00964348 /* DoctorInfoTableHeardView.m */,
+				E9477C811BAD437700964348 /* DoctorInfoTableHeardView.xib */,
+				E9477C8A1BAD473100964348 /* DoctorInfoDescCell.h */,
+				E9477C8B1BAD473100964348 /* DoctorInfoDescCell.m */,
+				E9477C8C1BAD473100964348 /* DoctorInfoDescCell.xib */,
+			);
+			path = DoctorInfoCustomObj;
+			sourceTree = "<group>";
+		};
+		E9477C8F1BAD4C0F00964348 /* DoctorInfoZhengShuCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9477C901BAD4C0F00964348 /* DoctorInfoZhengShuCell.h */,
+				E9477C911BAD4C0F00964348 /* DoctorInfoZhengShuCell.m */,
+				E9477C921BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib */,
+				E9477C951BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.h */,
+				E9477C961BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m */,
+				E9477C971BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib */,
+			);
+			path = DoctorInfoZhengShuCell;
 			sourceTree = "<group>";
 		};
 		E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */ = {
@@ -1336,21 +1423,11 @@
 		E9F978421BAB14F0003EA35B /* DoctorInfo */ = {
 			isa = PBXGroup;
 			children = (
-				E9F978461BAB152D003EA35B /* DoctorListCustomObj */,
-				E9F978431BAB150D003EA35B /* DoctorListViewController.h */,
-				E9F978441BAB150D003EA35B /* DoctorListViewController.m */,
+				E9477C6E1BAD41FA00964348 /* DoctorListViewController */,
+				E9477C791BAD427500964348 /* DoctorInfoViewController */,
+				E9477C781BAD427500964348 /* DoctorCommendViewController */,
 			);
 			path = DoctorInfo;
-			sourceTree = "<group>";
-		};
-		E9F978461BAB152D003EA35B /* DoctorListCustomObj */ = {
-			isa = PBXGroup;
-			children = (
-				E9F978471BAB1559003EA35B /* DoctorListTableViewCell.h */,
-				E9F978481BAB1559003EA35B /* DoctorListTableViewCell.m */,
-				E9F978491BAB1559003EA35B /* DoctorListTableViewCell.xib */,
-			);
-			path = DoctorListCustomObj;
 			sourceTree = "<group>";
 		};
 		F20720064779F984E0304245 /* Frameworks */ = {
@@ -1455,15 +1532,19 @@
 			files = (
 				E984EA7B1B9ADFF500FF7B88 /* SBOrder.storyboard in Resources */,
 				E99A91B01B9362A900299B60 /* UMShareEditViewController.xib in Resources */,
-				E9F9784B1BAB1559003EA35B /* DoctorListTableViewCell.xib in Resources */,
 				E984EA7D1B9AE00A00FF7B88 /* SBReservation.storyboard in Resources */,
 				E99A90121B935F7C00299B60 /* Main.storyboard in Resources */,
 				E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */,
+				E9477C991BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib in Resources */,
+				E9477C8E1BAD473100964348 /* DoctorInfoDescCell.xib in Resources */,
+				E9477C941BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib in Resources */,
 				E99A91B21B9362A900299B60 /* UMSLoginViewController.xib in Resources */,
 				E984EAAA1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
+				E9477C821BAD437700964348 /* DoctorInfoTableHeardView.xib in Resources */,
 				E99A91AD1B9362A900299B60 /* UMSCommentDetailController.xib in Resources */,
 				E99A91B31B9362A900299B60 /* UMSnsAccountViewController.xib in Resources */,
 				E92A77331BA864BB00A48B08 /* ChooseAddressCustomCell.xib in Resources */,
+				E9477C761BAD41FA00964348 /* DoctorListTableViewCell.xib in Resources */,
 				E99A91AE1B9362A900299B60 /* UMSCommentInputController.xib in Resources */,
 				E984EAA11B9B0C4500FF7B88 /* SVWebViewController.strings in Resources */,
 				E99A91AF1B9362A900299B60 /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -1542,14 +1623,15 @@
 			files = (
 				E99A91691B9362A900299B60 /* MJRefreshFooterView.m in Sources */,
 				E99A90631B93624900299B60 /* BaseTableViewCell.m in Sources */,
+				E9477C801BAD436B00964348 /* DoctorInfoTableHeardView.m in Sources */,
 				E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */,
 				E99A91A31B9362A900299B60 /* NSObject+RuntimeMethods.m in Sources */,
 				E919443F1BA70BC200D58A4A /* ChoooseAddressViewController.m in Sources */,
 				E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */,
 				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
-				E9F978451BAB150D003EA35B /* DoctorListViewController.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
 				E919443C1BA70B9600D58A4A /* ReservationInfoViewController.m in Sources */,
+				E9477C771BAD41FA00964348 /* DoctorListViewController.m in Sources */,
 				E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,
 				E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */,
@@ -1557,6 +1639,7 @@
 				E99A905C1B93624900299B60 /* CommonUser.m in Sources */,
 				E92A77321BA864BB00A48B08 /* ChooseAddressCustomCell.m in Sources */,
 				E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */,
+				E9477C751BAD41FA00964348 /* DoctorListTableViewCell.m in Sources */,
 				E99A90591B93624900299B60 /* SignTool.m in Sources */,
 				E99A916B1B9362A900299B60 /* UIScrollView+Extension.m in Sources */,
 				E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */,
@@ -1574,6 +1657,7 @@
 				E99A90551B93624900299B60 /* FoodModule.m in Sources */,
 				E99A905F1B93624900299B60 /* FormatData.m in Sources */,
 				E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */,
+				E9477C7D1BAD432D00964348 /* DoctorInfoViewController.m in Sources */,
 				E99A91A71B9362A900299B60 /* UINavigationBar+BackgroundColor.m in Sources */,
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
 				E99A90611B93624900299B60 /* UMTrack.m in Sources */,
@@ -1598,8 +1682,8 @@
 				E984EAAB1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari.m in Sources */,
 				E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */,
 				E99A91BF1B9362A900299B60 /* YXDAddImageCollectionView.m in Sources */,
+				E9477C8D1BAD473100964348 /* DoctorInfoDescCell.m in Sources */,
 				E99A91681B9362A900299B60 /* MJRefreshConst.m in Sources */,
-				E9F9784A1BAB1559003EA35B /* DoctorListTableViewCell.m in Sources */,
 				E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */,
 				E99A91601B9362A900299B60 /* AMapFunction.m in Sources */,
 				E984EAA21B9B0C4500FF7B88 /* SVModalWebViewController.m in Sources */,
@@ -1622,7 +1706,9 @@
 				E99A916E1B9362A900299B60 /* MLBlackTransition.m in Sources */,
 				E99A91611B9362A900299B60 /* BabySanteDatePicker.m in Sources */,
 				E99A90641B93624900299B60 /* BaseViewController.m in Sources */,
+				E9477C931BAD4C0F00964348 /* DoctorInfoZhengShuCell.m in Sources */,
 				E99A91621B9362A900299B60 /* BabysanteAlertView.m in Sources */,
+				E9477C981BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m in Sources */,
 				E99A91A51B9362A900299B60 /* UIAlertView+Blocks.m in Sources */,
 				E99A91721B9362A900299B60 /* NSDate+Category.m in Sources */,
 				E99A90561B93624900299B60 /* NaturtionItemModule.m in Sources */,

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sgx-Vm-HH7" customClass="DoctorInfoTableHeardView">
+            <rect key="frame" x="0.0" y="1" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-qB-UuW">
+                    <rect key="frame" x="19" y="17" width="66" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="9vR-cf-Rgj"/>
+                        <constraint firstAttribute="width" constant="66" id="EG0-Eu-ejx"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刘凡红" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-3r-j7A">
+                    <rect key="frame" x="102" y="8" width="51" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17r-i8-wEi">
+                    <rect key="frame" x="102" y="36" width="17" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZi-72-aQr">
+                    <rect key="frame" x="175" y="65" width="19.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35岁" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPh-pD-VhB">
+                    <rect key="frame" x="259" y="66" width="36.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完后项目" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufi-wc-XN6">
+                    <rect key="frame" x="102" y="66" width="68" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neX-pR-20K">
+                    <rect key="frame" x="217" y="66" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高级按摩师" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyd-Gd-nY5">
+                    <rect key="frame" x="158" y="8" width="85" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35岁" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-PW-3oI">
+                    <rect key="frame" x="133" y="37" width="36.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="neX-pR-20K" firstAttribute="top" secondItem="sgx-Vm-HH7" secondAttribute="top" constant="66" id="1ne-Fa-dw8"/>
+                <constraint firstItem="nZi-72-aQr" firstAttribute="top" secondItem="7Dm-PW-3oI" secondAttribute="bottom" constant="8" id="3GL-op-cbI"/>
+                <constraint firstItem="tHH-qB-UuW" firstAttribute="top" secondItem="sgx-Vm-HH7" secondAttribute="top" constant="17" id="ACf-Zr-ljt"/>
+                <constraint firstItem="X0m-3r-j7A" firstAttribute="leading" secondItem="tHH-qB-UuW" secondAttribute="trailing" constant="17" id="BcZ-U8-VOr"/>
+                <constraint firstItem="tHH-qB-UuW" firstAttribute="leading" secondItem="sgx-Vm-HH7" secondAttribute="leading" constant="19" id="H9N-SW-i3N"/>
+                <constraint firstItem="Ufi-wc-XN6" firstAttribute="top" secondItem="17r-i8-wEi" secondAttribute="bottom" constant="9.5" id="OAz-ZO-qFn"/>
+                <constraint firstItem="neX-pR-20K" firstAttribute="top" secondItem="nPh-pD-VhB" secondAttribute="top" id="P8D-Qf-L9b"/>
+                <constraint firstItem="X0m-3r-j7A" firstAttribute="top" secondItem="sgx-Vm-HH7" secondAttribute="top" constant="8" id="STu-B4-vc6"/>
+                <constraint firstItem="7Dm-PW-3oI" firstAttribute="top" secondItem="X0m-3r-j7A" secondAttribute="bottom" constant="8.5" id="T6d-bV-doD"/>
+                <constraint firstItem="17r-i8-wEi" firstAttribute="leading" secondItem="Ufi-wc-XN6" secondAttribute="leading" id="ZE9-xk-HdQ"/>
+                <constraint firstItem="Qyd-Gd-nY5" firstAttribute="leading" secondItem="X0m-3r-j7A" secondAttribute="trailing" constant="5" id="dAd-K7-FWd"/>
+                <constraint firstItem="nPh-pD-VhB" firstAttribute="leading" secondItem="neX-pR-20K" secondAttribute="trailing" constant="8" id="dLH-Xq-ucV"/>
+                <constraint firstItem="17r-i8-wEi" firstAttribute="top" secondItem="X0m-3r-j7A" secondAttribute="bottom" constant="8" id="fPt-ub-Yow"/>
+                <constraint firstItem="7Dm-PW-3oI" firstAttribute="leading" secondItem="17r-i8-wEi" secondAttribute="trailing" constant="14" id="q9e-eI-beI"/>
+                <constraint firstItem="nZi-72-aQr" firstAttribute="leading" secondItem="Ufi-wc-XN6" secondAttribute="trailing" constant="5" id="rxd-Sm-fhS"/>
+                <constraint firstItem="Qyd-Gd-nY5" firstAttribute="top" secondItem="sgx-Vm-HH7" secondAttribute="top" constant="8" id="v72-bc-nLb"/>
+                <constraint firstItem="neX-pR-20K" firstAttribute="leading" secondItem="nZi-72-aQr" secondAttribute="trailing" constant="23" id="wEO-Ge-2rs"/>
+                <constraint firstItem="17r-i8-wEi" firstAttribute="leading" secondItem="X0m-3r-j7A" secondAttribute="leading" id="wdo-Hw-VRC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgDoctIco" destination="tHH-qB-UuW" id="Xmb-b2-gHG"/>
+                <outlet property="lbAge" destination="7Dm-PW-3oI" id="sVv-tA-r0h"/>
+                <outlet property="lbDocName" destination="X0m-3r-j7A" id="2c9-gc-oGC"/>
+                <outlet property="lbJobTitle" destination="Qyd-Gd-nY5" id="daG-M1-gOw"/>
+                <outlet property="lbOrderCount" destination="nZi-72-aQr" id="ezI-0e-pS1"/>
+                <outlet property="lbPrice" destination="nPh-pD-VhB" id="rfa-Nr-8Bj"/>
+                <outlet property="lbSex" destination="17r-i8-wEi" id="iwK-Rv-00E"/>
+            </connections>
+            <point key="canvasLocation" x="332" y="395"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -11,7 +11,7 @@
  */
 
 //#define Interface_Server                    @"http://192.168.3.123/"//@"http://app.babysante.net/"//
-#define Interface_Server                    @"http://app.babysante.net/"//@"http://app.babysante.net/"//
+#define Interface_Server                    @"http://app.smkf.quickinhome.com/"//@"http://app.babysante.net/"//
 //#define Interface_Server                    @"http://app.babysante.com/"//@"http://app.babysante.net/"//
 
 

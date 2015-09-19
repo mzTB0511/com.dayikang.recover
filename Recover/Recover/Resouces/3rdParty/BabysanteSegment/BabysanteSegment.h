@@ -37,7 +37,27 @@
 typedef void(^BabysanteSegMentViewBlock)(NSString *menuIndex,NSString *subMenuIndex);
 @interface BabysanteSegment : UIView
 
+
+/**
+ *  初始化Segrement 控件
+ *
+ *  @param frame      frame 视图
+ *  @param menuMoudle 初始化数据
+ *  @param menus      包含的才当项目
+ *  @param block      选中项目后的回调事件
+ *
+ *  @return 自定义Segrement 控件
+ */
 -(id)initBabysanteSegmentViewFrame:(CGRect)frame MenuMoudle:(MenuMoudle *)menuMoudle AndMenuItems:(NSArray *)menus WithBabysanteSegmentBlock:(BabysanteSegMentViewBlock)block;
+
+
+
+/**
+ *  设置Segrement 默认选中项目
+ *
+ *  @param obj 默认项目数据
+ */
+-(void)setDefaultSecItem:(NSObject *)obj;
 
 
 @end

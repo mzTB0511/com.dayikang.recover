@@ -101,7 +101,13 @@
             addressView.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:addressView animated:YES];
             
-            [weakSelf.tbvReservationInfo reloadData];
+            addressView.doctorViewBlock = ^(NSDictionary *doctorInfo){
+                [_dictUploadData setObject:doctorInfo[@"did"] forKey:@"doctor_id"];
+                
+                [_muArrDataList[indexPath.row] setObject:doctorInfo[@"name"] forKey:@"subtitle"];
+                [weakSelf.tbvReservationInfo reloadData];
+            };
+         
         }
             break;
         default:

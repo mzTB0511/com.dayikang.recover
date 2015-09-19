@@ -11,6 +11,8 @@
 #import "NetworkHandle.h"
 #import "MJRefresh.h"
 #import "DoctorListTableViewCell.h"
+#import <BlocksKit/UIControl+BlocksKit.h>
+#import "DoctorInfoViewController.h"
 
 
 @interface DoctorListViewController ()<UITableViewDataSource,UITableViewDelegate>{
@@ -22,6 +24,8 @@
 @property(strong,nonatomic) NSMutableArray *muArrDoctorList;
 
 @property (weak, nonatomic) IBOutlet UIView *vSegmentView;
+
+@property(strong,nonatomic) NSMutableDictionary *muDictCondation;
 
 /**
  *  SegmentView
@@ -37,6 +41,10 @@
 
 
 #pragma mark --UITabelVeiwDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -49,12 +57,32 @@
     
     DoctorListTableViewCell *cell = getDequeueReusableCellWithClass(DoctorListTableViewCell);
     
-    //[cell setCellData:_muArr_OrderList[indexPath.row]];
+    [cell setCellData:_muArrDoctorList[indexPath.row]];
+    
+    //** 添加点击回调事件
+    [cell.btnReservation bk_addEventHandler:^(id sender) {
+        if (self.doctorViewBlock) {
+            self.doctorViewBlock(_muArrDoctorList[indexPath.row]);
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    WEAKSELF
+    DoctorInfoViewController *doctorInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorInfoViewController);
+    doctorInfo.doctorInfoBlock = ^(NSDictionary *docInfo){
+        
+        if (weakSelf.doctorViewBlock) {
+            weakSelf.doctorViewBlock(docInfo);
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    
+    };
+    [self.navigationController pushViewController:doctorInfo animated:YES];
     
 }
 
@@ -63,13 +91,13 @@
     WEAKSELF
     [_tbvDoctorListView addHeaderWithCallback:^{
         pageIndex = 1;
-        [weakSelf reloadTableViewWithPage:pageIndex AndSearchType:0];
+        [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:_muDictCondation];
     }];
     
     
     [_tbvDoctorListView addFooterWithCallback:^{
         pageIndex++;
-        [weakSelf reloadTableViewWithPage:pageIndex AndSearchType:0];
+        [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:_muDictCondation];
     }];
     
     
@@ -77,10 +105,10 @@
 }
 
 
--(void)reloadTableViewWithPage:(NSInteger)page AndSearchType:(NSInteger)searchType{
+-(void)reloadTableViewWithPage:(NSInteger)page AndSearchCondation:(NSDictionary *)condation{
     
     WEAKSELF
-    [NetworkHandle loadDataFromServerWithParamDic:nil
+    [NetworkHandle loadDataFromServerWithParamDic:condation
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"orders/list")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
@@ -194,19 +222,26 @@
         if ([menuIndex isEqualToString:@""] && [subMenuIndex isEqualToString:@""] ) {
             // ** 有二级子项菜单 下拉二级菜单
             animationSubMenu(_babysanteView,YES);
-            
+            return ;
         }else if (![menuIndex isEqualToString:@""] && ![subMenuIndex isEqualToString:@""]){
             //** 当前选中子项菜单 。进行数据筛选
             animationSubMenu(_babysanteView,NO);
+            pageIndex = 1;
+            [_muDictCondation setObject:menuIndex forKey:@"sort_type"];
+            [_muDictCondation setObject:subMenuIndex forKey:@"sort_cs"];
+            
         }else{
             //** 没有二级子项菜单 根据一级菜单过滤数据
             animationSubMenu(_babysanteView,NO);
-            
-            [self reloadTableViewWithPage:pageIndex AndSearchType:[menuIndex integerValue]];
+            pageIndex = 1;
+            [_muDictCondation setObject:menuIndex forKey:@"sort_type"];
+            [_muDictCondation setObject:@"" forKey:@"sort_cs"];
         }
         
-        
+        [self reloadTableViewWithPage:pageIndex AndSearchCondation:_muDictCondation];
     }];
+    
+    [_babysanteView setDefaultSecItem:segItem1];
     
     [self.view addSubview:_babysanteView];
 }
@@ -223,12 +258,20 @@
     
     _muArrDoctorList = [NSMutableArray array];
     
+    _muDictCondation = [NSMutableDictionary dictionary];
+    [_muDictCondation setObject:@"" forKey:@"symptom_id"];
+    [_muDictCondation setObject:@"" forKey:@"area_id"];
+    [_muDictCondation setObject:@"1" forKey:@"sort_type"];
+    [_muDictCondation setObject:@"0" forKey:@"sort_cs"];
+    [_muDictCondation setObject:@"1" forKey:@"page"];
+    
     [self initBabysatneSegMentView];
     
     [self setupMJTableView];
     
     _tbvDoctorListView.tableHeaderView = [UIView new];
     
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

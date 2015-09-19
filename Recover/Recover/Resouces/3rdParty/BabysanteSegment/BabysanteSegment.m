@@ -189,5 +189,29 @@
 
 
 
+-(void)setDefaultSecItem:(NSObject *)obj{
+    
+    if (obj) {
+        SegmentItem * segmentItem = (SegmentItem *)obj;
+        UIButton *btn = (UIButton *)[self viewWithTag:[segmentItem.menuID intValue]];
+        //**处理菜单选中事件，IndicatorView
+        [self actionSetMenuStatusAndIndicatorWith:_arrMenuItems currentMenuTag:btn.tag];
+        //** 点击按钮事件验证是否需要加载子menu
+        if (segmentItem.arrSubMenuList) {
+            
+            [self fillSubMenusWith:segmentItem];
+            if (_block) {
+                self.block(@"",@"");//[NSString stringWithFormat:@"%li",(long)tag]
+            }
+        }else{
+            
+            if (_block) {
+                self.block(segmentItem.menuID,@"");//[NSString stringWithFormat:@"%li",(long)tag]
+            }
+        }
+    }
+    
+}
+
 
 @end
