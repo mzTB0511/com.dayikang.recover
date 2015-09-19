@@ -46,6 +46,7 @@
 		E9477C9D1BAD603900964348 /* DoctorCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C9C1BAD603900964348 /* DoctorCommendViewController.m */; };
 		E9477CA11BAD605900964348 /* DoctorCommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C9F1BAD605900964348 /* DoctorCommendTableViewCell.m */; };
 		E9477CA21BAD605900964348 /* DoctorCommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477CA01BAD605900964348 /* DoctorCommendTableViewCell.xib */; };
+		E9477CA51BADA8D500964348 /* LXColorBoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CA41BADA8D500964348 /* LXColorBoundButton.m */; };
 		E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */; };
 		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
 		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
@@ -229,6 +230,8 @@
 		E9477C9E1BAD605900964348 /* DoctorCommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCommendTableViewCell.h; sourceTree = "<group>"; };
 		E9477C9F1BAD605900964348 /* DoctorCommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorCommendTableViewCell.m; sourceTree = "<group>"; };
 		E9477CA01BAD605900964348 /* DoctorCommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorCommendTableViewCell.xib; sourceTree = "<group>"; };
+		E9477CA31BADA8D500964348 /* LXColorBoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXColorBoundButton.h; sourceTree = "<group>"; };
+		E9477CA41BADA8D500964348 /* LXColorBoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXColorBoundButton.m; sourceTree = "<group>"; };
 		E94E5BDD1BA46A71003EA7F8 /* BabysanteSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegment.h; sourceTree = "<group>"; };
 		E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabysanteSegment.m; sourceTree = "<group>"; };
 		E94E5BDF1BA46A71003EA7F8 /* BabysanteSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegmentView.h; sourceTree = "<group>"; };
@@ -758,6 +761,8 @@
 				E91CC9331B9B21DA006B330B /* LXCircleImageView.m */,
 				E91CC9401B9B3803006B330B /* LXBaseTableViewCell.h */,
 				E91CC9411B9B3803006B330B /* LXBaseTableViewCell.m */,
+				E9477CA31BADA8D500964348 /* LXColorBoundButton.h */,
+				E9477CA41BADA8D500964348 /* LXColorBoundButton.m */,
 			);
 			path = CustomersObj;
 			sourceTree = "<group>";
@@ -1653,6 +1658,7 @@
 				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
 				E919443C1BA70B9600D58A4A /* ReservationInfoViewController.m in Sources */,
+				E9477CA51BADA8D500964348 /* LXColorBoundButton.m in Sources */,
 				E9477C771BAD41FA00964348 /* DoctorListViewController.m in Sources */,
 				E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,

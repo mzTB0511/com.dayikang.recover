@@ -11,6 +11,8 @@
 #import "NetworkHandle.h"
 #import "OrderListTableViewCell.h"
 #import "BabysanteSegmentView.h"
+#import <BlocksKit/UIControl+BlocksKit.h>
+
 
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger pageIndex;
@@ -34,6 +36,10 @@
 @implementation OrderViewController
 
 #pragma mark --UITabelVeiwDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 145;
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -43,10 +49,34 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    WEAKSELF
     OrderListTableViewCell *cell = getDequeueReusableCellWithClass(OrderListTableViewCell);
     
     [cell setCellData:_muArr_OrderList[indexPath.row]];
+    [cell.btn_ReservationStatus bk_addEventHandler:^(id sender) {
+        //确认服务，去评价，再次预约
+        NSInteger orderStatus = [_muArr_OrderList[indexPath.row][@"status"] intValue];
+        switch (orderStatus) {
+            case 1:{// 确认服务
+                [weakSelf actionConfirmServiceWithOrder:[_muArr_OrderList[indexPath.row] objectForKey:@"order_id"] AndStatus:@"2"];
+            }
+                break;
+            case 2:{// 去评价
+                
+            }
+                break;
+            case 3:{// 再次预约
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+    } forControlEvents:UIControlEventTouchUpInside];
+    
     
     return cell;
 }
@@ -77,7 +107,7 @@
 -(void)reloadTableViewWithPage:(NSInteger)page AndSearchType:(NSInteger)searchType{
     
     WEAKSELF
-    [NetworkHandle loadDataFromServerWithParamDic:nil
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"search_type":[NSString stringWithFormat:@"%li",(long)searchType]}
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"orders/list")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
@@ -109,6 +139,28 @@
 
 
 /**
+ *  更改订单状态
+ *
+ *  @param orderID dangdangID
+ *  @param status  更改后的状态
+ */
+-(void)actionConfirmServiceWithOrder:(NSString *)orderID AndStatus:(NSString *)status{
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"order_id":orderID,
+                                                    @"goto_status":status}
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"orders/updatestatus")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              [weakSelf.tbv_OrderListView reloadData];
+                                          }
+                                          failure:nil networkFailure:nil
+                                      showLoading:YES
+     ];
+}
+
+
+
+/**
  *  初始化SegmentBarView
  */
 -(void)initBabysatneSegMentView{
@@ -130,7 +182,7 @@
     
     SegmentItem *segItem2 = [SegmentItem new];
     [segItem2 setMenuID:@"2"];
-    [segItem2 setName:@"已完成"];
+    [segItem2 setName:@"已完成康复师日志"];
     [segItem2 setHasSubItem:NO];
     
     /**
@@ -186,13 +238,14 @@
         }else{
             //** 没有二级子项菜单 根据一级菜单过滤数据
             animationSubMenu(_babysanteView,NO);
-            
+            pageIndex = 1;
             [self reloadTableViewWithPage:pageIndex AndSearchType:[menuIndex integerValue]];
         }
         
         
     }];
 
+    [_babysanteView setDefaultSecItem:segItem1];
     [self.vSegmentView addSubview:_babysanteView];
 }
 
@@ -207,7 +260,7 @@
     mRegisterNib_TableView(_tbv_OrderListView, OrderListTableViewCell);
    
     _muArr_OrderList = [NSMutableArray array];
-    
+
     [self initBabysatneSegMentView];
     
     [self setupMJTableView];

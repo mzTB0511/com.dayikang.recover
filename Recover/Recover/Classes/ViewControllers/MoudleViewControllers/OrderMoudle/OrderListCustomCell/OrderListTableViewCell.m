@@ -27,7 +27,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lb_Price;
 
-@property (weak, nonatomic) IBOutlet UIButton *btn_ReservationStatus;
 
 
 
@@ -43,36 +42,38 @@
 -(void)setCellData:(NSDictionary *)cellData{
     [super setCellData:cellData];
 
-    NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@""]);
+    NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"ico"]);
     
     [_img_DocIco sd_setImageWithURL:[NSURL URLWithString:baoIco] placeholderImage:nil];
 
-    [_lb_OrderTime setText:[cellData objectForKey:@""]];
-    [_lb_ServiceItem setText:[cellData objectForKey:@""]];
+    [_lb_OrderTime setText:[cellData objectForKey:@"date"]];
+    [_lb_ServiceItem setText:[cellData objectForKey:@"item_name"]];
     [_lb_DocName setText:[cellData objectForKey:@""]];
-    [_lb_ServiceTime setText:[cellData objectForKey:@""]];
-    [_lb_Price setText:[cellData objectForKey:@""]];
+    [_lb_ServiceTime setText:[cellData objectForKey:@"time"]];
+    [_lb_Price setText:[cellData objectForKey:@"amount"]];
 
     
-    int orderStatus = [cellData[@""] intValue];
-    int serviceStatus = [cellData[@""] intValue];
-    
+    int orderStatus = [cellData[@"status"] intValue];
+  
+    WEAKSELF
     //** 设置订单状态
     void(^setOrderStatus)(int) = ^(int orderStatus){
         NSString *statusDesc = @"";
         switch (orderStatus) {
             case 1:
-               statusDesc = @"等待服务";
+               statusDesc = @"正在服务";
                 break;
             case 2:
-                statusDesc = @"正在服务";
+                statusDesc = @"待评价";
                 break;
             case 3:
-                statusDesc = @"服务结束";
+                statusDesc = @"已评价";
                 break;
             default:
                 break;
         }
+        
+        [weakSelf.lb_OrderStatus setText:statusDesc];
     };
     
     
@@ -81,23 +82,24 @@
         NSString *statusDesc = @"";
         switch (serviceStatus) {
             case 1:
-                statusDesc = @"正在处理";
+                statusDesc = @"确认服务";
                 break;
             case 2:
-                statusDesc = @"预约成功";
+                statusDesc = @"去评价";
                 break;
             case 3:
-                statusDesc = @"完成服务";
+                statusDesc = @"再次预约";
                 break;
             default:
                 break;
         }
+        
+         [weakSelf.btn_ReservationStatus setTitle:statusDesc forState:UIControlStateNormal];
     };
-    
     
     setOrderStatus(orderStatus);
     
-    setOrderServiceStatus(serviceStatus);
+    setOrderServiceStatus(orderStatus);
     
 }
 

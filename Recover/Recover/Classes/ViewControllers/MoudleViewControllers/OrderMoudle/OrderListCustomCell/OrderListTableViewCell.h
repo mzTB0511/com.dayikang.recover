@@ -10,4 +10,7 @@
 
 @interface OrderListTableViewCell : LXBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_ReservationStatus;
+
+
 @end
