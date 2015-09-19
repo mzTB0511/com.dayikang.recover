@@ -13,6 +13,8 @@
 #import "ChooseAddressCustomView.h"
 #import "NetworkHandle.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
+#import "DoctorCommendViewController.h"
+
 
 @interface DoctorInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -115,6 +117,16 @@
     return nil;
     
 }
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    DoctorCommendViewController *recommendInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorCommendViewController);
+    recommendInfo.viewObject = (NSString *)self.viewObject;
+    [self.navigationController pushViewController:recommendInfo animated:YES];
+    
+}
+
 
 
 
