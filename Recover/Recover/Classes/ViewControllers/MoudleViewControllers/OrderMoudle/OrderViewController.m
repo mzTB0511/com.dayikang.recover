@@ -16,6 +16,7 @@
 
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger pageIndex;
+    NSInteger chooseType;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tbv_OrderListView;
@@ -52,7 +53,7 @@
     WEAKSELF
     OrderListTableViewCell *cell = getDequeueReusableCellWithClass(OrderListTableViewCell);
     
-    [cell setCellData:_muArr_OrderList[indexPath.row]];
+    [cell actionSetCellData:_muArr_OrderList[indexPath.row] WithType:chooseType];
     [cell.btn_ReservationStatus bk_addEventHandler:^(id sender) {
         //确认服务，去评价，再次预约
         NSInteger orderStatus = [_muArr_OrderList[indexPath.row][@"status"] intValue];
@@ -77,6 +78,11 @@
         
     } forControlEvents:UIControlEventTouchUpInside];
     
+    // ** 去评价
+    [cell.btnCommend bk_addEventHandler:^(id sender) {
+        
+        
+    } forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -239,6 +245,7 @@
             //** 没有二级子项菜单 根据一级菜单过滤数据
             animationSubMenu(_babysanteView,NO);
             pageIndex = 1;
+            chooseType = [menuIndex integerValue];
             [self reloadTableViewWithPage:pageIndex AndSearchType:[menuIndex integerValue]];
         }
         

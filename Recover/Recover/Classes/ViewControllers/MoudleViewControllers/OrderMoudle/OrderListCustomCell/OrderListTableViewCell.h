@@ -12,5 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_ReservationStatus;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnCommend;
+
+
+-(void)actionSetCellData:(NSDictionary *)cellData WithType:(NSInteger)type;
+
 
 @end

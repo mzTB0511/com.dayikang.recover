@@ -28,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_Price;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *lbKFSLog;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbKFSLogContent;
 
 
 @end
@@ -39,8 +42,9 @@
     // Initialization code
 }
 
--(void)setCellData:(NSDictionary *)cellData{
-    [super setCellData:cellData];
+
+
+-(void)actionSetCellData:(NSDictionary *)cellData WithType:(NSInteger)type{
 
     NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"ico"]);
     
@@ -100,6 +104,26 @@
     setOrderStatus(orderStatus);
     
     setOrderServiceStatus(orderStatus);
+    
+    // ** 进行中， 已经完成项目分开处理
+    switch (type) {
+        case 1:{
+            [_lbKFSLog setHidden:YES];
+            [_lbKFSLogContent setHidden:YES];
+            [_btnCommend setHidden:YES];
+        }
+            
+            break;
+        case 2:{
+            [_lbKFSLog setHidden:NO];
+            [_lbKFSLogContent setHidden:NO];
+            [_btnCommend setHidden:NO];
+        }
+            
+            break;
+    }
+    
+    [_lbKFSLogContent setText:[cellData objectForKey:@"content_desc"]];
     
 }
 
