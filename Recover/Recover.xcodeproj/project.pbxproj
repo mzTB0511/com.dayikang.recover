@@ -47,6 +47,14 @@
 		E9477CA11BAD605900964348 /* DoctorCommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C9F1BAD605900964348 /* DoctorCommendTableViewCell.m */; };
 		E9477CA21BAD605900964348 /* DoctorCommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477CA01BAD605900964348 /* DoctorCommendTableViewCell.xib */; };
 		E9477CA51BADA8D500964348 /* LXColorBoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CA41BADA8D500964348 /* LXColorBoundButton.m */; };
+		E9477CA91BAE584100964348 /* AddDoctorCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CA81BAE584100964348 /* AddDoctorCommendViewController.m */; };
+		E9477CAD1BAE595200964348 /* AddDoctorCommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CAC1BAE595200964348 /* AddDoctorCommendHeadView.m */; };
+		E9477CAF1BAE595A00964348 /* AddDoctorCommendHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477CAE1BAE595A00964348 /* AddDoctorCommendHeadView.xib */; };
+		E9477CB31BAE598F00964348 /* AddDoctorCommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CB11BAE598F00964348 /* AddDoctorCommendTableViewCell.m */; };
+		E9477CB41BAE598F00964348 /* AddDoctorCommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477CB21BAE598F00964348 /* AddDoctorCommendTableViewCell.xib */; };
+		E9477CB81BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CB61BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m */; };
+		E9477CB91BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477CB71BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib */; };
+		E9477CBC1BAE62F200964348 /* LXCommendStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CBB1BAE62F200964348 /* LXCommendStartView.m */; };
 		E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */; };
 		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
 		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
@@ -232,6 +240,19 @@
 		E9477CA01BAD605900964348 /* DoctorCommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorCommendTableViewCell.xib; sourceTree = "<group>"; };
 		E9477CA31BADA8D500964348 /* LXColorBoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXColorBoundButton.h; sourceTree = "<group>"; };
 		E9477CA41BADA8D500964348 /* LXColorBoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXColorBoundButton.m; sourceTree = "<group>"; };
+		E9477CA71BAE584100964348 /* AddDoctorCommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDoctorCommendViewController.h; sourceTree = "<group>"; };
+		E9477CA81BAE584100964348 /* AddDoctorCommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDoctorCommendViewController.m; sourceTree = "<group>"; };
+		E9477CAB1BAE595200964348 /* AddDoctorCommendHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDoctorCommendHeadView.h; sourceTree = "<group>"; };
+		E9477CAC1BAE595200964348 /* AddDoctorCommendHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDoctorCommendHeadView.m; sourceTree = "<group>"; };
+		E9477CAE1BAE595A00964348 /* AddDoctorCommendHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDoctorCommendHeadView.xib; sourceTree = "<group>"; };
+		E9477CB01BAE598F00964348 /* AddDoctorCommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDoctorCommendTableViewCell.h; sourceTree = "<group>"; };
+		E9477CB11BAE598F00964348 /* AddDoctorCommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDoctorCommendTableViewCell.m; sourceTree = "<group>"; };
+		E9477CB21BAE598F00964348 /* AddDoctorCommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDoctorCommendTableViewCell.xib; sourceTree = "<group>"; };
+		E9477CB51BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDoctorCommendContentTableViewCell.h; sourceTree = "<group>"; };
+		E9477CB61BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDoctorCommendContentTableViewCell.m; sourceTree = "<group>"; };
+		E9477CB71BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDoctorCommendContentTableViewCell.xib; sourceTree = "<group>"; };
+		E9477CBA1BAE62F200964348 /* LXCommendStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCommendStartView.h; sourceTree = "<group>"; };
+		E9477CBB1BAE62F200964348 /* LXCommendStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCommendStartView.m; sourceTree = "<group>"; };
 		E94E5BDD1BA46A71003EA7F8 /* BabysanteSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegment.h; sourceTree = "<group>"; };
 		E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabysanteSegment.m; sourceTree = "<group>"; };
 		E94E5BDF1BA46A71003EA7F8 /* BabysanteSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegmentView.h; sourceTree = "<group>"; };
@@ -679,6 +700,34 @@
 				E9477CA01BAD605900964348 /* DoctorCommendTableViewCell.xib */,
 			);
 			path = DoctorInfoRecommendCustomObj;
+			sourceTree = "<group>";
+		};
+		E9477CA61BAE582700964348 /* AddDoctorCommendViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9477CAA1BAE58F500964348 /* AddDoctorCommendCustomObj */,
+				E9477CA71BAE584100964348 /* AddDoctorCommendViewController.h */,
+				E9477CA81BAE584100964348 /* AddDoctorCommendViewController.m */,
+			);
+			path = AddDoctorCommendViewController;
+			sourceTree = "<group>";
+		};
+		E9477CAA1BAE58F500964348 /* AddDoctorCommendCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E9477CAB1BAE595200964348 /* AddDoctorCommendHeadView.h */,
+				E9477CAC1BAE595200964348 /* AddDoctorCommendHeadView.m */,
+				E9477CAE1BAE595A00964348 /* AddDoctorCommendHeadView.xib */,
+				E9477CB01BAE598F00964348 /* AddDoctorCommendTableViewCell.h */,
+				E9477CB11BAE598F00964348 /* AddDoctorCommendTableViewCell.m */,
+				E9477CB21BAE598F00964348 /* AddDoctorCommendTableViewCell.xib */,
+				E9477CB51BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.h */,
+				E9477CB61BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m */,
+				E9477CB71BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib */,
+				E9477CBA1BAE62F200964348 /* LXCommendStartView.h */,
+				E9477CBB1BAE62F200964348 /* LXCommendStartView.m */,
+			);
+			path = AddDoctorCommendCustomObj;
 			sourceTree = "<group>";
 		};
 		E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */ = {
@@ -1452,6 +1501,7 @@
 				E9477C6E1BAD41FA00964348 /* DoctorListViewController */,
 				E9477C791BAD427500964348 /* DoctorInfoViewController */,
 				E9477C781BAD427500964348 /* DoctorCommendViewController */,
+				E9477CA61BAE582700964348 /* AddDoctorCommendViewController */,
 			);
 			path = DoctorInfo;
 			sourceTree = "<group>";
@@ -1560,6 +1610,7 @@
 				E99A91B01B9362A900299B60 /* UMShareEditViewController.xib in Resources */,
 				E984EA7D1B9AE00A00FF7B88 /* SBReservation.storyboard in Resources */,
 				E99A90121B935F7C00299B60 /* Main.storyboard in Resources */,
+				E9477CB91BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib in Resources */,
 				E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */,
 				E9477C991BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib in Resources */,
 				E9477C8E1BAD473100964348 /* DoctorInfoDescCell.xib in Resources */,
@@ -1568,6 +1619,7 @@
 				E984EAAA1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				E9477C821BAD437700964348 /* DoctorInfoTableHeardView.xib in Resources */,
 				E99A91AD1B9362A900299B60 /* UMSCommentDetailController.xib in Resources */,
+				E9477CB41BAE598F00964348 /* AddDoctorCommendTableViewCell.xib in Resources */,
 				E99A91B31B9362A900299B60 /* UMSnsAccountViewController.xib in Resources */,
 				E92A77331BA864BB00A48B08 /* ChooseAddressCustomCell.xib in Resources */,
 				E9477C761BAD41FA00964348 /* DoctorListTableViewCell.xib in Resources */,
@@ -1584,6 +1636,7 @@
 				E984EAA51B9B0C4500FF7B88 /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
 				E99A91661B9362A900299B60 /* MJRefresh.bundle in Resources */,
 				E984EAAC1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari@2x.png in Resources */,
+				E9477CAF1BAE595A00964348 /* AddDoctorCommendHeadView.xib in Resources */,
 				E99A91AB1B9362A900299B60 /* UMSocialLocalizable.strings in Resources */,
 				E99A91B11B9362A900299B60 /* UMShareEditViewControlleriPad.xib in Resources */,
 				E99A91B41B9362A900299B60 /* UMSShareListController.xib in Resources */,
@@ -1650,6 +1703,7 @@
 			files = (
 				E99A91691B9362A900299B60 /* MJRefreshFooterView.m in Sources */,
 				E99A90631B93624900299B60 /* BaseTableViewCell.m in Sources */,
+				E9477CA91BAE584100964348 /* AddDoctorCommendViewController.m in Sources */,
 				E9477C801BAD436B00964348 /* DoctorInfoTableHeardView.m in Sources */,
 				E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */,
 				E99A91A31B9362A900299B60 /* NSObject+RuntimeMethods.m in Sources */,
@@ -1661,15 +1715,18 @@
 				E9477CA51BADA8D500964348 /* LXColorBoundButton.m in Sources */,
 				E9477C771BAD41FA00964348 /* DoctorListViewController.m in Sources */,
 				E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */,
+				E9477CB31BAE598F00964348 /* AddDoctorCommendTableViewCell.m in Sources */,
 				E99A90621B93624900299B60 /* BaseNavigationViewController.m in Sources */,
 				E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */,
 				E9477CA11BAD605900964348 /* DoctorCommendTableViewCell.m in Sources */,
 				E99A905E1B93624900299B60 /* CommonFunc.m in Sources */,
+				E9477CBC1BAE62F200964348 /* LXCommendStartView.m in Sources */,
 				E99A905C1B93624900299B60 /* CommonUser.m in Sources */,
 				E92A77321BA864BB00A48B08 /* ChooseAddressCustomCell.m in Sources */,
 				E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */,
 				E9477C751BAD41FA00964348 /* DoctorListTableViewCell.m in Sources */,
 				E99A90591B93624900299B60 /* SignTool.m in Sources */,
+				E9477CAD1BAE595200964348 /* AddDoctorCommendHeadView.m in Sources */,
 				E99A916B1B9362A900299B60 /* UIScrollView+Extension.m in Sources */,
 				E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */,
 				E99A8FE61B935E8000299B60 /* AppDelegate.m in Sources */,
@@ -1705,6 +1762,7 @@
 				E99A8FE31B935E8000299B60 /* main.m in Sources */,
 				E91CC9341B9B21DA006B330B /* LXCircleImageView.m in Sources */,
 				E99A90601B93624900299B60 /* UIImage+Tint.m in Sources */,
+				E9477CB81BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m in Sources */,
 				E99A91671B9362A900299B60 /* MJRefreshBaseView.m in Sources */,
 				E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */,
 				E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */,

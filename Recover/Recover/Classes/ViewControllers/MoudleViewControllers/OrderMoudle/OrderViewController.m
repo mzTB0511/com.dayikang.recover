@@ -12,7 +12,7 @@
 #import "OrderListTableViewCell.h"
 #import "BabysanteSegmentView.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
-
+#import "AddDoctorCommendViewController.h"
 
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger pageIndex;
@@ -59,11 +59,11 @@
         NSInteger orderStatus = [_muArr_OrderList[indexPath.row][@"status"] intValue];
         switch (orderStatus) {
             case 1:{// 确认服务
-                [weakSelf actionConfirmServiceWithOrder:[_muArr_OrderList[indexPath.row] objectForKey:@"order_id"] AndStatus:@"2"];
+                [weakSelf actionConfirmServiceWithOrder:[_muArr_OrderList[indexPath.row] objectForKey:@"orders_id"] AndStatus:@"2"];
             }
                 break;
             case 2:{// 去评价
-                
+                pushViewControllerWith(StoryBoard_Doctor, AddDoctorCommendViewController, (_muArr_OrderList[indexPath.row]));
             }
                 break;
             case 3:{// 再次预约
@@ -80,7 +80,7 @@
     
     // ** 去评价
     [cell.btnCommend bk_addEventHandler:^(id sender) {
-        
+        pushViewControllerWith(StoryBoard_Doctor, AddDoctorCommendViewController, (_muArr_OrderList[indexPath.row]));
         
     } forControlEvents:UIControlEventTouchUpInside];
     
