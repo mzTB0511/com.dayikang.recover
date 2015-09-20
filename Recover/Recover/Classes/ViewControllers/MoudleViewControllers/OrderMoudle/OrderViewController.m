@@ -13,6 +13,8 @@
 #import "BabysanteSegmentView.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
 #import "AddDoctorCommendViewController.h"
+#import "OrderInfoViewController.h"
+
 
 @interface OrderViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger pageIndex;
@@ -88,7 +90,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    pushViewControllerWith(StoryBoard_Order, OrderInfoViewController, _muArr_OrderList[indexPath.row][@"orders_id"])
 }
 
 

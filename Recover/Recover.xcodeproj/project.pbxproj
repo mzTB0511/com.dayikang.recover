@@ -61,6 +61,11 @@
 		E94E5BE91BA486A4003EA7F8 /* DoctroJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE81BA486A4003EA7F8 /* DoctroJoinViewController.m */; };
 		E94E5BEC1BA486B3003EA7F8 /* ServiceAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */; };
 		E94E5BEF1BA486C9003EA7F8 /* CopyrightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */; };
+		E952CD261BAEB21D002EB2C9 /* OrderInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD251BAEB21D002EB2C9 /* OrderInfoViewController.m */; };
+		E952CD291BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD281BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.m */; };
+		E952CD2C1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD2B1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m */; };
+		E952CD2F1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD2E1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m */; };
+		E952CD321BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD311BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m */; };
 		E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
@@ -266,6 +271,16 @@
 		E94E5BEB1BA486B3003EA7F8 /* ServiceAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAreaViewController.m; sourceTree = "<group>"; };
 		E94E5BED1BA486C9003EA7F8 /* CopyrightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyrightViewController.h; sourceTree = "<group>"; };
 		E94E5BEE1BA486C9003EA7F8 /* CopyrightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyrightViewController.m; sourceTree = "<group>"; };
+		E952CD241BAEB21D002EB2C9 /* OrderInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoViewController.h; sourceTree = "<group>"; };
+		E952CD251BAEB21D002EB2C9 /* OrderInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoViewController.m; sourceTree = "<group>"; };
+		E952CD271BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoProgramTableViewCell.h; sourceTree = "<group>"; };
+		E952CD281BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoProgramTableViewCell.m; sourceTree = "<group>"; };
+		E952CD2A1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoOrderDetailTableViewCell.h; sourceTree = "<group>"; };
+		E952CD2B1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoOrderDetailTableViewCell.m; sourceTree = "<group>"; };
+		E952CD2D1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoServiceTimeTableViewCell.h; sourceTree = "<group>"; };
+		E952CD2E1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoServiceTimeTableViewCell.m; sourceTree = "<group>"; };
+		E952CD301BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoKFLogTableViewCell.h; sourceTree = "<group>"; };
+		E952CD311BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoKFLogTableViewCell.m; sourceTree = "<group>"; };
 		E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRelevantPickView.h; sourceTree = "<group>"; };
 		E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRelevantPickView.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
@@ -742,6 +757,31 @@
 				E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */,
 			);
 			path = BabysanteSegment;
+			sourceTree = "<group>";
+		};
+		E952CD221BAEB1F6002EB2C9 /* OrderInfoController */ = {
+			isa = PBXGroup;
+			children = (
+				E952CD231BAEB1F6002EB2C9 /* OrderInfoCustomObj */,
+				E952CD241BAEB21D002EB2C9 /* OrderInfoViewController.h */,
+				E952CD251BAEB21D002EB2C9 /* OrderInfoViewController.m */,
+			);
+			path = OrderInfoController;
+			sourceTree = "<group>";
+		};
+		E952CD231BAEB1F6002EB2C9 /* OrderInfoCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E952CD271BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.h */,
+				E952CD281BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.m */,
+				E952CD2A1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.h */,
+				E952CD2B1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m */,
+				E952CD2D1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.h */,
+				E952CD2E1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m */,
+				E952CD301BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.h */,
+				E952CD311BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m */,
+			);
+			path = OrderInfoCustomObj;
 			sourceTree = "<group>";
 		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
@@ -1466,6 +1506,7 @@
 		E99DFD191B94A79B000DEDCB /* OrderMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E952CD221BAEB1F6002EB2C9 /* OrderInfoController */,
 				E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */,
 				E99DFD1F1B94A9FB000DEDCB /* OrderViewController.h */,
 				E99DFD201B94A9FB000DEDCB /* OrderViewController.m */,
@@ -1702,6 +1743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99A91691B9362A900299B60 /* MJRefreshFooterView.m in Sources */,
+				E952CD2F1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m in Sources */,
 				E99A90631B93624900299B60 /* BaseTableViewCell.m in Sources */,
 				E9477CA91BAE584100964348 /* AddDoctorCommendViewController.m in Sources */,
 				E9477C801BAD436B00964348 /* DoctorInfoTableHeardView.m in Sources */,
@@ -1739,11 +1781,13 @@
 				E9477C9D1BAD603900964348 /* DoctorCommendViewController.m in Sources */,
 				E92A773C1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m in Sources */,
 				E94E5BE91BA486A4003EA7F8 /* DoctroJoinViewController.m in Sources */,
+				E952CD2C1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m in Sources */,
 				E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */,
 				E984EAA41B9B0C4500FF7B88 /* SVWebViewController.m in Sources */,
 				E99A90551B93624900299B60 /* FoodModule.m in Sources */,
 				E99A905F1B93624900299B60 /* FormatData.m in Sources */,
 				E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */,
+				E952CD261BAEB21D002EB2C9 /* OrderInfoViewController.m in Sources */,
 				E9477C7D1BAD432D00964348 /* DoctorInfoViewController.m in Sources */,
 				E99A91A71B9362A900299B60 /* UINavigationBar+BackgroundColor.m in Sources */,
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
@@ -1797,6 +1841,8 @@
 				E9477C931BAD4C0F00964348 /* DoctorInfoZhengShuCell.m in Sources */,
 				E99A91621B9362A900299B60 /* BabysanteAlertView.m in Sources */,
 				E9477C981BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m in Sources */,
+				E952CD291BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.m in Sources */,
+				E952CD321BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m in Sources */,
 				E99A91A51B9362A900299B60 /* UIAlertView+Blocks.m in Sources */,
 				E99A91721B9362A900299B60 /* NSDate+Category.m in Sources */,
 				E99A90561B93624900299B60 /* NaturtionItemModule.m in Sources */,
