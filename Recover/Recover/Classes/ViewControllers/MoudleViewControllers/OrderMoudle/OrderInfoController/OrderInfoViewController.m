@@ -13,6 +13,8 @@
 #import "OrderInfoKFLogTableViewCell.h"
 #import "NetworkHandle.h"
 #import "MJRefresh.h"
+#import "ChooseAddressCustomView.h"
+#import <BlocksKit/UIControl+BlocksKit.h>
 
 @interface OrderInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -155,6 +157,17 @@
                                                   NSDictionary *data = [responseDictionary objectForKey:@"data"];
                                                   
                                                   weakSelf.muArrDataSource = makeTableViewDataSourceWith(data);
+                                                  [weakSelf.tbvOrderInfo reloadData];
+                                                  
+                                                  ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
+                                                  [view.btn_Ok setTitle:@"再次预约" forState:UIControlStateNormal];
+                                                  
+                                                  //** 再次预约点击事件
+                                                  [view.btn_Ok bk_addEventHandler:^(id sender) {
+                                                     
+                                                      
+                                                  } forControlEvents:UIControlEventTouchUpInside];
+                                                  
                                                   
                                               }
                                               
