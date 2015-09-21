@@ -10,4 +10,7 @@
 
 @interface MyCouponsTableViewCell : UITableViewCell
 
+@property(nonatomic,strong)NSDictionary *cellData;
+
+
 @end

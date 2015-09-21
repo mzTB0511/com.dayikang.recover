@@ -7,12 +7,63 @@
 //
 
 #import "MyCouponsTableViewCell.h"
+@interface MyCouponsTableViewCell()
+
+@property (weak, nonatomic) IBOutlet UIView *vLeftView;
+
+@property (weak, nonatomic) IBOutlet UIView *vReightView;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbName;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbDesc;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbValidTime;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgInValid;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbMoney;
+
+
+
+@end
+
 
 @implementation MyCouponsTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    [_imgInValid setHidden:YES];
 }
+
+-(void)setCellData:(NSDictionary *)cellData{
+    if (_cellData == cellData) return;
+    [_lbName setText:cellData[@"name"]];
+    [_lbDesc setText:cellData[@"desc"]];
+    [_lbValidTime setText:cellData[@"validity_end"]];
+    [_lbMoney setText:cellData[@"moeny"]];
+    
+    int status = [cellData[@"status"] intValue];
+    switch (status) {
+        case 0:
+        case 1:{
+            [_vLeftView setBackgroundColor:[UIColor whiteColor]];
+            [_vReightView setBackgroundColor:getColorWithRGB(47, 154, 161)];
+            [_imgInValid setHidden:YES];
+        }
+            break;
+        case 2:{
+            [_vLeftView setBackgroundColor:[UIColor grayColor]];
+            [_vReightView setBackgroundColor:[UIColor whiteColor]];
+            [_imgInValid setHidden:NO];
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

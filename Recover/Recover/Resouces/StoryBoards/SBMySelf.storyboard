@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="66T-vl-Lyc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mPh-6E-fC6" id="Gas-hs-VMi"/>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="66T-vl-Lyc" secondAttribute="trailing" id="ECv-7T-ad1"/>
-                            <constraint firstItem="66T-vl-Lyc" firstAttribute="top" secondItem="KBT-3y-jfG" secondAttribute="top" id="WFj-ib-rxC"/>
+                            <constraint firstItem="66T-vl-Lyc" firstAttribute="top" secondItem="KBT-3y-jfG" secondAttribute="top" constant="45" id="WFj-ib-rxC"/>
                             <constraint firstAttribute="bottom" secondItem="66T-vl-Lyc" secondAttribute="bottom" id="pOB-Ld-GR0"/>
                             <constraint firstItem="66T-vl-Lyc" firstAttribute="leading" secondItem="KBT-3y-jfG" secondAttribute="leading" id="xCg-Zi-KFk"/>
                         </constraints>
@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdf-yx-kaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409.60000000000002" y="301.04000000000002"/>
+            <point key="canvasLocation" x="409" y="301"/>
         </scene>
         <!--My Doctors View Controller-->
         <scene sceneID="yeq-zT-C8F">
@@ -133,7 +133,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GTt-rt-ub7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="NzJ-bd-Jps" id="DRY-7x-bby"/>
                                     <outlet property="delegate" destination="NzJ-bd-Jps" id="8Kf-PR-0BA"/>

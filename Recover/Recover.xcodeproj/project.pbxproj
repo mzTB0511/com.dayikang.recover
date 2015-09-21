@@ -66,6 +66,8 @@
 		E952CD2C1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD2B1BAEB27F002EB2C9 /* OrderInfoOrderDetailTableViewCell.m */; };
 		E952CD2F1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD2E1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m */; };
 		E952CD321BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD311BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m */; };
+		E952CD371BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD351BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m */; };
+		E952CD381BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */; };
 		E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
@@ -281,6 +283,9 @@
 		E952CD2E1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoServiceTimeTableViewCell.m; sourceTree = "<group>"; };
 		E952CD301BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoKFLogTableViewCell.h; sourceTree = "<group>"; };
 		E952CD311BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoKFLogTableViewCell.m; sourceTree = "<group>"; };
+		E952CD341BAF04C3002EB2C9 /* MyWalletViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletViewTableViewCell.h; sourceTree = "<group>"; };
+		E952CD351BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletViewTableViewCell.m; sourceTree = "<group>"; };
+		E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWalletViewTableViewCell.xib; sourceTree = "<group>"; };
 		E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRelevantPickView.h; sourceTree = "<group>"; };
 		E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRelevantPickView.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
@@ -624,6 +629,7 @@
 		E935BF401B9F2F85002D6BE6 /* MyWallet */ = {
 			isa = PBXGroup;
 			children = (
+				E952CD331BAF047A002EB2C9 /* MyWalletViewCustomObj */,
 				E90EA7231B9F35CB006FE8E6 /* MyWalletViewController.h */,
 				E90EA7241B9F35CB006FE8E6 /* MyWalletViewController.m */,
 			);
@@ -782,6 +788,16 @@
 				E952CD311BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m */,
 			);
 			path = OrderInfoCustomObj;
+			sourceTree = "<group>";
+		};
+		E952CD331BAF047A002EB2C9 /* MyWalletViewCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E952CD341BAF04C3002EB2C9 /* MyWalletViewTableViewCell.h */,
+				E952CD351BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m */,
+				E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */,
+			);
+			path = MyWalletViewCustomObj;
 			sourceTree = "<group>";
 		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
@@ -1686,6 +1702,7 @@
 				E92A773D1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib in Resources */,
 				E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */,
 				E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */,
+				E952CD381BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib in Resources */,
 				E91CC9391B9B2686006B330B /* ServiceItemCollectionViewCell.xib in Resources */,
 				E90EA72C1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.xib in Resources */,
 				E99A91B51B9362A900299B60 /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -1767,6 +1784,7 @@
 				E92A77321BA864BB00A48B08 /* ChooseAddressCustomCell.m in Sources */,
 				E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */,
 				E9477C751BAD41FA00964348 /* DoctorListTableViewCell.m in Sources */,
+				E952CD371BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m in Sources */,
 				E99A90591B93624900299B60 /* SignTool.m in Sources */,
 				E9477CAD1BAE595200964348 /* AddDoctorCommendHeadView.m in Sources */,
 				E99A916B1B9362A900299B60 /* UIScrollView+Extension.m in Sources */,
