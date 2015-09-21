@@ -101,7 +101,10 @@
                                     interfaceName:InterfaceAddressName(@"my/chargecard")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               
-                                              _muArrDataSource = [NSMutableArray arrayWithArray:responseDictionary[@"data"]];
+                                              [[[_muArrDataSource objectAtIndex:0] objectAtIndex:0] setObject:responseDictionary[@"count_over"] forKey:@"cash"];
+                                              
+                                              [_muArrDataSource setObject:@[responseDictionary[@"data"]] atIndexedSubscript:1];
+                                              
                                               [weakSelf.tbvTableView reloadData];
                                               stopTableViewRefreshAnimation(_tbvTableView);
                                           }
