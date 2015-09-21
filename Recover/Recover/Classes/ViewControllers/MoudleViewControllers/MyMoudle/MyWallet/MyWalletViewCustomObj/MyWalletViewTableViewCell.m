@@ -45,7 +45,9 @@
 
 -(void)setCellData:(NSDictionary *)cellData{
     if (_cellData == cellData) return;
-    
+    [_lbAmount setText:cellData[@"amount"]];
+    [_lbSaleDesc setText:cellData[@"desc"]];
+    [_lbValidTime setText:getStringAppendingStr(@"有效期", (@[cellData[@"validity_start"],@"至",cellData[@"validity_end"]]))];
     
 }
 
