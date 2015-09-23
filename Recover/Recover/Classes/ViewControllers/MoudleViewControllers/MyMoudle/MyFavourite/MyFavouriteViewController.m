@@ -9,14 +9,16 @@
 #import "MyFavouriteViewController.h"
 #import "NetworkHandle.h"
 #import "MJRefresh.h"
-
+#import "DoctorListTableViewCell.h"
+#import "DoctorInfoViewController.h"
+#import <BlocksKit/UIControl+BlocksKit.h>
 
 @interface MyFavouriteViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger pageIndex;
 }
 @property(weak,nonatomic) IBOutlet UITableView *tbvTableView;
 
-@property(nonatomic ,strong) NSMutableArray *muArrDataSource;
+@property(nonatomic ,strong) NSMutableArray *muArrDoctorList;
 
 
 
@@ -25,87 +27,113 @@
 @implementation MyFavouriteViewController
 
 
-#pragma mark --UITableViewDelegate
+
+#pragma mark --UITabelVeiwDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _muArrDataSource.count;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+    return _muArrDoctorList.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    DoctorListTableViewCell *cell = getDequeueReusableCellWithClass(DoctorListTableViewCell);
     
-    return nil;
+    [cell setCellData:_muArrDoctorList[indexPath.row]];
+    
+    //** 添加点击回调事件
+    [cell.btnReservation bk_addEventHandler:^(id sender) {
+//        if (self.doctorViewBlock) {
+//            self.doctorViewBlock(_muArrDoctorList[indexPath.row]);
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }
+        
+    } forControlEvents:UIControlEventTouchUpInside];
+    
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    WEAKSELF
+    DoctorInfoViewController *doctorInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorInfoViewController);
+    doctorInfo.doctorInfoBlock = ^(NSDictionary *docInfo){
+        
+//        if (weakSelf.doctorViewBlock) {
+//            weakSelf.doctorViewBlock(docInfo);
+//            [self.navigationController popToRootViewControllerAnimated:YES];
+//        }
+        
+    };
+    [self.navigationController pushViewController:doctorInfo animated:YES];
     
 }
+
+
+-(void)setupMJTableView{
+    WEAKSELF
+    [_tbvTableView addHeaderWithCallback:^{
+        pageIndex = 1;
+        [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:nil];
+    }];
+    
+    
+    [_tbvTableView addFooterWithCallback:^{
+        pageIndex++;
+        [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:nil];
+    }];
+    
+    
+    [_tbvTableView headerBeginRefreshing];
+}
+
+
+-(void)reloadTableViewWithPage:(NSInteger)page AndSearchCondation:(NSDictionary *)condation{
+    
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:nil
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"my/favourite")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              
+                                              if ([responseDictionary objectForKey:@"list"]) {
+                                                  NSArray *data = [responseDictionary objectForKey:@"list"];
+                                                  
+                                                  page == 1 ? [weakSelf.muArrDoctorList removeAllObjects]: nil;
+                                                  
+                                                  data.count > 0 ? [weakSelf.muArrDoctorList addObjectsFromArray:data] : nil;
+                                                  
+                                                  weakSelf.muArrDoctorList.count == 0 ?
+                                                  [self setEmptyRemindImageWithRes:@""] : [self removeEmptyRemindImage];
+                                                  
+                                              }
+                                              
+                                              stopTableViewRefreshAnimation(weakSelf.tbvTableView);
+                                          }
+                                          failure:^{
+                                              stopTableViewRefreshAnimation(weakSelf.tbvTableView);
+                                          } networkFailure:^{
+                                              stopTableViewRefreshAnimation(weakSelf.tbvTableView);
+                                          }
+                                      showLoading:YES
+     ];
+    
+    
+}
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"我的收藏"];
     // Do any additional setup after loading the view.
-    [self setupMjRefreshViewWithTableView:_tbvTableView];
+    [self setupMJTableView];
     
-    
-}
-
-
-/**
- *  初始化TableView
- *
- *  @param tabelView TableView对象
- */
--(void)setupMjRefreshViewWithTableView:(UITableView *)tabelView{
-    
-    WEAKSELF
-    [tabelView addHeaderWithCallback:^{
-        pageIndex = 1;
-        [weakSelf getDataSourceFromServerWithPageIndex:pageIndex];
-    }];
-    
-    [tabelView addFooterWithCallback:^{
-        pageIndex ++;
-        [weakSelf getDataSourceFromServerWithPageIndex:pageIndex];
-        
-    }];
-    
-    [tabelView headerBeginRefreshing];
-}
-
-
-/**
- *  调用接口请求数据
- *
- *  @param page 当前页码
- */
--(void)getDataSourceFromServerWithPageIndex:(NSInteger)page{
-    
-    [NetworkHandle loadDataFromServerWithParamDic:nil
-                                          signDic:nil
-                                    interfaceName:InterfaceAddressName(@"")
-                                          success:^(NSDictionary *responseDictionary, NSString *message) {
-                                              
-                                              
-                                              
-                                              stopTableViewRefreshAnimation(_tbvTableView);
-                                          }
-                                          failure:^{
-                                              stopTableViewRefreshAnimation(_tbvTableView);
-                                          }
-                                   networkFailure:^{
-                                       stopTableViewRefreshAnimation(_tbvTableView);
-                                   }
-     
-                                      showLoading:YES];
     
 }
 
