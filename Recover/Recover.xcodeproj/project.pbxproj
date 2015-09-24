@@ -165,6 +165,13 @@
 		E99DFD271B94AA31000DEDCB /* MyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD261B94AA31000DEDCB /* MyCenterViewController.m */; };
 		E99DFD2A1B94AA43000DEDCB /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD291B94AA43000DEDCB /* MoreViewController.m */; };
 		E99DFD2D1B94AA57000DEDCB /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */; };
+		E9F2DE931BB2FB6C0071F16C /* MakeOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2DE921BB2FB6C0071F16C /* MakeOrderViewController.m */; };
+		E9F2DE981BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2DE961BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.m */; };
+		E9F2DE991BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F2DE971BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.xib */; };
+		E9F2DE9D1BB2FD700071F16C /* MakeOrderAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2DE9B1BB2FD700071F16C /* MakeOrderAddressTableViewCell.m */; };
+		E9F2DE9E1BB2FD700071F16C /* MakeOrderAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F2DE9C1BB2FD700071F16C /* MakeOrderAddressTableViewCell.xib */; };
+		E9F2DEA21BB2FD880071F16C /* MakeOrderAddDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2DEA01BB2FD880071F16C /* MakeOrderAddDescTableViewCell.m */; };
+		E9F2DEA31BB2FD880071F16C /* MakeOrderAddDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F2DEA11BB2FD880071F16C /* MakeOrderAddDescTableViewCell.xib */; };
 		E9F9784D1BAB1582003EA35B /* SBDoctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -482,6 +489,17 @@
 		E99DFD291B94AA43000DEDCB /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		E99DFD2B1B94AA57000DEDCB /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		E9F2DE911BB2FB6C0071F16C /* MakeOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeOrderViewController.h; sourceTree = "<group>"; };
+		E9F2DE921BB2FB6C0071F16C /* MakeOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeOrderViewController.m; sourceTree = "<group>"; };
+		E9F2DE951BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeOrderPuZhuTableViewCell.h; sourceTree = "<group>"; };
+		E9F2DE961BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeOrderPuZhuTableViewCell.m; sourceTree = "<group>"; };
+		E9F2DE971BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeOrderPuZhuTableViewCell.xib; sourceTree = "<group>"; };
+		E9F2DE9A1BB2FD700071F16C /* MakeOrderAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeOrderAddressTableViewCell.h; sourceTree = "<group>"; };
+		E9F2DE9B1BB2FD700071F16C /* MakeOrderAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeOrderAddressTableViewCell.m; sourceTree = "<group>"; };
+		E9F2DE9C1BB2FD700071F16C /* MakeOrderAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeOrderAddressTableViewCell.xib; sourceTree = "<group>"; };
+		E9F2DE9F1BB2FD880071F16C /* MakeOrderAddDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeOrderAddDescTableViewCell.h; sourceTree = "<group>"; };
+		E9F2DEA01BB2FD880071F16C /* MakeOrderAddDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeOrderAddDescTableViewCell.m; sourceTree = "<group>"; };
+		E9F2DEA11BB2FD880071F16C /* MakeOrderAddDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeOrderAddDescTableViewCell.xib; sourceTree = "<group>"; };
 		E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBDoctor.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1522,6 +1540,7 @@
 		E99DFD191B94A79B000DEDCB /* OrderMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E9F2DE901BB2FB400071F16C /* MakeOrderController */,
 				E952CD221BAEB1F6002EB2C9 /* OrderInfoController */,
 				E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */,
 				E99DFD1F1B94A9FB000DEDCB /* OrderViewController.h */,
@@ -1550,6 +1569,32 @@
 				E984EAAF1B9B0CD800FF7B88 /* MoudleUserLoginViewController.m */,
 			);
 			path = LoginRegisterMoudle;
+			sourceTree = "<group>";
+		};
+		E9F2DE901BB2FB400071F16C /* MakeOrderController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2DE941BB2FB8A0071F16C /* MakeOrderViewCustomObj */,
+				E9F2DE911BB2FB6C0071F16C /* MakeOrderViewController.h */,
+				E9F2DE921BB2FB6C0071F16C /* MakeOrderViewController.m */,
+			);
+			path = MakeOrderController;
+			sourceTree = "<group>";
+		};
+		E9F2DE941BB2FB8A0071F16C /* MakeOrderViewCustomObj */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2DE951BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.h */,
+				E9F2DE961BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.m */,
+				E9F2DE971BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.xib */,
+				E9F2DE9A1BB2FD700071F16C /* MakeOrderAddressTableViewCell.h */,
+				E9F2DE9B1BB2FD700071F16C /* MakeOrderAddressTableViewCell.m */,
+				E9F2DE9C1BB2FD700071F16C /* MakeOrderAddressTableViewCell.xib */,
+				E9F2DE9F1BB2FD880071F16C /* MakeOrderAddDescTableViewCell.h */,
+				E9F2DEA01BB2FD880071F16C /* MakeOrderAddDescTableViewCell.m */,
+				E9F2DEA11BB2FD880071F16C /* MakeOrderAddDescTableViewCell.xib */,
+			);
+			path = MakeOrderViewCustomObj;
 			sourceTree = "<group>";
 		};
 		E9F978421BAB14F0003EA35B /* DoctorInfo */ = {
@@ -1678,6 +1723,7 @@
 				E99A91AD1B9362A900299B60 /* UMSCommentDetailController.xib in Resources */,
 				E9477CB41BAE598F00964348 /* AddDoctorCommendTableViewCell.xib in Resources */,
 				E99A91B31B9362A900299B60 /* UMSnsAccountViewController.xib in Resources */,
+				E9F2DE9E1BB2FD700071F16C /* MakeOrderAddressTableViewCell.xib in Resources */,
 				E92A77331BA864BB00A48B08 /* ChooseAddressCustomCell.xib in Resources */,
 				E9477C761BAD41FA00964348 /* DoctorListTableViewCell.xib in Resources */,
 				E99A91AE1B9362A900299B60 /* UMSCommentInputController.xib in Resources */,
@@ -1694,11 +1740,13 @@
 				E99A91661B9362A900299B60 /* MJRefresh.bundle in Resources */,
 				E984EAAC1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari@2x.png in Resources */,
 				E9477CAF1BAE595A00964348 /* AddDoctorCommendHeadView.xib in Resources */,
+				E9F2DEA31BB2FD880071F16C /* MakeOrderAddDescTableViewCell.xib in Resources */,
 				E99A91AB1B9362A900299B60 /* UMSocialLocalizable.strings in Resources */,
 				E99A91B11B9362A900299B60 /* UMShareEditViewControlleriPad.xib in Resources */,
 				E99A91B41B9362A900299B60 /* UMSShareListController.xib in Resources */,
 				E9F9784D1BAB1582003EA35B /* SBDoctor.storyboard in Resources */,
 				E9477CA21BAD605900964348 /* DoctorCommendTableViewCell.xib in Resources */,
+				E9F2DE991BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.xib in Resources */,
 				E92A773D1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib in Resources */,
 				E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */,
 				E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */,
@@ -1759,6 +1807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F2DE9D1BB2FD700071F16C /* MakeOrderAddressTableViewCell.m in Sources */,
 				E99A91691B9362A900299B60 /* MJRefreshFooterView.m in Sources */,
 				E952CD2F1BAEB2B6002EB2C9 /* OrderInfoServiceTimeTableViewCell.m in Sources */,
 				E99A90631B93624900299B60 /* BaseTableViewCell.m in Sources */,
@@ -1826,6 +1875,7 @@
 				E99A90601B93624900299B60 /* UIImage+Tint.m in Sources */,
 				E9477CB81BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m in Sources */,
 				E99A91671B9362A900299B60 /* MJRefreshBaseView.m in Sources */,
+				E9F2DE931BB2FB6C0071F16C /* MakeOrderViewController.m in Sources */,
 				E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */,
 				E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */,
 				E99A91C01B9362A900299B60 /* YXDAddImageCollectionViewCell.m in Sources */,
@@ -1855,12 +1905,14 @@
 				E99A91831B9362A900299B60 /* MZTimerLabel.m in Sources */,
 				E99A916E1B9362A900299B60 /* MLBlackTransition.m in Sources */,
 				E99A91611B9362A900299B60 /* BabySanteDatePicker.m in Sources */,
+				E9F2DE981BB2FD5A0071F16C /* MakeOrderPuZhuTableViewCell.m in Sources */,
 				E99A90641B93624900299B60 /* BaseViewController.m in Sources */,
 				E9477C931BAD4C0F00964348 /* DoctorInfoZhengShuCell.m in Sources */,
 				E99A91621B9362A900299B60 /* BabysanteAlertView.m in Sources */,
 				E9477C981BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.m in Sources */,
 				E952CD291BAEB25E002EB2C9 /* OrderInfoProgramTableViewCell.m in Sources */,
 				E952CD321BAEB312002EB2C9 /* OrderInfoKFLogTableViewCell.m in Sources */,
+				E9F2DEA21BB2FD880071F16C /* MakeOrderAddDescTableViewCell.m in Sources */,
 				E99A91A51B9362A900299B60 /* UIAlertView+Blocks.m in Sources */,
 				E99A91721B9362A900299B60 /* NSDate+Category.m in Sources */,
 				E99A90561B93624900299B60 /* NaturtionItemModule.m in Sources */,
