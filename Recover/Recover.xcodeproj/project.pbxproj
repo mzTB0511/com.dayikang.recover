@@ -69,6 +69,7 @@
 		E952CD371BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E952CD351BAF04C3002EB2C9 /* MyWalletViewTableViewCell.m */; };
 		E952CD381BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */; };
 		E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */; };
+		E95706B71BB979F80044E351 /* SBLoginRegsiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */; };
@@ -295,6 +296,7 @@
 		E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWalletViewTableViewCell.xib; sourceTree = "<group>"; };
 		E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRelevantPickView.h; sourceTree = "<group>"; };
 		E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRelevantPickView.m; sourceTree = "<group>"; };
+		E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBLoginRegsiter.storyboard; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
@@ -974,6 +976,7 @@
 				E984EA7A1B9ADFF500FF7B88 /* SBOrder.storyboard */,
 				E984EA7C1B9AE00A00FF7B88 /* SBReservation.storyboard */,
 				E9F9784C1BAB1582003EA35B /* SBDoctor.storyboard */,
+				E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1720,6 +1723,7 @@
 				E99A91B21B9362A900299B60 /* UMSLoginViewController.xib in Resources */,
 				E984EAAA1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				E9477C821BAD437700964348 /* DoctorInfoTableHeardView.xib in Resources */,
+				E95706B71BB979F80044E351 /* SBLoginRegsiter.storyboard in Resources */,
 				E99A91AD1B9362A900299B60 /* UMSCommentDetailController.xib in Resources */,
 				E9477CB41BAE598F00964348 /* AddDoctorCommendTableViewCell.xib in Resources */,
 				E99A91B31B9362A900299B60 /* UMSnsAccountViewController.xib in Resources */,
@@ -2055,7 +2059,6 @@
 			baseConfigurationReference = 953D4F3F3052C028F366A25F /* Pods-Recover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Recover/PrefixHeader.pch";
@@ -2078,7 +2081,6 @@
 			baseConfigurationReference = 55F8FF62C70BBB01902CA259 /* Pods-Recover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Recover/PrefixHeader.pch";

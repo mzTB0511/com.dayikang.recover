@@ -35,6 +35,9 @@
                     <constraint firstItem="7Kx-j7-9fn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="x1V-Tg-apC"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="tfDesc" destination="Kdm-ki-Ak1" id="y5Q-gf-D7u"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

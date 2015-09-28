@@ -10,4 +10,6 @@
 
 @interface MyCouponsViewController : BaseViewController
 
+@property(nonatomic,copy) CommonReturnDataBlock dataBlock;
+
 @end

@@ -59,6 +59,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+ 
+    if (self.dataBlock) {
+        self.dataBlock(_muArrDataSource[indexPath.row]);
+    }
     
 }
 

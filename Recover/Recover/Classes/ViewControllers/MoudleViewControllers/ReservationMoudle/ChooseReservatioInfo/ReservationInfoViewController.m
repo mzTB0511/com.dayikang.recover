@@ -12,6 +12,7 @@
 #import "ChoooseAddressViewController.h"
 #import "LXRelevantPickView.h"
 #import "DoctorListViewController.h"
+#import "MakeOrderViewController.h"
 
 @interface ReservationInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -55,7 +56,6 @@
     switch (indexPath.row) {
         case 0:{// goto康复时间
            
-            //省市信息选择器
              [LXRelevantPickView showPickerWithData:@[_arrDateList,_arrTimeSecList] defaultIndex:nil withPickerMoudle:DataPickerMoudleNomal block:^(NSArray *chooseObj) {
                 
                 if (chooseObj.count > 0) {
@@ -152,10 +152,10 @@
                                     interfaceName:InterfaceAddressName(@"reservation/timesection")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               if ([responseDictionary objectForKey:@"data"]) {
-                                                  NSDictionary *dictTimeData = [responseDictionary objectForKey:@"data"];
-                                                  if (dictTimeData) {
+                                                  NSDictionary *arrTimeSection = [responseDictionary objectForKey:@"data"];
+                                                  if (arrTimeSection) {
                                                 
-                                                setReservationTime(dictTimeData[@"date"],dictTimeData[@"time_sec"]);
+                                                setReservationTime(arrTimeSection[@"date"],arrTimeSection[@"time_sec"]);
                                                       
                                                   }
                                                   
@@ -208,6 +208,17 @@
 #pragma mark--CustomerUINavigationBarEvent
 -(void)navigationRightItemEvent{
     
+    //** 提交预约数据记载订单信息
+    [_dictUploadData setObject:@"1" forKey:@"userID"];
+    [_dictUploadData setObject:@"1" forKey:@"service_id"];
+    [_dictUploadData setObject:@"8" forKey:@"contact_id"];
+    [_dictUploadData setObject:@"2" forKey:@"doctor_id"];
+    [_dictUploadData setObject:@"113" forKey:@"time_id"];
+    [_dictUploadData setObject:@"2015-09-21" forKey:@"reservation_date"];
+     [_dictUploadData setObject:@"10.00" forKey:@"start_time"];
+     [_dictUploadData setObject:@"11.00" forKey:@"end_time"];
+    
+    pushViewControllerWith(StoryBoard_Order, MakeOrderViewController, _dictUploadData);
     
 }
 

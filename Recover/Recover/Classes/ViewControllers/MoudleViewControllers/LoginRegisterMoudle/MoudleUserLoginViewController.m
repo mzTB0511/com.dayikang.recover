@@ -195,12 +195,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    if (![WXApi isWXAppInstalled] || ![WXApi isWXAppSupportApi]) {
-        [self.v_OtherLog setHidden:YES];
-    } else {
-        [self.v_OtherLog setHidden:NO];
-    }
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+
 }
 
 - (void)didReceiveMemoryWarning {

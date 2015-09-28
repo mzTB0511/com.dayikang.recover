@@ -70,7 +70,8 @@
 #define StoryBoard_Reservation @"SBReservation"
 //【康复师】模块
 #define StoryBoard_Doctor      @"SBDoctor"
-
+//【登录注册】模块
+#define StoryBoard_LoginRegsiter      @"SBLoginRegsiter"
 
 
 //**************************** 消息通知名称 键宏定义***********************************************/

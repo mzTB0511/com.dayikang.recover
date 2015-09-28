@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^MakeoOderAddDescComplateBlock)(NSString *content);
+
 @interface MakeOrderAddDescTableViewCell : UITableViewCell
+
+-(void)actionSetCellData:(NSString *)data CompateBlock:(MakeoOderAddDescComplateBlock)block;
+
 
 @end

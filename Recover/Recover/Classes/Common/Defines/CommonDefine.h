@@ -92,6 +92,9 @@ otherButtonTitles:nil]; \
 
 typedef void(^CommonBlock)(void);
 
+typedef void(^CommonReturnDataBlock)(id data);
+
+
 //root view controller
 #define mRootViewController                     ((AppDelegate *)([UIApplication sharedApplication].delegate)).window.rootViewController
 

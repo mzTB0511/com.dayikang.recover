@@ -16,12 +16,16 @@
 #import "MakeOrderAddDescTableViewCell.h"
 
 #import "MyCouponsViewController.h"
+#import "ChooseAddressCustomView.h"
+
 
 @interface MakeOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tbvOrderInfoView;
 
 @property (strong, nonatomic) NSMutableArray *muArrDataSource;
+
+@property(strong,nonatomic) NSMutableDictionary *muDictUploadData;
 
 
 @end
@@ -31,6 +35,48 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 20;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.section) {
+        case 0:
+        case 1:
+        case 4:
+        case 5:{
+            return 44;
+            
+        }
+            break;
+        case 2:{
+        
+            return 50;
+        }
+            break;
+        case 3:{
+            switch (indexPath.row) {
+                case 0:{
+                   
+                    return 44;
+                }
+                    break;
+                case 1:{
+                    
+                    return 100;
+                }
+                    break;
+                case 2:{
+            
+                    return 44;
+                }
+                    break;
+            }
+        }
+            break;
+            
+    }
+    
+    return 0;
 }
 
 
@@ -52,8 +98,8 @@
         case 5:{
             
             UITableViewCell *cell  = getDequeueReusableCellWithIdentifier(@"MakeOrderCommTableViewCell");
-            [cell.textLabel setText:_muArrDataSource[indexPath.section][@""]];
-            [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][@""]];
+            [cell.textLabel setText:_muArrDataSource[indexPath.section][@"title"]];
+            [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][@"content"]];
             
             indexPath.section == 4 ? ([cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator]) : nil;
             return cell;
@@ -70,15 +116,15 @@
             switch (indexPath.row) {
                 case 0:{
                     UITableViewCell *cell  = getDequeueReusableCellWithIdentifier(@"MakeOrderCommTableViewCell");
-                    [cell.textLabel setText:_muArrDataSource[indexPath.section][@""]];
-                    [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][@""]];
+                    [cell.textLabel setText:_muArrDataSource[indexPath.section][@"title"]];
+                    [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][@"content"]];
                     
                     return cell;
                 }
                     break;
                 case 1:{
                     MakeOrderAddressTableViewCell *cell  = getDequeueReusableCellWithClass(@"MakeOrderAddressTableViewCell");
-                    
+            
                     return cell;
                 }
                     break;
@@ -103,7 +149,13 @@
     
     switch (indexPath.section) {
         case 4:{ // 选择优惠券
-            
+                MyCouponsViewController *couponsInfo = getViewControllFromStoryBoard(StoryBoard_MySelf, MyCouponsViewController);
+                couponsInfo.viewObject = (NSString *)self.viewObject;
+            couponsInfo.dataBlock = ^(NSDictionary *data){
+              //** 更新选择的优惠券信息
+              
+            };
+                [self.navigationController pushViewController:couponsInfo animated:YES];
         }
             break;
             
@@ -111,9 +163,7 @@
             break;
     }
     
-//    DoctorCommendViewController *recommendInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorCommendViewController);
-//    recommendInfo.viewObject = (NSString *)self.viewObject;
-//    [self.navigationController pushViewController:recommendInfo animated:YES];
+
     
 }
 
@@ -132,6 +182,16 @@
                                                   NSDictionary *data = [responseDictionary objectForKey:@"data"];
                                                   weakSelf.muArrDataSource = [weakSelf makeTableViewDataSourceWith:data];
                                                   [weakSelf.tbvOrderInfoView reloadData];
+                                                  
+                                                  ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
+                                                  [view.btn_Ok setTitle:@"确认预约" forState:UIControlStateNormal];
+                                                  
+                                                  //** 确认预约点击事件
+                                                  [view.btn_Ok bk_addEventHandler:^(id sender) {
+                                                      
+                                                      
+                                                  } forControlEvents:UIControlEventTouchUpInside];
+                                                  
                                               }
                                               
                                           }
@@ -189,13 +249,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationItem setTitle:@"康复治疗师详情"];
+    [self.navigationItem setTitle:@"订单确认"];
     
     mRegisterNib_TableView(_tbvOrderInfoView, MakeOrderAddDescTableViewCell);
     mRegisterNib_TableView(_tbvOrderInfoView, MakeOrderAddressTableViewCell);
     mRegisterNib_TableView(_tbvOrderInfoView, MakeOrderPuZhuTableViewCell);
     
-    [self loadDataFromServerWithInfo:(NSString *)self.viewObject];
+    _muDictUploadData = [NSMutableDictionary dictionaryWithDictionary:(NSDictionary *)self.viewObject];
+    
+    [self loadDataFromServerWithInfo:_muDictUploadData];
 }
 
 

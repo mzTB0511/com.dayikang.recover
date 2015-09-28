@@ -33,7 +33,11 @@
         <scene sceneID="0O2-Xi-GjS">
             <objects>
                 <navigationController id="nhb-rg-7Tb" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="TIk-ud-aDQ"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="img_Tablebar_item_Index" selectedImage="img_Tablebar_item_Index_Sel" id="TIk-ud-aDQ">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_Index_Sel"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="eHM-9y-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -183,7 +187,11 @@
         <scene sceneID="L3W-Km-Eh2">
             <objects>
                 <navigationController id="aAm-xk-Wyo" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="订单" id="yyL-nm-UHJ"/>
+                    <tabBarItem key="tabBarItem" title="订单" image="img_Tablebar_item_Order" selectedImage="img_Tablebar_item_Order_Sel" id="yyL-nm-UHJ">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_Order_Sel"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iIA-Y3-JwT">
@@ -312,7 +320,12 @@
         <scene sceneID="lLi-4L-kWQ">
             <objects>
                 <navigationController id="zmO-H8-qzg" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="oRU-2l-JMw"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="img_Tablebar_item_My" selectedImage="img_Tablebar_item_My_Sel" id="oRU-2l-JMw">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_My_Sel"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NJL-wh-Wmo">
@@ -390,7 +403,12 @@
         <scene sceneID="4zE-F6-bK6">
             <objects>
                 <navigationController id="boz-rI-KK6" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="更多" id="9xk-QR-SH5"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="img_Tablebar_item_More" selectedImage="img_Tablebar_item_More_Sel" id="9xk-QR-SH5">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_More_Sel"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="12i-O0-cAA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -465,4 +483,14 @@
             <point key="canvasLocation" x="1398.75" y="2736.9718309859154"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_Tablebar_item_Index" width="22" height="23"/>
+        <image name="img_Tablebar_item_Index_Sel" width="22" height="23"/>
+        <image name="img_Tablebar_item_More" width="21" height="21"/>
+        <image name="img_Tablebar_item_More_Sel" width="21" height="21"/>
+        <image name="img_Tablebar_item_My" width="16" height="23"/>
+        <image name="img_Tablebar_item_My_Sel" width="16" height="23"/>
+        <image name="img_Tablebar_item_Order" width="20" height="23"/>
+        <image name="img_Tablebar_item_Order_Sel" width="20" height="23"/>
+    </resources>
 </document>

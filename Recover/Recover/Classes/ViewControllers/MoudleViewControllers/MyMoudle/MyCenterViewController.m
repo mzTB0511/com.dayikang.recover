@@ -16,7 +16,8 @@
 #import "MyFavouriteViewController.h"
 #import "MyRecordViewController.h"
 #import "MyWalletViewController.h"
-
+#import "BaseNavigationViewController.h"
+#import "MoudleUserLoginViewController.h"
 
 @interface MyCenterViewController ()
 
@@ -166,12 +167,17 @@
     
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+  
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    [self actionShowLoginView];
+    
     self.navigationItem.title = @"我";
     
     mRegisterNib_TableView(_tbv_UserInfoTableView, UserInfoAvatarCell);
@@ -182,6 +188,23 @@
     
     [self makeTBVDataSource];
 }
+
+
+-(void)actionShowLoginView{
+    BaseNavigationViewController *navBase  = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
+    
+    MoudleUserLoginViewController *loginView = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, MoudleUserLoginViewController);
+    loginView.completionBlock = ^{
+        
+    };
+    [loginView action_showDismissButton];
+    navBase.viewControllers = @[loginView];
+    
+    [self presentViewController:navBase animated:YES completion:nil];
+    
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {
