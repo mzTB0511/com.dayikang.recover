@@ -16,24 +16,20 @@
 @property (nonatomic, copy) NSString *userID;
 
 /**
- *  0-没有设置状态，1-已经设置过
- */
-@property (nonatomic, copy) NSString *status;
-
-/**
  *  用户手机号
  */
-@property (nonatomic, copy) NSString *userPhone;
+@property (nonatomic, copy) NSString *phone;
 
 /**
  *  用户性别，0-男，1-女
  */
-@property (nonatomic, copy) NSString *userSex;
+@property (nonatomic, copy) NSString *sex;
 
 /**
  *  用户头像
  */
-@property (nonatomic, copy) NSString *userIco;
+@property (nonatomic, copy) NSString *ico;
+
 
 /**
  *  用户昵称
@@ -67,6 +63,7 @@
 
 // 用户昵称
 @property(nonatomic,strong) NSString* userName ;
+
 
 // 百度 userID chinnelID
 @property(nonatomic,strong) NSString* bdUserID ;

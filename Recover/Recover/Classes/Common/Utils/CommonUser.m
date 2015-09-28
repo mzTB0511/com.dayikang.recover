@@ -310,14 +310,6 @@
     
     [CommonUser setUserInfo:userInfo];
     
-    //如果用户已经设置过状态 则覆盖本地状态
-    if ([userInfo.status isEqualToString:@"1"]) {
-        
-        NSDictionary *userStatus = responseDictionary[Return_data][@"statusvalue"];
-        
-        [CommonUser setUserStatusInfo:userStatus];
-    }
-    
     NSDictionary *bdDict = [CommonIO getLocalValue:@"BPushRequestResponseParamsKey"];
     
     if (bdDict) {
@@ -352,12 +344,6 @@
     return [[CommonUser userInfo].isTempUser isEqualToString:@"0"];
 }
 
-/**
- *  用户是否已经设置了用户状态(在服务器设置了)
- */
-+ (BOOL) ifUserSetStatus {
-    return [[CommonUser userInfo].status isEqualToString:@"1"];
-}
 
 /**
  *  将用户信息存储在本地

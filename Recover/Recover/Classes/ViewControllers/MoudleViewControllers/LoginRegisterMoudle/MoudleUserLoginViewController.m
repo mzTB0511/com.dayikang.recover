@@ -84,7 +84,7 @@
     //发送验证码
     [NetworkHandle loadDataFromServerWithParamDic:@{@"phone":_txf_phoneNumber.text}
                                           signDic:nil
-                                    interfaceName:InterfaceAddressName(@"account/sendvcode")
+                                    interfaceName:InterfaceAddressName(@"user/verification")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               [CommonHUD showHudWithMessage:@"发送成功" delay:CommonHudShowDuration completion:nil];
                                           }
@@ -109,9 +109,8 @@
         return;
     }
 
-    [self action_loginWithData:@{@"type":@"2",
-                                 @"phone":_txf_phoneNumber.text,
-                                 @"vCode":_txf_verifyCode.text}];
+    [self action_loginWithData:@{@"phone":_txf_phoneNumber.text,
+                                 @"verification":_txf_verifyCode.text}];
 }
 
 - (void) action_loginWithData:(NSDictionary *)data {
@@ -119,7 +118,7 @@
     WEAKSELF
     [NetworkHandle loadDataFromServerWithParamDic:data
                                           signDic:nil
-                                    interfaceName:InterfaceAddressName(@"account/quicklogin")
+                                    interfaceName:InterfaceAddressName(@"user/login")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               [CommonUser userLoginSuccess:responseDictionary block:weakSelf.completionBlock];
                                           }
@@ -127,68 +126,6 @@
                                    networkFailure:nil];
 }
 
-/**
- *  微信登录
- */
-- (IBAction) action_WeixinLogin {
-    
-    if ([WXApi isWXAppInstalled] && [WXApi isWXAppSupportApi]) {
-        
-        UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
-        
-        WEAKSELF
-        snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-            
-            if (response.responseCode == UMSResponseCodeSuccess) {
-                
-//                UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];
-                
-//                NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
-                
-                //得到的数据在回调Block对象形参respone的data属性
-                [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToWechatSession  completion:^(UMSocialResponseEntity *response){
-//                    NSLog(@"SnsInformation is %@",response.data);
-                    
-                    //请求unionid
-                    NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@",response.data[@"access_token"],response.data[@"openid"]];
-                    
-                    [NetworkHandle loadDataFromServerWithParamDic:nil
-                                                          signDic:nil
-                                                    interfaceName:url
-                                                          success:^(NSDictionary *responseDictionary, NSString *message) {
-                                                              
-                                                              [weakSelf action_loginWithData:@{@"type":@"1",
-                                                                                               @"openID":response.data[@"openid"],
-                                                                                               @"unionID":responseDictionary[@"unionid"],
-                                                                                               @"nickName":responseDictionary[@"nickname"],
-                                                                                               @"userIco":responseDictionary[@"headimgurl"],
-                                                                                               @"gender":responseDictionary[@"sex"]}];
-                                                              
-                                                          }
-                                                          failure:nil
-                                                   networkFailure:nil];
-                }];
-                
-            } else {
-                
-                [UIAlertView showAlertViewWithTitle:@"微信登录授权失败,请稍后重试"
-                                            message:nil
-                                  cancelButtonTitle:@"确定"
-                                  otherButtonTitles:nil
-                                          onDismiss:nil
-                                           onCancel:nil];
-            }
-        });
-    } else {
-        
-        [UIAlertView showAlertViewWithTitle:@"您当前没有安装微信或微信版本太低"
-                                    message:nil
-                          cancelButtonTitle:@"确定"
-                          otherButtonTitles:nil
-                                  onDismiss:nil
-                                   onCancel:nil];
-    }
-}
 
 #pragma mark - Life Cycle
 
