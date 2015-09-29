@@ -23,6 +23,13 @@
 @property(nonatomic,strong) NSMutableDictionary *muDictAddData;
 
 
+//** 省市区 三级联动数据
+@property(nonatomic,strong) NSMutableArray *muArrProvince;
+@property(nonatomic,strong) NSMutableArray *muArrCity;
+@property(nonatomic,strong) NSMutableArray *muArrArea;
+
+
+
 @end
 
 @implementation ChoooseAddressViewController
@@ -64,13 +71,13 @@
             break;
     }
     
-    return 66;
+    return 22;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     switch (section) {
         case 0:
-            return 66;
+            return 22;
             break;
     }
     
@@ -87,6 +94,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  WEAKSELF
     switch (indexPath.section) {
         case 0:{
             ChooseAddressCustomCell *cell = getDequeueReusableCellWithIdentifier(@"ChooseAddressCustomCell");
@@ -133,7 +141,10 @@
             [cell setCellData:_muArrDataList[indexPath.section][indexPath.row]];
             [cell.btnUsed bk_addEventHandler:^(id sender) {
                 // [使用]按钮点击事件
+                if (weakSelf.returnContactBlock) {
+                    weakSelf.returnContactBlock([NSString stringWithFormat:@"%li",(long)((UIButton *)sender).tag],cell.lbItemName.text);
                 
+                }
                 
             } forControlEvents:UIControlEventTouchUpInside];
             return cell;
@@ -154,49 +165,9 @@
         case 0:{
             switch (indexPath.row) {
                 case 2: {
-                    //**造数据
-                    PickerMoudle *pmProvience = [PickerMoudle new];
-                    pmProvience.selfID = @"1";
-                    pmProvience.name = @"上海";
-                    
-                    PickerMoudle *pmProvience1 = [PickerMoudle new];
-                    pmProvience1.selfID = @"2";
-                    pmProvience1.name = @"北京";
-                    
-                    PickerMoudle *pmCity = [PickerMoudle new];
-                    pmCity.parentID = @"1";
-                    pmCity.selfID = @"1";
-                    pmCity.name = @"上海市";
-                    
-                    PickerMoudle *pmCity1 = [PickerMoudle new];
-                    pmCity1.parentID = @"2";
-                    pmCity1.selfID = @"2";
-                    pmCity1.name = @"北京市";
-                    
-                    
-                    PickerMoudle *pmArea = [PickerMoudle new];
-                    pmArea.parentID = @"1";
-                    pmArea.selfID = @"1";
-                    pmArea.name = @"长宁区";
-                    
-                    PickerMoudle *pmArea2 = [PickerMoudle new];
-                    pmArea2.parentID = @"1";
-                    pmArea2.selfID = @"1";
-                    pmArea2.name = @"普陀区";
-                    
-                    PickerMoudle *pmArea3 = [PickerMoudle new];
-                    pmArea3.parentID = @"2";
-                    pmArea3.selfID = @"1";
-                    pmArea3.name = @"海淀区";
-                    
-                    PickerMoudle *pmArea4 = [PickerMoudle new];
-                    pmArea4.parentID = @"2";
-                    pmArea4.selfID = @"1";
-                    pmArea4.name = @"丰台区";
-                    
+                
                     //省市信息选择器
-                    [LXRelevantPickView showPickerWithData:@[@[pmProvience,pmProvience1],@[pmCity,pmCity1],
-                                                             @[pmArea,pmArea2,pmArea3,pmArea4]] defaultIndex:nil withPickerMoudle:DataPickerMoudleRelevant block:^(NSArray *chooseObj) {
+                    [LXRelevantPickView showPickerWithData:@[_muArrProvince,_muArrCity,_muArrArea] defaultIndex:nil withPickerMoudle:DataPickerMoudleRelevant block:^(NSArray *chooseObj) {
                         
                                                                  if (chooseObj.count > 0) {
                                                                     
@@ -236,12 +207,12 @@
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"reservation/addcontact")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
-                                              if ([responseDictionary objectForKey:@"return_data"]) {
-                                                  NSDictionary *dictTimeData = [responseDictionary objectForKey:@"return_data"];
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSDictionary *dictTimeData = [responseDictionary objectForKey:@"data"];
                                                   if (dictTimeData) {
-                                                      
                                                       if (weakSelf.returnContactBlock) {
                                                           weakSelf.returnContactBlock(dictTimeData[@"contact_id"],[_muArrDataList[0][2] objectForKey:@"subtitle"]);
+                                                        
                                                       }
                                                   }
                                                   
@@ -284,15 +255,65 @@
 
 -(void)getProvienceCityAreaInfoFromServer{
     WEAKSELF
+    
+    //**过滤日期出来 格式（01-12 星期-）
+    void(^setProvinceCityAreaData)(NSArray *) = ^(NSArray *dateList){
+        if (dateList.count > 0) {
+            NSMutableArray *muArrProvice = [NSMutableArray array];
+            NSMutableArray *muArrCity = [NSMutableArray array];
+            NSMutableArray *muArrArea = [NSMutableArray array];
+            [dateList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                NSDictionary *dicTime = obj;
+                NSString *pID = dicTime[@"pid"];
+                //**写入省份
+                PickerMoudle *moduleP = [PickerMoudle new];
+                [moduleP setSelfID:pID];
+                [moduleP setName:dicTime[@"pname"]];
+            
+                [muArrProvice addObject:moduleP];
+                
+                //**写入城市
+                NSArray *arrCityList = obj[@"plist"];
+                [arrCityList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    NSString *cityID = obj[@"cid"];
+                    PickerMoudle *moduleC = [PickerMoudle new];
+                    [moduleC setParentID:pID];
+                    [moduleC setSelfID:cityID];
+                    [moduleC setName:obj[@"cname"]];
+                    
+                    [muArrCity addObject:moduleC];
+                    
+                    //** 写入区
+                    NSArray *arrAreaList = obj[@"clist"];
+                    [arrAreaList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                        PickerMoudle *moduleA = [PickerMoudle new];
+                        [moduleA setParentID:cityID];
+                        [moduleA setSelfID:obj[@"did"]];
+                        [moduleA setName:obj[@"dname"]];
+                        
+                        [muArrArea addObject:moduleA];
+                    }];
+                    
+                    
+                }];
+                
+            }];
+            
+            weakSelf.muArrProvince = muArrProvice;
+            weakSelf.muArrCity = muArrCity;
+            weakSelf.muArrArea = muArrArea;
+            
+        }
+    };
+    
     [NetworkHandle loadDataFromServerWithParamDic:nil
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"reservation/getcitylist")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
-                                              if ([responseDictionary objectForKey:@"addresslist"]) {
-                                                  NSArray *arrHis = [responseDictionary objectForKey:@"addresslist"];
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSArray *arrHis = [responseDictionary objectForKey:@"data"];
                                                   if (arrHis) {
-                                                      
-                                                      
+                                                      setProvinceCityAreaData(arrHis);
                                                   }
                                                   
                                               }
@@ -300,6 +321,7 @@
                                           }
                                           failure:nil
                                    networkFailure:nil
+     showLoading:YES
      ];
     
 }

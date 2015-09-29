@@ -13,6 +13,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ServiceItemCollectionViewCell.h"
 #import <BlocksKit/UIView+BlocksKit.h>
+#import <AlipaySDK/AlipaySDK.h>
+#import "ReservationInfoViewController.h"
 
 
 @interface IndexViewController ()<LXCycleScrollViewDatasource,LXCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
@@ -42,50 +44,6 @@
 @implementation IndexViewController
 
 
--(void)loadBannerData{
-    
-    WEAKSELF
-    [NetworkHandle loadDataFromServerWithParamDic:nil
-                                          signDic:nil
-                                    interfaceName:InterfaceAddressName(@"app/banner")
-                                          success:^(NSDictionary *responseDictionary, NSString *message) {
-                                              
-                                              if ([responseDictionary objectForKey:@"list"]) {
-                                                  NSArray *data = [responseDictionary objectForKey:@"list"];
-                                                  
-                                                  if (data.count > 0) {
-                                                      
-                                                      weakSelf.arrBanner = data;
-                                                      if ([data count] > 0) {
-                                                          LXCycleScrollView *view = [[LXCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
-                                                          
-                                                          //** 初始化ScrollVeiw
-                                                          view.delegate = self ;
-                                                          view.datasource = self;
-                                                          
-                                                          [data count] ==1 ? [view.scrollView setScrollEnabled:NO] : nil;
-                                                          
-                                                          [_v_BannerView addSubview:view];
-                                                      }
-                                                      
-                                                  }
-                                                  
-                                              }
-                                              
-                                              
-                                          }
-                                          failure:^{
-                                              
-                                          } networkFailure:^{
-                                              
-                                          }
-                                      showLoading:YES
-     ];
-    
-}
-
-
-
 
 #pragma mark -- CycleScrollVeiwDelegate
 - (NSInteger)numberOfPages{
@@ -96,7 +54,7 @@
     NSDictionary *dict = [_arrBanner objectAtIndex:index];
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
     //image.contentMode  = UIViewContentModeScaleAspectFill;
-    [image sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"imgurl"]] placeholderImage:nil];
+    [image sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"img_url"]] placeholderImage:nil];
     
     return  image;
     
@@ -161,11 +119,102 @@
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [CommonHUD showHudWithMessage:@"不知道哪里..." delay:1.0f completion:nil];
+    //** goto ReservationViewControlelr
+    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, _arrCtvDataSource[indexPath.row][@"id"]);
 
+}
+
+
+
+-(void)actionGoAlipay{
+    //** 添加支付宝Demo 验证
+    [NetworkHandle loadDataFromServerWithParamDic:nil
+                                          signDic:nil
+                                    interfaceName:@"http://121.197.10.218/app.alipay.net/alipay.php"
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              
+                                              if ([responseDictionary objectForKey:@"sign_data"]) {
+                                                  NSString *signData = [responseDictionary objectForKey:@"sign_data"];
+                                                  
+                                                  [[AlipaySDK defaultService] payOrder:signData fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
+                                                      NSLog(@"reslut = %@",resultDic);
+                                                      
+                                                  }];
+                                              }
+                                              
+                                              
+                                          }
+                                          failure:^{
+                                              
+                                          } networkFailure:^{
+                                              
+                                          }
+                                      showLoading:YES
+     ];
+}
+
+
+
+
+-(void)loadBannerData{
+    
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:nil
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"index/banner")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              NSArray *data = [responseDictionary objectForKey:@"data"];
+                                              
+                                              if (data.count > 0) {
+                                                  
+                                                  weakSelf.arrBanner = data;
+                                                  if ([data count] > 0) {
+                                                      LXCycleScrollView *view = [[LXCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
+                                                      
+                                                      //** 初始化ScrollVeiw
+                                                      view.delegate = self ;
+                                                      view.datasource = self;
+                                                      
+                                                      [data count] ==1 ? [view.scrollView setScrollEnabled:NO] : nil;
+                                                      
+                                                      [_v_BannerView addSubview:view];
+                                                  }
+                                                  
+                                              }
+                                              
+                                          }
+                                          failure:^{
+                                              
+                                          } networkFailure:^{
+                                              
+                                          }
+                                      showLoading:YES
+     ];
     
 }
+
+
+
+-(void)actionGetServiceItemFromServerWithType:(int)type{
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"servicetype":[NSString stringWithFormat:@"%i",type]}
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"index/serviceitems")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              NSArray *arrList = responseDictionary[@"data"];
+                                              weakSelf.arrCtvDataSource = arrList ? arrList : @[];
+                                              [weakSelf.ctv_ServiceItem reloadData];
+                                              
+                                          }
+                                          failure:^{
+                                              
+                                          } networkFailure:^{
+                                              
+                                          }
+                                      showLoading:YES
+     ];
+}
+
 
 
 - (void)viewDidLoad {
@@ -176,22 +225,16 @@
     
     [self loadBannerData];
     
-    NSArray *arrServiceItems = @[@{@"id":@"3",@"ico":@"",@"name":@"颈痛/腰痛"},
-                                 @{@"id":@"4",@"ico":@"",@"name":@"头痛/头晕/失眠"},
-                                 @{@"id":@"5",@"ico":@"",@"name":@"落枕"},
-                                 @{@"id":@"6",@"ico":@"",@"name":@"足跟痛"}];
-    _arrCtvDataSource = [NSArray arrayWithArray:arrServiceItems];
-    
-    
     mRegisterNib_CollectionView(_ctv_ServiceItem, ServiceItemCollectionViewCell);
     
     //**亚健康人群，病后术后人群
     [self actionMainServerTapEvent];
     
-    
+    [self actionGetServiceItemFromServerWithType:3];
     
     
 }
+
 
 
 -(void)actionMainServerTapEvent{

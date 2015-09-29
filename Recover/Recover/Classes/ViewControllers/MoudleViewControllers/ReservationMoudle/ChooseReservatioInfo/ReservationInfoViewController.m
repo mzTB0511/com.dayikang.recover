@@ -13,6 +13,9 @@
 #import "LXRelevantPickView.h"
 #import "DoctorListViewController.h"
 #import "MakeOrderViewController.h"
+#import "NSDate+Category.h"
+#import "NSDateFormatter+Category.h"
+
 
 @interface ReservationInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -56,21 +59,21 @@
     switch (indexPath.row) {
         case 0:{// goto康复时间
            
-             [LXRelevantPickView showPickerWithData:@[_arrDateList,_arrTimeSecList] defaultIndex:nil withPickerMoudle:DataPickerMoudleNomal block:^(NSArray *chooseObj) {
+             [LXRelevantPickView showPickerWithData:@[_arrDateList,_arrTimeSecList] defaultIndex:nil withPickerMoudle:DataPickerMoudleRelevant block:^(NSArray *chooseObj) {
                 
                 if (chooseObj.count > 0) {
                     
                     PickerMoudle *areaMoudle = chooseObj[0][@"seldata"];
-                    [_dictUploadData setObject:areaMoudle.name forKey:@"reservation_date"];
+                    [_dictUploadData setObject:areaMoudle.mark forKey:@"reservation_date"];
                     
-                                                                         PickerMoudle *cMoudle = chooseObj[1][@"seldata"];
+                    PickerMoudle *cMoudle = chooseObj[1][@"seldata"];
                     
                     NSArray *starEndTime = [cMoudle.name componentsSeparatedByString:@"-"];
                     
                     [_dictUploadData setObject:starEndTime[0] forKey:@"start_time"];
                     [_dictUploadData setObject:starEndTime[1] forKey:@"end_time"];
                     
-                    [_muArrDataList[indexPath.row] setObject:getStringAppendingStr(areaMoudle.name, (@[starEndTime[0],starEndTime[1]])) forKey:@"subtitle"];
+                    [_muArrDataList[indexPath.row] setObject:getStringAppendingStr(areaMoudle.name, (@[@" ",starEndTime[0],@"-",starEndTime[1]])) forKey:@"subtitle"];
                     
                     [weakSelf.tbvReservationInfo reloadData];
                 }
@@ -83,11 +86,12 @@
             ChoooseAddressViewController *addressView = getViewControllFromStoryBoard(StoryBoard_Reservation, ChoooseAddressViewController);
             addressView.returnContactBlock = ^(NSString *contactID,NSString *addressDesc){
             
+                
                 [_dictUploadData setObject:contactID forKey:@"contact_id"];
                 
                 [_muArrDataList[indexPath.row] setObject:addressDesc forKey:@"subtitle"];
                 [weakSelf.tbvReservationInfo reloadData];
-                
+                [weakSelf.navigationController popViewControllerAnimated:YES];
             };
             
             addressView.hidesBottomBarWhenPushed = YES;
@@ -122,26 +126,79 @@
 -(void)getServiceTimeSectionWithDocID:(NSString *)doctorID{
     
     WEAKSELF
-    void(^setReservationTime)(NSArray *,NSArray *) = ^(NSArray *dateList,NSArray *timeSecList){
+    
+    NSString *(^getWeekNameFromWeek)(NSInteger) = ^(NSInteger week){
+        NSString *weekName = @"";
+        switch (week) {
+            case 1:
+                weekName = @"日";
+                break;
+            case 2:
+                weekName = @"一";
+                break;
+            case 3:
+                weekName = @"二";
+                break;
+            case 4:
+                weekName = @"三";
+                break;
+            case 5:
+                weekName = @"四";
+                break;
+            case 6:
+                weekName = @"五";
+                break;
+            case 7:
+                weekName = @"六";
+                break;
+        }
+        return getStringAppendingStr(@"星期", weekName);
+    };
+    
+    
+    //**过滤日期出来 格式（01-12 星期-）
+    void(^setReservationTime)(NSArray *) = ^(NSArray *dateList){
         if (dateList.count > 0) {
             NSMutableArray *muArrDateList = [NSMutableArray array];
-            [dateList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                [muArrDateList addObject:obj[@"date"]];
-            }];
-        
-            weakSelf.arrDateList = muArrDateList;
-        }
-        
-        if (timeSecList.count > 0) {
             NSMutableArray *muArrTimeSecList = [NSMutableArray array];
             [dateList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSString *timeSec = obj[@"start_time"];
-                timeSec = [timeSec stringByAppendingString:getStringAppendingStr(@"-", obj[@"end_time"]) ];
-                [muArrTimeSecList addObject:timeSec];
+                NSDictionary *dicTime = obj;
+                // **组合时间格式
+                NSDateFormatter *formateDate = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd"];
+                NSDate *date = [formateDate dateFromString:dicTime[@"date"]];
+                NSDateFormatter *formateStrDate = [NSDateFormatter dateFormatterWithFormat:@"MM-dd"];
+                NSString *strDate = [formateStrDate stringFromDate:date];
+                NSString *dateWeek = getStringAppendingStr(strDate, (@[@"  ",getWeekNameFromWeek([date weekday])])) ;
+                PickerMoudle *module = [PickerMoudle new];
+                NSString *parentID = [NSString stringWithFormat:@"%li",(long)idx];
+                [module setSelfID:parentID];
+                [module setName:dateWeek];
+                [module setMark:dicTime[@"date"]];
+                
+                [muArrDateList addObject:module];
+                
+                //**写入日期下对应的时间
+                NSArray *arrTimeSec = obj[@"time_sec"];
+                [arrTimeSec enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    NSString *timeStart = obj[@"start_time"];
+                    NSString *timeEnd = obj[@"end_time"];
+                    timeStart = getStringAppendingStr(timeStart, (@[@"-",timeEnd]));
+                   
+                    PickerMoudle *moduleSec = [PickerMoudle new];
+                    [moduleSec setParentID:parentID];
+                    [moduleSec setSelfID:obj[@"time_id"]];
+                    [moduleSec setName:timeStart];
+                    
+                    [muArrTimeSecList addObject:moduleSec];
+                }];
+              
             }];
             
+            weakSelf.arrDateList = muArrDateList;
             weakSelf.arrTimeSecList = muArrTimeSecList;
+
         }
+    
         
     };
     
@@ -151,56 +208,16 @@
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"reservation/timesection")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
-                                              if ([responseDictionary objectForKey:@"data"]) {
-                                                  NSDictionary *arrTimeSection = [responseDictionary objectForKey:@"data"];
+                                                NSArray *arrTimeSection = [responseDictionary objectForKey:@"data"];
                                                   if (arrTimeSection) {
-                                                
-                                                setReservationTime(arrTimeSection[@"date"],arrTimeSection[@"time_sec"]);
-                                                      
-                                                  }
-                                                  
-                                              }
-                                              
-                                              
+                                                    setReservationTime(arrTimeSection);
+                                                   }
                                           }
                                           failure:nil
                                    networkFailure:nil
      ];
     
 }
-
-
-
--(void)getDoctorServiceTimeFromServer{
-    
-    //**造数据
-    PickerMoudle *data1 = [PickerMoudle new];
-    data1.selfID = @"1";
-    data1.name = @"09-17 周四";
-    
-    PickerMoudle *data2 = [PickerMoudle new];
-    data2.selfID = @"2";
-    data2.name = @"09-18 周四";
-    
-    PickerMoudle *timeSec1 = [PickerMoudle new];
-    timeSec1.selfID = @"1";
-    timeSec1.name = @"09-10";
-    
-    PickerMoudle *timeSec2 = [PickerMoudle new];
-    timeSec2.selfID = @"1";
-    timeSec2.name = @"10-11";
-    
-    PickerMoudle *timeSec3 = [PickerMoudle new];
-    timeSec3.selfID = @"1";
-    timeSec3.name = @"11-12";
-    
-    _arrDateList = [NSMutableArray arrayWithArray:@[data1,data2]];
-    _arrTimeSecList = [NSMutableArray arrayWithArray:@[timeSec1,timeSec2,timeSec3]];
-    
-    [self getServiceTimeSectionWithDocID:nil];
-    
-}
-
 
 
 
@@ -243,8 +260,7 @@
     // 设置服务项目ID 信息
     [_dictUploadData setObject:(NSString *)self.viewObject forKey:@"service_id"];
     
-    [self getDoctorServiceTimeFromServer];
-   
+    [self getServiceTimeSectionWithDocID:nil];
     
     
 }

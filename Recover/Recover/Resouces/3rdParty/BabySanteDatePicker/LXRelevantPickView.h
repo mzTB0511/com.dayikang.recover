@@ -24,6 +24,7 @@ typedef void(^LXDataPickerPickingResultBlock)(NSArray *chooseObj);
 @property(nonatomic, copy) NSString *parentID;
 @property(nonatomic, copy) NSString *selfID;
 @property(nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *mark;
 
 @end
 

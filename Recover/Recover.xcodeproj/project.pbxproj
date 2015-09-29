@@ -55,6 +55,8 @@
 		E9477CB81BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CB61BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.m */; };
 		E9477CB91BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477CB71BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib */; };
 		E9477CBC1BAE62F200964348 /* LXCommendStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477CBB1BAE62F200964348 /* LXCommendStartView.m */; };
+		E948D9A01BBA398100F082C1 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E948D99E1BBA398100F082C1 /* AlipaySDK.bundle */; };
+		E948D9A11BBA398100F082C1 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E948D99F1BBA398100F082C1 /* AlipaySDK.framework */; };
 		E94E5BE41BA46A71003EA7F8 /* BabysanteSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */; };
 		E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE11BA46A71003EA7F8 /* SegmentItem.m */; };
 		E94E5BE61BA46A71003EA7F8 /* UIButton+block.m in Sources */ = {isa = PBXBuildFile; fileRef = E94E5BE31BA46A71003EA7F8 /* UIButton+block.m */; };
@@ -268,6 +270,8 @@
 		E9477CB71BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDoctorCommendContentTableViewCell.xib; sourceTree = "<group>"; };
 		E9477CBA1BAE62F200964348 /* LXCommendStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCommendStartView.h; sourceTree = "<group>"; };
 		E9477CBB1BAE62F200964348 /* LXCommendStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCommendStartView.m; sourceTree = "<group>"; };
+		E948D99E1BBA398100F082C1 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		E948D99F1BBA398100F082C1 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		E94E5BDD1BA46A71003EA7F8 /* BabysanteSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegment.h; sourceTree = "<group>"; };
 		E94E5BDE1BA46A71003EA7F8 /* BabysanteSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabysanteSegment.m; sourceTree = "<group>"; };
 		E94E5BDF1BA46A71003EA7F8 /* BabysanteSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabysanteSegmentView.h; sourceTree = "<group>"; };
@@ -510,6 +514,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E948D9A11BBA398100F082C1 /* AlipaySDK.framework in Frameworks */,
 				E99A91AC1B9362A900299B60 /* libUMSocial_Sdk_4.2.a in Frameworks */,
 				E99A91B61B9362A900299B60 /* libSocialWechat.a in Frameworks */,
 				E99A91B71B9362A900299B60 /* libWeChatSDK.a in Frameworks */,
@@ -769,6 +774,15 @@
 				E9477CBB1BAE62F200964348 /* LXCommendStartView.m */,
 			);
 			path = AddDoctorCommendCustomObj;
+			sourceTree = "<group>";
+		};
+		E948D99D1BBA398000F082C1 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				E948D99E1BBA398100F082C1 /* AlipaySDK.bundle */,
+				E948D99F1BBA398100F082C1 /* AlipaySDK.framework */,
+			);
+			path = AliPay;
 			sourceTree = "<group>";
 		};
 		E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */ = {
@@ -1167,6 +1181,7 @@
 		E99A90681B9362A900299B60 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E948D99D1BBA398000F082C1 /* AliPay */,
 				E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */,
 				E99A90691B9362A900299B60 /* AMapFunction */,
 				E99A906C1B9362A900299B60 /* BabySanteDatePicker */,
@@ -1717,6 +1732,7 @@
 				E99A90121B935F7C00299B60 /* Main.storyboard in Resources */,
 				E9477CB91BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib in Resources */,
 				E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */,
+				E948D9A01BBA398100F082C1 /* AlipaySDK.bundle in Resources */,
 				E9477C991BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib in Resources */,
 				E9477C8E1BAD473100964348 /* DoctorInfoDescCell.xib in Resources */,
 				E9477C941BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib in Resources */,
@@ -2060,6 +2076,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Recover/Resouces/3rdParty/AliPay",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Recover/PrefixHeader.pch";
 				INFOPLIST_FILE = Recover/Info.plist;
@@ -2082,6 +2102,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Recover/Resouces/3rdParty/AliPay",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Recover/PrefixHeader.pch";
 				INFOPLIST_FILE = Recover/Info.plist;

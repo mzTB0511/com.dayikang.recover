@@ -191,11 +191,12 @@
 
 
 -(void)actionShowLoginView{
+    WEAKSELF
     BaseNavigationViewController *navBase  = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
     
     MoudleUserLoginViewController *loginView = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, MoudleUserLoginViewController);
     loginView.completionBlock = ^{
-        
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
     };
     [loginView action_showDismissButton];
     navBase.viewControllers = @[loginView];

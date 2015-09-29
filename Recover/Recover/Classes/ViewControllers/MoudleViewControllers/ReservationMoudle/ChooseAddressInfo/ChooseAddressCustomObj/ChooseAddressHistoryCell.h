@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnUsed;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbItemName;
 
 @property(nonatomic,strong)NSDictionary *cellData;
 

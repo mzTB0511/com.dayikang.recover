@@ -15,7 +15,6 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3DH-fU-ngZ" customClass="LXCircleImageView">
                         <rect key="frame" x="116" y="8" width="68" height="68"/>
-                        <color key="backgroundColor" red="0.96862745100000003" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="FyM-FJ-shP"/>
                             <constraint firstAttribute="height" constant="68" id="x4W-dk-hEY"/>

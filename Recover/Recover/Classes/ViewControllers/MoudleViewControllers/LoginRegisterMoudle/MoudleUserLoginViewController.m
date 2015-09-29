@@ -104,10 +104,10 @@
         return;
     }
     
-    if (_txf_verifyCode.text.length != 4) {
-        [CommonHUD showHudWithMessage:@"请输入四位验证码" delay:CommonHudShowDuration completion:nil];
-        return;
-    }
+//    if (_txf_verifyCode.text.length != 4) {
+//        [CommonHUD showHudWithMessage:@"请输入四位验证码" delay:CommonHudShowDuration completion:nil];
+//        return;
+//    }
 
     [self action_loginWithData:@{@"phone":_txf_phoneNumber.text,
                                  @"verification":_txf_verifyCode.text}];

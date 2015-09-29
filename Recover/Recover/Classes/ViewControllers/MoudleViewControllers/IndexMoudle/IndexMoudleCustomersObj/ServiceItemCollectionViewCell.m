@@ -7,6 +7,7 @@
 //
 
 #import "ServiceItemCollectionViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ServiceItemCollectionViewCell()
 
@@ -32,7 +33,7 @@
         return;
     }
     
-    [_img_ItemIco setImage:getImageWithRes(@"")];
+    [_img_ItemIco sd_setImageWithURL:getUrlWithStrValue(cellData[@"img_url"]) placeholderImage :getImageWithRes(@"img_url")];
     [_lb_ItemName setText:getValueFromDictionary(cellData, @"name")];
     
 }

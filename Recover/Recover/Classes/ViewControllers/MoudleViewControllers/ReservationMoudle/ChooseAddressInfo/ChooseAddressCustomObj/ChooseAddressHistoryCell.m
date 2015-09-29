@@ -10,7 +10,6 @@
 
 @interface ChooseAddressHistoryCell()
 
-@property (weak, nonatomic) IBOutlet UILabel *lbItemName;
 
 @end
 
@@ -23,9 +22,13 @@
 
 -(void)setCellData:(NSDictionary *)cellData{
     if(_cellData == cellData) return;
-
-    [_lbItemName setText:cellData[@""]];
-    [_btnUsed setTag:[cellData[@""] intValue]];
+    NSString *strP  = getValueIfNilReturnStr(cellData[@"province_name"]);
+    NSString *strC  = getValueIfNilReturnStr(cellData[@"city_name"]);
+    NSString *strA  = getValueIfNilReturnStr(cellData[@"area_name"]);
+    NSString *strAddress  = getValueIfNilReturnStr(cellData[@"address"]);
+    
+    [_lbItemName setText:getStringAppendingStr(strP, (@[@" ",strC,@" ",strA,@" ",strAddress]))];
+    [_btnUsed setTag:[cellData[@"contact_id"] intValue]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
