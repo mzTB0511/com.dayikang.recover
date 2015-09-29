@@ -74,11 +74,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     WEAKSELF
     DoctorInfoViewController *doctorInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorInfoViewController);
+    doctorInfo.viewObject = _muArrDoctorList[indexPath.row][@"did"];
     doctorInfo.doctorInfoBlock = ^(NSDictionary *docInfo){
         
         if (weakSelf.doctorViewBlock) {
             weakSelf.doctorViewBlock(docInfo);
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
         }
     
     };
@@ -91,12 +92,14 @@
     WEAKSELF
     [_tbvDoctorListView addHeaderWithCallback:^{
         pageIndex = 1;
+        [_muDictCondation setObject:[NSString stringWithFormat:@"%li",(long)pageIndex] forKey:@"page"];
         [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:_muDictCondation];
     }];
     
     
     [_tbvDoctorListView addFooterWithCallback:^{
         pageIndex++;
+        [_muDictCondation setObject:[NSString stringWithFormat:@"%li",(long)pageIndex] forKey:@"page"];
         [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:_muDictCondation];
     }];
     
@@ -110,11 +113,11 @@
     WEAKSELF
     [NetworkHandle loadDataFromServerWithParamDic:condation
                                           signDic:nil
-                                    interfaceName:InterfaceAddressName(@"orders/list")
+                                    interfaceName:InterfaceAddressName(@"doctor/list")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               
-                                              if ([responseDictionary objectForKey:@"list"]) {
-                                                  NSArray *data = [responseDictionary objectForKey:@"list"];
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSArray *data = [responseDictionary objectForKey:@"data"];
                                                   
                                                   page == 1 ? [weakSelf.muArrDoctorList removeAllObjects]: nil;
                                                   
@@ -123,6 +126,7 @@
                                                   weakSelf.muArrDoctorList.count == 0 ?
                                                   [self setEmptyRemindImageWithRes:@""] : [self removeEmptyRemindImage];
                                                   
+                                                  [weakSelf.tbvDoctorListView reloadData];
                                               }
                                               
                                               stopTableViewRefreshAnimation(weakSelf.tbvDoctorListView);
@@ -261,15 +265,21 @@
     _muDictCondation = [NSMutableDictionary dictionary];
     [_muDictCondation setObject:@"" forKey:@"symptom_id"];
     [_muDictCondation setObject:@"" forKey:@"area_id"];
-    [_muDictCondation setObject:@"1" forKey:@"sort_type"];
-    [_muDictCondation setObject:@"0" forKey:@"sort_cs"];
+    [_muDictCondation setObject:@"3" forKey:@"sort_type"];
+    [_muDictCondation setObject:@"1" forKey:@"sort_cs"];
     [_muDictCondation setObject:@"1" forKey:@"page"];
+    
+    if (self.viewObject) {
+        NSDictionary *dictPassObj = (NSDictionary *)self.viewObject;
+        [_muDictCondation setObject:dictPassObj[@"service_id"] forKey:@"symptom_id"];
+        [_muDictCondation setObject:@"40" forKey:@"area_id"];
+    }
     
     [self initBabysatneSegMentView];
     
     [self setupMJTableView];
     
-    _tbvDoctorListView.tableHeaderView = [UIView new];
+    _tbvDoctorListView.tableFooterView = [UIView new];
     
 
 }

@@ -66,6 +66,35 @@
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.section) {
+        case 0:{
+            switch (indexPath.section) {
+                case 0:{
+                    DoctorInfoDescCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"DoctorInfoDescCell"];
+                    [cell.lbDocDesc setText:_muDictDoctorInfo[@"desc"]];
+                    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+                
+                    return size.height + 1;
+                 }
+                    break;
+                case 1:{
+                    return 44;
+                }
+                    break;
+            }
+        }
+            break;
+        case 1:{
+            return 124;
+        }
+            break;
+    }
+    
+    return 0;
+}
+
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -95,7 +124,7 @@
                     
                 case 1:{
                     UITableViewCell *cell = getDequeueReusableCellWithIdentifier(@"DoctorInfoRecommendCell");
-                    [cell.textLabel setText:getStringAppendingStr(@"顾客评价", (@[@"(",_muDictDoctorInfo[@""],@")"]))];
+                    [cell.textLabel setText:getStringAppendingStr(@"顾客评价", (@[@"(",_muDictDoctorInfo[@"comment_count"],@")"]))];
                     return cell;
                 }
                     break;
@@ -138,12 +167,15 @@ WEAKSELF
                                     interfaceName:InterfaceAddressName(@"doctor/info")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               
-                                              if ([responseDictionary objectForKey:@"list"]) {
-                                                  NSDictionary *data = [responseDictionary objectForKey:@"return_data"];
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSDictionary *data = [responseDictionary objectForKey:@"data"];
                                                 
                                                   weakSelf.muDictDoctorInfo = [NSMutableDictionary dictionaryWithDictionary:data];
                                                   
                                                   [weakSelf actionSetTableViewHeadView:weakSelf.tbvDoctorInfo];
+                                                  weakSelf.tbvDoctorInfo.dataSource = weakSelf;
+                                                  weakSelf.tbvDoctorInfo.delegate = weakSelf;
+                                                  [weakSelf.tbvDoctorInfo reloadData];
                                               }
                                               
                                             

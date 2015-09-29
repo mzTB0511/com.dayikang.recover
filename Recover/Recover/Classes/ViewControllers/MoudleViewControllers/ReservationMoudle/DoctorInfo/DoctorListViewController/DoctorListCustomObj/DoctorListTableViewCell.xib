@@ -148,7 +148,6 @@
                 <outlet property="lbLikeCount" destination="KWH-uv-akN" id="t5w-Ym-aym"/>
                 <outlet property="lbOrderCount" destination="J6T-AX-INk" id="HH1-ik-Wco"/>
                 <outlet property="lbPrice" destination="Qyg-Xk-jHC" id="BbW-fZ-BBs"/>
-                <outlet property="lbSec" destination="qqR-8G-boi" id="7g4-lU-au6"/>
                 <outlet property="lbSex" destination="qqR-8G-boi" id="ikU-nS-aLM"/>
                 <outlet property="lbTime" destination="tz9-n3-3TA" id="Kix-Re-CW7"/>
                 <outlet property="lbWorkExperience" destination="4sO-xD-31h" id="V7w-xw-Qfi"/>

@@ -25,9 +25,9 @@
 @implementation DoctorInfoZhengShuCell
 
 - (void)awakeFromNib {
-    // Initialization code
     mRegisterNib_CollectionView(_collectZiZhiView, DoctorInfoZhengShuCollectionViewCell);
-}
+
+  }
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -37,7 +37,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     DoctorInfoZhengShuCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DoctorInfoZhengShuCollectionViewCell" forIndexPath:indexPath];
-    [cell.imgDocZhengShu sd_setImageWithURL:getUrlWithStrValue(_arrDataSource[indexPath.row][@"img_url"]) placeholderImage:getImageWithRes(@"")];
+    [cell.imgDocZhengShu sd_setImageWithURL:getUrlWithStrValue(_arrDataSource[indexPath.row][@"img_url"]) placeholderImage:getImageWithRes(@"img_Default_UserIco_Boys")];
  
     return cell;
 }
@@ -54,8 +54,11 @@
 
 
 -(void)actionSetCellData:(NSArray *)list CollectionViewBlock:(DoctorInfoZhzengShuBlock)block{
+ 
     self.doctorZSBlock = block;
     self.arrDataSource = list;
+    self.collectZiZhiView.dataSource = self;
+    self.collectZiZhiView.delegate = self;
     [self.collectZiZhiView reloadData];
     
 }

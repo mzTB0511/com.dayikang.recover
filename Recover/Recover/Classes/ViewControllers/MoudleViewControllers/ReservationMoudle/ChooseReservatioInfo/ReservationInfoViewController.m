@@ -101,7 +101,7 @@
         case 2:{// goto康复师选择
          
             DoctorListViewController *addressView = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorListViewController);
-            
+            addressView.viewObject = _dictUploadData;
             addressView.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:addressView animated:YES];
             

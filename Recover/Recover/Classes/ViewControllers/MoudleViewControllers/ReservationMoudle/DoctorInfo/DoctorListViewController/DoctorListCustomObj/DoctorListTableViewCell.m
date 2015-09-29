@@ -52,7 +52,8 @@
     [_lbOrderCount setText:cellData[@"nums"]];
     [_lbLikeCount setText:cellData[@"comment_count"]];
     
-    UIImage *image = [UIImage imageNamed:@"img_moudle_fourth_holder_doctor"];
+    UIImage *image = [cellData[@"sex"] isEqualToString:@"男"] ? getImageWithRes(@"img_DoctorMoudle_DoctorIco_Boy") : getImageWithRes(@"img_DoctorMoudle_DoctorIco_Girl");
+   
     if ([cellData[@"ico"] hasPrefix:@"http://"]) {
         [_imgDoctIco sd_setImageWithURL:[NSURL URLWithString:cellData[@"ico"]] placeholderImage:image];
     }

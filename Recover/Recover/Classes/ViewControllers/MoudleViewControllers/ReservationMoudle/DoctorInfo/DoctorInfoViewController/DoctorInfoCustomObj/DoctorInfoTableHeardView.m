@@ -42,7 +42,9 @@
     [_lbPrice setText:viewData[@"price"]];
     [_lbOrderCount setText:viewData[@"nums"]];
   
-    UIImage *image = [UIImage imageNamed:@"img_moudle_fourth_holder_doctor"];
+    
+    UIImage *image = [viewData[@"sex"] isEqualToString:@"男"] ? getImageWithRes(@"img_DoctorMoudle_DoctorIco_Boy") : getImageWithRes(@"img_DoctorMoudle_DoctorIco_Girl");
+   
     if ([viewData[@"ico"] hasPrefix:@"http://"]) {
         [_imgDoctIco sd_setImageWithURL:[NSURL URLWithString:viewData[@"ico"]] placeholderImage:image];
     }

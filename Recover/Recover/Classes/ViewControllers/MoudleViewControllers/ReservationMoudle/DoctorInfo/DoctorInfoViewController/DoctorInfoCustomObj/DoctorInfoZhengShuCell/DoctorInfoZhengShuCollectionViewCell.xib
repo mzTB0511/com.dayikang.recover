@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DoctorInfoZhengShuCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DoctorInfoZhengShuCollectionViewCell" id="gTV-IL-0wX" customClass="DoctorInfoZhengShuCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="67" height="67"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -26,7 +26,7 @@
                 <constraint firstItem="nsh-Mk-cIs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iXZ-2i-e1A"/>
             </constraints>
             <connections>
-                <outlet property="imgDocZhengShu" destination="nsh-Mk-cIs" id="QNF-7A-jnz"/>
+                <outlet property="imgDocZhengShu" destination="nsh-Mk-cIs" id="h04-54-7tF"/>
             </connections>
         </collectionViewCell>
     </objects>
