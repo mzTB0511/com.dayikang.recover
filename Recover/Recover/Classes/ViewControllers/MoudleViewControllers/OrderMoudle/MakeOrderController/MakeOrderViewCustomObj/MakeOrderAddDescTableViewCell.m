@@ -11,6 +11,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *tfDesc;
 
+@property(nonatomic,copy)MakeoOderAddDescComplateBlock block;
 
 @end
 
@@ -19,13 +20,19 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [_tfDesc setDelegate:self];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+
+    if (self.block) {
+        self.block(textField.text);
+    }
 }
 
 
 -(void)actionSetCellData:(NSString *)data CompateBlock:(MakeoOderAddDescComplateBlock)block{
-    if (data) {
-        
-    }
+    self.block = block;
 }
 
 

@@ -58,12 +58,12 @@
     DoctorListTableViewCell *cell = getDequeueReusableCellWithClass(DoctorListTableViewCell);
     
     [cell setCellData:_muArrDoctorList[indexPath.row]];
-    
+    WEAKSELF
     //** 添加点击回调事件
     [cell.btnReservation bk_addEventHandler:^(id sender) {
         if (self.doctorViewBlock) {
             self.doctorViewBlock(_muArrDoctorList[indexPath.row]);
-            [self.navigationController popViewControllerAnimated:YES];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }
         
     } forControlEvents:UIControlEventTouchUpInside];
@@ -78,10 +78,11 @@
     doctorInfo.doctorInfoBlock = ^(NSDictionary *docInfo){
         
         if (weakSelf.doctorViewBlock) {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
             weakSelf.doctorViewBlock(docInfo);
-            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+           
         }
-    
+     
     };
     [self.navigationController pushViewController:doctorInfo animated:YES];
     

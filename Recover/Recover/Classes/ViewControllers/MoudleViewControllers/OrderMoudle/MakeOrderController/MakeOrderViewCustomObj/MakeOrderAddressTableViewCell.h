@@ -10,4 +10,6 @@
 
 @interface MakeOrderAddressTableViewCell : UITableViewCell
 
+@property(nonatomic,strong) NSDictionary *cellData;
+
 @end

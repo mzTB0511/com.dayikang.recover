@@ -10,4 +10,6 @@
 
 @interface MakeOrderPuZhuTableViewCell : UITableViewCell
 
+@property(nonatomic,strong) NSDictionary *cellData;
+
 @end

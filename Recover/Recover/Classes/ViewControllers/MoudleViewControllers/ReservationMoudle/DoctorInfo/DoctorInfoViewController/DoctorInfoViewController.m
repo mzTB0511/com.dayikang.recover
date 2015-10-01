@@ -31,7 +31,7 @@
 
 #pragma mark --UITabelVeiwDelegate
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-
+WEAKSELF
     switch (section) {
         case 1:{
             ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
@@ -40,7 +40,10 @@
             //** 添加点击事件
             [view.btn_Ok bk_addEventHandler:^(id sender) {
                 if (self.doctorInfoBlock) {
+                    [_muDictDoctorInfo setObject:(NSString *)self.viewObject forKey:@"did"];
+                    [weakSelf.navigationController popViewControllerAnimated:NO];
                     self.doctorInfoBlock(_muDictDoctorInfo);
+                    
                 }
                 
             } forControlEvents:UIControlEventTouchUpInside];

@@ -90,7 +90,7 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    WEAKSELF
     switch (indexPath.section) {
         case 0:
         case 1:
@@ -98,8 +98,8 @@
         case 5:{
             
             UITableViewCell *cell  = getDequeueReusableCellWithIdentifier(@"MakeOrderCommTableViewCell");
-            [cell.textLabel setText:_muArrDataSource[indexPath.section][@"title"]];
-            [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][@"content"]];
+            [cell.textLabel setText:_muArrDataSource[indexPath.section][indexPath.row][@"title"]];
+            [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][indexPath.row][@"content"]];
             
             indexPath.section == 4 ? ([cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator]) : nil;
             return cell;
@@ -107,8 +107,8 @@
         }
             break;
         case 2:{
-            MakeOrderPuZhuTableViewCell *cell  = getDequeueReusableCellWithClass(@"MakeOrderPuZhuTableViewCell");
-            
+            MakeOrderPuZhuTableViewCell *cell  = getDequeueReusableCellWithClass(MakeOrderPuZhuTableViewCell);
+            [cell setCellData:_muArrDataSource[indexPath.section][indexPath.row]];
             return cell;
         }
             break;
@@ -116,21 +116,28 @@
             switch (indexPath.row) {
                 case 0:{
                     UITableViewCell *cell  = getDequeueReusableCellWithIdentifier(@"MakeOrderCommTableViewCell");
-                    [cell.textLabel setText:_muArrDataSource[indexPath.section][@"title"]];
-                    [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][@"content"]];
+                    [cell.textLabel setText:_muArrDataSource[indexPath.section][indexPath.row][@"title"]];
+                    [cell.detailTextLabel setText:_muArrDataSource[indexPath.section][indexPath.row][@"content"]];
                     
                     return cell;
                 }
                     break;
                 case 1:{
-                    MakeOrderAddressTableViewCell *cell  = getDequeueReusableCellWithClass(@"MakeOrderAddressTableViewCell");
-            
+                    MakeOrderAddressTableViewCell *cell = getDequeueReusableCellWithClass(MakeOrderAddressTableViewCell);
+                    [cell setCellData:_muArrDataSource[indexPath.section][indexPath.row]];
+                    
                     return cell;
                 }
                     break;
                 case 2:{
-                    MakeOrderAddDescTableViewCell *cell  = getDequeueReusableCellWithClass(@"MakeOrderAddDescTableViewCell");
-                    
+                    MakeOrderAddDescTableViewCell *cell  = getDequeueReusableCellWithClass(MakeOrderAddDescTableViewCell);
+                    [cell actionSetCellData:_muArrDataSource[indexPath.section][indexPath.row][@"content"] CompateBlock:^(NSString *content) {
+                    // ** 备注信息
+                        [_muArrDataSource[indexPath.section][indexPath.row] setObject:content forKey:@"content"];
+                        [weakSelf.tbvOrderInfoView reloadData];
+                        //**这只备注内容
+                        [_muDictUploadData setObject:content forKey:@"desc"];
+                    }];
                     return cell;
                 }
                     break;
@@ -150,10 +157,11 @@
     switch (indexPath.section) {
         case 4:{ // 选择优惠券
                 MyCouponsViewController *couponsInfo = getViewControllFromStoryBoard(StoryBoard_MySelf, MyCouponsViewController);
-                couponsInfo.viewObject = (NSString *)self.viewObject;
+                couponsInfo.viewObject = self.viewObject;
             couponsInfo.dataBlock = ^(NSDictionary *data){
               //** 更新选择的优惠券信息
-              
+               [_muDictUploadData setObject:data[@"id"] forKey:@"coupons_id"];
+                
             };
                 [self.navigationController pushViewController:couponsInfo animated:YES];
         }
@@ -192,6 +200,8 @@
                                                       
                                                   } forControlEvents:UIControlEventTouchUpInside];
                                                   
+                                                 [weakSelf.tbvOrderInfoView setTableFooterView:view];
+                                                  
                                               }
                                               
                                           }
@@ -214,16 +224,16 @@
         // 康复师傅
         [muArrRetData addObject:@[@{@"id":@"",@"title":@"康复治疗师",@"content":dict[@"doctor_name"],@"sel":@"0"}]];
         // 康复项目
-        [muArrRetData addObject:@[@{@"id":@"",@"title":@"头颈肩理疗",@"content":dict[@"doctor_name"],@"sel":@"0"}]];
+        [muArrRetData addObject:@[@{@"id":@"",@"title":@"头颈肩理疗",@"content":dict[@"service_name"],@"sel":@"0"}]];
         // 康复辅助项目
         [muArrRetData addObject:dict[@"service_subs"]];
         
         // 1,预约时间
-        NSString *resTime = getStringAppendingStr(dict[@"date"], (@[dict[@"doctor_name"],@" ",dict[@"start_time"],@"-",dict[@"end_time"]]));
+        NSString *resTime = getStringAppendingStr(dict[@"date"], (@[@" ",dict[@"start_time"],@"-",dict[@"end_time"]]));
         NSDictionary *dictTime = @{@"id":@"",@"title":@"预约实时间",@"content":resTime,@"sel":@"0"};
         // 2.预约地址
         NSString *address = getStringAppendingStr(dict[@"province_name"], (@[dict[@"area_name"],@"  ",dict[@"address"]]));
-        NSDictionary *dictAddress = @{@"title":@"预约地址",@"name":@"",@"phone":@"",@"address":address};
+        NSDictionary *dictAddress = @{@"title":@"预约地址",@"name":dict[@"name"],@"phone":dict[@"phone"],@"address":address};
         // 3.备注
         NSDictionary *dictDesc = @{@"title":@"",@"content":@"",@"sel":@""};
         NSMutableDictionary *muDictDesc = [NSMutableDictionary dictionaryWithDictionary:dictDesc];
@@ -258,6 +268,7 @@
     _muDictUploadData = [NSMutableDictionary dictionaryWithDictionary:(NSDictionary *)self.viewObject];
     
     [self loadDataFromServerWithInfo:_muDictUploadData];
+    
 }
 
 

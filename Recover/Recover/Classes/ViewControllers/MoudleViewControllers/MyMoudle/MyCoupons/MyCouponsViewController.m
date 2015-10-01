@@ -200,7 +200,7 @@
         }else{
             //** 没有二级子项菜单 根据一级菜单过滤数据
             animationSubMenu(_babysanteView,NO);
-            [_muDictPostData setObject:menuIndex forKey:@"type"];
+            [_muDictPostData setObject:[NSString stringWithFormat:@"%i",[menuIndex intValue] -1] forKey:@"type"];
             [weakSelf getDataSourceFromServerWithPageIndex:_muDictPostData];
         }
         
@@ -221,9 +221,9 @@
     
     _muDictPostData = [NSMutableDictionary dictionary];
     [_muDictPostData setObject:@"0" forKey:@"type"];
-    NSString *serviceItem = (NSString *)self.viewObject ? (NSString *)self.viewObject : @"";
-    [_muDictPostData setObject:serviceItem forKey:@"service_id"];
- 
+    NSDictionary *dictOdrderInfo = (NSDictionary *)self.viewObject ? (NSDictionary *)self.viewObject : nil;
+    dictOdrderInfo ? [_muDictPostData setObject:dictOdrderInfo[@"service_id"] forKey:@"service_id"] : nil;
+    [_muDictPostData setObject:@"0" forKey:@"service_id"];
     [self initBabysatneSegMentView];
     
     [self setupMjRefreshViewWithTableView:_tbvTableView];

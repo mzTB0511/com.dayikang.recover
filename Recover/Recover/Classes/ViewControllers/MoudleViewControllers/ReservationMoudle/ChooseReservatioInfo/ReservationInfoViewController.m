@@ -72,6 +72,7 @@
                     
                     [_dictUploadData setObject:starEndTime[0] forKey:@"start_time"];
                     [_dictUploadData setObject:starEndTime[1] forKey:@"end_time"];
+                    [_dictUploadData setObject:cMoudle.selfID forKey:@"time_id"];
                     
                     [_muArrDataList[indexPath.row] setObject:getStringAppendingStr(areaMoudle.name, (@[@" ",starEndTime[0],@"-",starEndTime[1]])) forKey:@"subtitle"];
                     
@@ -225,18 +226,11 @@
 #pragma mark--CustomerUINavigationBarEvent
 -(void)navigationRightItemEvent{
     
-    //** 提交预约数据记载订单信息
-    [_dictUploadData setObject:@"1" forKey:@"userID"];
-    [_dictUploadData setObject:@"1" forKey:@"service_id"];
-    [_dictUploadData setObject:@"8" forKey:@"contact_id"];
-    [_dictUploadData setObject:@"2" forKey:@"doctor_id"];
-    [_dictUploadData setObject:@"113" forKey:@"time_id"];
-    [_dictUploadData setObject:@"2015-09-21" forKey:@"reservation_date"];
-     [_dictUploadData setObject:@"10.00" forKey:@"start_time"];
-     [_dictUploadData setObject:@"11.00" forKey:@"end_time"];
-    
-    pushViewControllerWith(StoryBoard_Order, MakeOrderViewController, _dictUploadData);
-    
+    if (_dictUploadData){
+      pushViewControllerWith(StoryBoard_Order, MakeOrderViewController, _dictUploadData);
+        
+    }
+ 
 }
 
 - (void)viewDidLoad {
