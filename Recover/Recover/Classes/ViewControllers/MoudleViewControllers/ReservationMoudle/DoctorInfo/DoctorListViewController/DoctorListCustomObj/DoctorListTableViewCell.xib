@@ -51,10 +51,10 @@
                         <color key="textColor" red="0.1843137255" green="0.60392156860000001" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-4c-5DZ">
-                        <rect key="frame" x="244" y="3" width="68" height="22.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-4c-5DZ" customClass="LXColorBoundButton">
+                        <rect key="frame" x="244" y="8" width="68" height="26.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="22.5" id="FfM-h2-ZIz"/>
+                            <constraint firstAttribute="height" constant="26.5" id="FfM-h2-ZIz"/>
                             <constraint firstAttribute="width" constant="68" id="Txo-er-Vic"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -125,7 +125,7 @@
                     <constraint firstItem="ke4-8e-Ueb" firstAttribute="leading" secondItem="qqR-8G-boi" secondAttribute="trailing" constant="8" id="SPZ-VC-xjU"/>
                     <constraint firstItem="gMR-U8-1MR" firstAttribute="leading" secondItem="qnP-9u-LsH" secondAttribute="trailing" constant="10" id="TrF-16-aif"/>
                     <constraint firstItem="KWH-uv-akN" firstAttribute="leading" secondItem="pXb-Ul-8JQ" secondAttribute="trailing" constant="4" id="WEO-Gd-Fr2"/>
-                    <constraint firstItem="Ifj-4c-5DZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="XCh-yu-XF6"/>
+                    <constraint firstItem="Ifj-4c-5DZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="XCh-yu-XF6"/>
                     <constraint firstItem="qqR-8G-boi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="31" id="ZW6-5l-6Pk"/>
                     <constraint firstItem="pXb-Ul-8JQ" firstAttribute="leading" secondItem="J6T-AX-INk" secondAttribute="trailing" constant="7" id="Zvh-hV-qlq"/>
                     <constraint firstItem="qnP-9u-LsH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="b8B-OG-dUb"/>

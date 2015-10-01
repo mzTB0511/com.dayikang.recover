@@ -16,6 +16,7 @@
     self.layer.borderColor = Color_System_Main_Color.CGColor;
     self.layer.cornerRadius = 3.0f;
     self.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.tintColor = Color_System_Main_Color;
     
 }
 

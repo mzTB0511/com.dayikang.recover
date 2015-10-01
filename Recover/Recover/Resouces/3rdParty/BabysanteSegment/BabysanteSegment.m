@@ -35,6 +35,8 @@
 
 @property(nonatomic, assign) BOOL hasDropDown;
 
+@property(nonatomic,strong) MenuMoudle *menuMoudle;
+
 
 @end
 
@@ -45,6 +47,7 @@
     
     if (self = [self initWithFrame:frame]) {
         _arrMenuItems = menus;
+        _menuMoudle = menuMoudle;
         _block = block;
         _hasDropDown = NO;
         [self initWithBabysanteSegViewWith:menuMoudle Menus:menus];
@@ -164,10 +167,14 @@
     for (int i = 0; i<segItem.arrSubMenuList.count; i++) {
         NSDictionary *menuItem = (NSDictionary *)segItem.arrSubMenuList[i];
         UIButton *btnMenu = [UIButton buttonWithType:UIButtonTypeSystem];
-        [btnMenu setFrame:CGRectMake(0,0,item_W,38)];
+        [btnMenu setFrame:CGRectMake(0,0,item_W,28)];
         [btnMenu setTitle:menuItem[@"name"] forState:UIControlStateNormal];
         [btnMenu setTag:[menuItem[@"id"] intValue]];
         [btnMenu setBackgroundColor:[UIColor whiteColor]];
+        btnMenu.layer.borderWidth = 1.0;
+        btnMenu.layer.borderColor = _menuMoudle.itemSelColor.CGColor;
+        btnMenu.layer.cornerRadius = 3.0f;
+        btnMenu.tintColor = _menuMoudle.itemSelColor;
         int nums = (int)segItem.arrSubMenuList.count * 2;
         CGFloat posX = (i*2+1.0)/nums*mScreen_Width;
         [btnMenu setCenter:CGPointMake(posX, _vSubMenuView.frame.size.height / 2)];
