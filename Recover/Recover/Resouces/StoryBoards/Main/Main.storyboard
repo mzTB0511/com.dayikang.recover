@@ -84,17 +84,17 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_Reservation_YJK_ico" translatesAutoresizingMaskIntoConstraints="NO" id="lVr-Jo-nSf" customClass="LXCircleImageView">
-                                                <rect key="frame" x="123" y="23" width="54" height="54"/>
+                                                <rect key="frame" x="115" y="25" width="70" height="70"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="54" id="eTB-pl-tH2"/>
-                                                    <constraint firstAttribute="width" constant="54" id="mps-qK-hal"/>
+                                                    <constraint firstAttribute="height" constant="70" id="eTB-pl-tH2"/>
+                                                    <constraint firstAttribute="width" constant="70" id="mps-qK-hal"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="lVr-Jo-nSf" firstAttribute="top" secondItem="n4c-7S-lY0" secondAttribute="top" constant="23" id="1eX-99-4oF"/>
-                                            <constraint firstItem="AC7-nE-dPP" firstAttribute="top" secondItem="lVr-Jo-nSf" secondAttribute="bottom" constant="32" id="QP7-NW-pwn"/>
+                                            <constraint firstItem="lVr-Jo-nSf" firstAttribute="top" secondItem="n4c-7S-lY0" secondAttribute="top" constant="25" id="1eX-99-4oF"/>
+                                            <constraint firstItem="AC7-nE-dPP" firstAttribute="top" secondItem="lVr-Jo-nSf" secondAttribute="bottom" constant="14" id="QP7-NW-pwn"/>
                                             <constraint firstAttribute="centerX" secondItem="AC7-nE-dPP" secondAttribute="centerX" id="r7D-1C-tkx"/>
                                             <constraint firstAttribute="centerX" secondItem="lVr-Jo-nSf" secondAttribute="centerX" id="wdA-bv-wKW"/>
                                         </constraints>
@@ -109,18 +109,18 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_Reservation_BHSH_ico" translatesAutoresizingMaskIntoConstraints="NO" id="Kje-BX-IaS" customClass="LXCircleImageView">
-                                                <rect key="frame" x="123" y="27" width="54" height="54"/>
+                                                <rect key="frame" x="115" y="24" width="70" height="70"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="54" id="VNy-S2-YVF"/>
-                                                    <constraint firstAttribute="height" constant="54" id="ffX-TG-hTV"/>
+                                                    <constraint firstAttribute="width" constant="70" id="VNy-S2-YVF"/>
+                                                    <constraint firstAttribute="height" constant="70" id="ffX-TG-hTV"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="bMR-WO-Wme" secondAttribute="centerX" id="XLz-A2-NFM"/>
-                                            <constraint firstItem="bMR-WO-Wme" firstAttribute="top" secondItem="Kje-BX-IaS" secondAttribute="bottom" constant="28" id="aJ7-2W-B5F"/>
-                                            <constraint firstItem="Kje-BX-IaS" firstAttribute="top" secondItem="bRh-hE-6gh" secondAttribute="top" constant="27" id="coU-9U-f4Z"/>
+                                            <constraint firstItem="bMR-WO-Wme" firstAttribute="top" secondItem="Kje-BX-IaS" secondAttribute="bottom" constant="15" id="aJ7-2W-B5F"/>
+                                            <constraint firstItem="Kje-BX-IaS" firstAttribute="top" secondItem="bRh-hE-6gh" secondAttribute="top" constant="24" id="coU-9U-f4Z"/>
                                             <constraint firstAttribute="centerX" secondItem="Kje-BX-IaS" secondAttribute="centerX" id="zfM-ON-sdy"/>
                                         </constraints>
                                     </view>
@@ -172,6 +172,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="ctv_ServiceItem" destination="fd1-dw-Wg5" id="ezT-wF-MRI"/>
+                        <outlet property="imgBHSH" destination="Kje-BX-IaS" id="y1P-1S-Lhk"/>
+                        <outlet property="imgYjk" destination="lVr-Jo-nSf" id="q0d-oe-KB4"/>
+                        <outlet property="lbNameBHSH" destination="bMR-WO-Wme" id="NU9-hq-s8r"/>
+                        <outlet property="lbNameYjk" destination="AC7-nE-dPP" id="FvO-o5-3OT"/>
                         <outlet property="v_BannerView" destination="qjt-d4-c2m" id="mGQ-zJ-dPn"/>
                         <outlet property="v_TypeBHSH" destination="bRh-hE-6gh" id="vb8-r1-epw"/>
                         <outlet property="v_TypeYjk" destination="n4c-7S-lY0" id="oQq-5S-rok"/>

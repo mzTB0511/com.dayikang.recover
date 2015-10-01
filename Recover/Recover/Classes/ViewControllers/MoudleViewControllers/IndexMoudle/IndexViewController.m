@@ -31,6 +31,19 @@
 //** 病后术后类型
 @property (weak, nonatomic) IBOutlet UIView *v_TypeBHSH;
 
+//** 亚健康类型
+@property (weak, nonatomic) IBOutlet UIImageView *imgYjk;
+
+//** 病后术后类型
+@property (weak, nonatomic) IBOutlet UIImageView *imgBHSH;
+
+//** 亚健康类型
+@property (weak, nonatomic) IBOutlet UILabel *lbNameYjk;
+
+//** 病后术后类型
+@property (weak, nonatomic) IBOutlet UILabel *lbNameBHSH;
+
+
 @property (weak, nonatomic) IBOutlet UICollectionView *ctv_ServiceItem;
 
 @property(strong, nonatomic) NSArray *arrCtvDataSource;
@@ -197,6 +210,18 @@
 
 -(void)actionGetServiceItemFromServerWithType:(int)type{
     WEAKSELF
+    void(^setItemNameAndImg)(NSDictionary *) = ^(NSDictionary *dict){
+        if (dict) {
+            //设置病后，术后，亚健康状态图标
+            [_imgBHSH sd_setImageWithURL:getUrlWithStrValue(dict[@"cate_2_ico"]) placeholderImage:getImageWithRes(@"")];
+            [_lbNameBHSH setText:getValueIfNilReturnStr(dict[@"cate_2_name"])];
+            
+            [_imgYjk sd_setImageWithURL:getUrlWithStrValue(dict[@"cate_1_ico"]) placeholderImage:getImageWithRes(@"")];
+            [_lbNameYjk setText:getValueIfNilReturnStr(dict[@"cate_1_name"])];
+            
+        }
+    };
+    
     [NetworkHandle loadDataFromServerWithParamDic:@{@"servicetype":[NSString stringWithFormat:@"%i",type]}
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"index/serviceitems")
@@ -204,6 +229,8 @@
                                               NSArray *arrList = responseDictionary[@"data"];
                                               weakSelf.arrCtvDataSource = arrList ? arrList : @[];
                                               [weakSelf.ctv_ServiceItem reloadData];
+                                              
+                                              setItemNameAndImg(responseDictionary);
                                               
                                           }
                                           failure:^{
