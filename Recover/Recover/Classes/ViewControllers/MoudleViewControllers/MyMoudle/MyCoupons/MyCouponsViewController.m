@@ -23,6 +23,11 @@
 @property(nonatomic ,strong) NSMutableDictionary *muDictPostData;
 
 
+@property(nonatomic ,strong) NSDictionary *dictPassOrderInfo;
+
+
+
+
 /**
  *  SegmentView
  */
@@ -60,10 +65,25 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
  
+    //** 只对支付订单使用时有效
+    if (_dictPassOrderInfo) {
+/*
+    //**检查本次订单金额是否允许使用优惠券
+    NSDictionary *dictCoupons = _muArrDataSource[indexPath.row];
+    CGFloat amount = [_dictPassOrderInfo[@"amount"] floatValue];
+    CGFloat auota = [dictCoupons[@"quota"] floatValue];
+    if (amount < auota) {
+        [CommonHUD showHudWithMessage:@"该订单不能使用此优惠券" delay:1.0f completion:nil];
+       return;
+    }
+*/ 
+    WEAKSELF
     if (self.dataBlock) {
+        [weakSelf.navigationController popViewControllerAnimated:YES];
         self.dataBlock(_muArrDataSource[indexPath.row]);
     }
     
+    }
 }
 
 
@@ -221,14 +241,15 @@
     
     _muDictPostData = [NSMutableDictionary dictionary];
     [_muDictPostData setObject:@"0" forKey:@"type"];
-    NSDictionary *dictOdrderInfo = (NSDictionary *)self.viewObject ? (NSDictionary *)self.viewObject : nil;
-    dictOdrderInfo ? [_muDictPostData setObject:dictOdrderInfo[@"service_id"] forKey:@"service_id"] : nil;
+    _dictPassOrderInfo = (NSDictionary *)self.viewObject ? (NSDictionary *)self.viewObject : nil;
+    _dictPassOrderInfo ? [_muDictPostData setObject:_dictPassOrderInfo[@"service_id"] forKey:@"service_id"] : nil;
     [_muDictPostData setObject:@"0" forKey:@"service_id"];
+    [_muDictPostData setObject:@"2" forKey:@"userID"];
     [self initBabysatneSegMentView];
     
     [self setupMjRefreshViewWithTableView:_tbvTableView];
     
-    
+    [self.tbvTableView setTableFooterView:[UIView new]];
 }
 
 

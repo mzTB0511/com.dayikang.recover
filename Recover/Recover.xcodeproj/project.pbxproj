@@ -72,6 +72,10 @@
 		E952CD381BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */; };
 		E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */; };
 		E95706B71BB979F80044E351 /* SBLoginRegsiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */; };
+		E96A24081BBD823600255CC7 /* PaymentChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E96A24071BBD823600255CC7 /* PaymentChooseView.m */; };
+		E96A240A1BBD823F00255CC7 /* PaymentChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96A24091BBD823F00255CC7 /* PaymentChooseView.xib */; };
+		E96A240C1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96A240B1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib */; };
+		E96A240F1BBD990500255CC7 /* PaymentChooseHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E96A240E1BBD990500255CC7 /* PaymentChooseHeaderView.m */; };
 		E984EA751B9ADFB800FF7B88 /* SBHomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */; };
 		E984EA771B9ADFCE00FF7B88 /* SBMySelf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */; };
 		E984EA791B9ADFE400FF7B88 /* SBMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */; };
@@ -301,6 +305,12 @@
 		E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRelevantPickView.h; sourceTree = "<group>"; };
 		E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRelevantPickView.m; sourceTree = "<group>"; };
 		E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBLoginRegsiter.storyboard; sourceTree = "<group>"; };
+		E96A24061BBD823600255CC7 /* PaymentChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentChooseView.h; sourceTree = "<group>"; };
+		E96A24071BBD823600255CC7 /* PaymentChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentChooseView.m; sourceTree = "<group>"; };
+		E96A24091BBD823F00255CC7 /* PaymentChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentChooseView.xib; sourceTree = "<group>"; };
+		E96A240B1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentChooseHeaderView.xib; sourceTree = "<group>"; };
+		E96A240D1BBD990500255CC7 /* PaymentChooseHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentChooseHeaderView.h; sourceTree = "<group>"; };
+		E96A240E1BBD990500255CC7 /* PaymentChooseHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentChooseHeaderView.m; sourceTree = "<group>"; };
 		E984EA741B9ADFB800FF7B88 /* SBHomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBHomePage.storyboard; sourceTree = "<group>"; };
 		E984EA761B9ADFCE00FF7B88 /* SBMySelf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMySelf.storyboard; sourceTree = "<group>"; };
 		E984EA781B9ADFE400FF7B88 /* SBMore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBMore.storyboard; sourceTree = "<group>"; };
@@ -832,6 +842,19 @@
 				E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */,
 			);
 			path = MyWalletViewCustomObj;
+			sourceTree = "<group>";
+		};
+		E96A24051BBD818D00255CC7 /* PaymentCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E96A24061BBD823600255CC7 /* PaymentChooseView.h */,
+				E96A24071BBD823600255CC7 /* PaymentChooseView.m */,
+				E96A24091BBD823F00255CC7 /* PaymentChooseView.xib */,
+				E96A240D1BBD990500255CC7 /* PaymentChooseHeaderView.h */,
+				E96A240E1BBD990500255CC7 /* PaymentChooseHeaderView.m */,
+				E96A240B1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib */,
+			);
+			path = PaymentCustomView;
 			sourceTree = "<group>";
 		};
 		E984EA811B9B0C4500FF7B88 /* SVWebViewController */ = {
@@ -1558,6 +1581,7 @@
 		E99DFD191B94A79B000DEDCB /* OrderMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E96A24051BBD818D00255CC7 /* PaymentCustomView */,
 				E9F2DE901BB2FB400071F16C /* MakeOrderController */,
 				E952CD221BAEB1F6002EB2C9 /* OrderInfoController */,
 				E91CC93A1B9B2E2F006B330B /* OrderListCustomCell */,
@@ -1730,11 +1754,13 @@
 				E99A91B01B9362A900299B60 /* UMShareEditViewController.xib in Resources */,
 				E984EA7D1B9AE00A00FF7B88 /* SBReservation.storyboard in Resources */,
 				E99A90121B935F7C00299B60 /* Main.storyboard in Resources */,
+				E96A240A1BBD823F00255CC7 /* PaymentChooseView.xib in Resources */,
 				E9477CB91BAE59AD00964348 /* AddDoctorCommendContentTableViewCell.xib in Resources */,
 				E91CC93F1B9B2E55006B330B /* OrderListTableViewCell.xib in Resources */,
 				E948D9A01BBA398100F082C1 /* AlipaySDK.bundle in Resources */,
 				E9477C991BAD4C3700964348 /* DoctorInfoZhengShuCollectionViewCell.xib in Resources */,
 				E9477C8E1BAD473100964348 /* DoctorInfoDescCell.xib in Resources */,
+				E96A240C1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib in Resources */,
 				E9477C941BAD4C0F00964348 /* DoctorInfoZhengShuCell.xib in Resources */,
 				E99A91B21B9362A900299B60 /* UMSLoginViewController.xib in Resources */,
 				E984EAAA1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
@@ -1882,6 +1908,7 @@
 				E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */,
 				E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */,
 				E99A90541B93624900299B60 /* BaseModel.m in Sources */,
+				E96A240F1BBD990500255CC7 /* PaymentChooseHeaderView.m in Sources */,
 				E99A91641B9362A900299B60 /* LXCycleScrollView.m in Sources */,
 				E99A91C21B9362A900299B60 /* YXDFirstRemindView.m in Sources */,
 				E99A916D1B9362A900299B60 /* UIView+Extension.m in Sources */,
@@ -1897,6 +1924,7 @@
 				E99A91671B9362A900299B60 /* MJRefreshBaseView.m in Sources */,
 				E9F2DE931BB2FB6C0071F16C /* MakeOrderViewController.m in Sources */,
 				E94E5BE51BA46A71003EA7F8 /* SegmentItem.m in Sources */,
+				E96A24081BBD823600255CC7 /* PaymentChooseView.m in Sources */,
 				E91CC9421B9B3803006B330B /* LXBaseTableViewCell.m in Sources */,
 				E99A91C01B9362A900299B60 /* YXDAddImageCollectionViewCell.m in Sources */,
 				E984EAAB1B9B0C4500FF7B88 /* SVWebViewControllerActivitySafari.m in Sources */,

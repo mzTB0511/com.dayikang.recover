@@ -9,6 +9,8 @@
 #import "MyCouponsTableViewCell.h"
 @interface MyCouponsTableViewCell()
 
+@property (weak, nonatomic) IBOutlet UIView *vCellBgView;
+
 @property (weak, nonatomic) IBOutlet UIView *vLeftView;
 
 @property (weak, nonatomic) IBOutlet UIView *vReightView;
@@ -23,6 +25,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbMoney;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbUp;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbDown;
 
 
 @end
@@ -33,13 +38,20 @@
 - (void)awakeFromNib {
     // Initialization code
     [_imgInValid setHidden:YES];
+    
+    _lbUp.layer.cornerRadius = 4.0f;
+    _lbUp.layer.masksToBounds = YES;
+    
+    _lbDown.layer.cornerRadius = 4.0f;
+    _lbDown.layer.masksToBounds = YES;
+    
 }
 
 -(void)setCellData:(NSDictionary *)cellData{
     if (_cellData == cellData) return;
     [_lbName setText:cellData[@"name"]];
     [_lbDesc setText:cellData[@"desc"]];
-    [_lbValidTime setText:cellData[@"validity_end"]];
+    [_lbValidTime setText:getStringAppendingStr(@"有效期至:", cellData[@"validity_end"]) ];
     [_lbMoney setText:cellData[@"moeny"]];
     
     int status = [cellData[@"status"] intValue];

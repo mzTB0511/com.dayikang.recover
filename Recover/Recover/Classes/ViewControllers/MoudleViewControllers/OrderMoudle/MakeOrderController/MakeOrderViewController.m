@@ -17,7 +17,9 @@
 
 #import "MyCouponsViewController.h"
 #import "ChooseAddressCustomView.h"
-
+#import "BabysanteAlertView.h"
+#import "PaymentChooseView.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface MakeOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -153,14 +155,25 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    WEAKSELF
     switch (indexPath.section) {
         case 4:{ // 选择优惠券
                 MyCouponsViewController *couponsInfo = getViewControllFromStoryBoard(StoryBoard_MySelf, MyCouponsViewController);
-                couponsInfo.viewObject = self.viewObject;
+                couponsInfo.viewObject = _muDictUploadData;
             couponsInfo.dataBlock = ^(NSDictionary *data){
               //** 更新选择的优惠券信息
-               [_muDictUploadData setObject:data[@"id"] forKey:@"coupons_id"];
+                if (data) {
+                    // 计算优惠券抵扣金额
+                    CGFloat amount = [_muArrDataSource[indexPath.section][indexPath.row][@"amount"] floatValue];
+                    CGFloat sale = [data[@"money"] floatValue];
+                    amount = amount - sale;
+                    amount = amount > 0 ? amount : 0;
+                    [_muDictUploadData setObject:data[@"coupons_id"] forKey:@"coupons_id"];
+                    [_muArrDataSource[indexPath.section+1][indexPath.row] setObject:[NSString stringWithFormat:@"%.1f",amount] forKey:@"content"];
+                    [_muArrDataSource[indexPath.section][indexPath.row] setObject:data[@"name"] forKey:@"content"];
+                    [weakSelf.tbvOrderInfoView reloadData];
+                }
+              
                 
             };
                 [self.navigationController pushViewController:couponsInfo animated:YES];
@@ -196,7 +209,7 @@
                                                   
                                                   //** 确认预约点击事件
                                                   [view.btn_Ok bk_addEventHandler:^(id sender) {
-                                                      
+                                                      [weakSelf actionUploadOrderInfoToServer:weakSelf.muDictUploadData];
                                                       
                                                   } forControlEvents:UIControlEventTouchUpInside];
                                                   
@@ -246,13 +259,100 @@
         
         // Amount
         NSDictionary *dictAmount = @{@"title":@"实际付费",@"content":dict[@"service_price"],@"sel":@""};
+        
         NSMutableDictionary *muAmountHui = [NSMutableDictionary dictionaryWithDictionary:dictAmount];
         [muArrRetData addObject:@[muAmountHui]];
+        
+        //**记录应付费用
+         [_muDictUploadData setObject:dict[@"service_price"] forKey:@"amount"];
+        
         
     }
     
     return muArrRetData;
 }
+
+
+-(void)actionUploadOrderInfoToServer:(NSDictionary *)data{
+    WEAKSELF
+    //** 选择支付方式再提交订单
+    PaymentChooseView *paymentChooseView = getViewByNib(PaymentChooseView, self);
+    PaymentMoudle *payMoudle = [PaymentMoudle new];
+    [payMoudle setPayAmont:1];
+    [payMoudle setTotalAmount:100];
+    [payMoudle setUserPhone:@"15618297762"];
+    [paymentChooseView actionSetViewWith:payMoudle ChooseBlock:^(id data) {
+       NSString *payType = [data intValue] == 1 ? @"alipay" : @"chargecard";
+        [_muDictUploadData setObject:payType forKey:@"paytool"];
+        
+    }];
+
+    [BabysanteAlertView BabysanteAlertViewShow:paymentChooseView CancelBtn:@"取消" OtherBtns:@[@"确定"] CalelBlock:^{
+        
+    } OthersBlock:^(NSInteger btnIndex) {
+        [NetworkHandle loadDataFromServerWithParamDic:data
+                                              signDic:nil
+                                        interfaceName:InterfaceAddressName(@"reservation/makeorder")
+                                              success:^(NSDictionary *responseDictionary, NSString *message) {
+                                                  //**支付成功确定是否跳转支付宝钱包
+                                                  if ([responseDictionary[@"paytool"] isEqualToString:@"alipay"]) {
+                                                      //**调用支付宝钱包付款
+                                                      NSDictionary *dictSignData = [responseDictionary objectForKey:@"data"];
+                                                      
+                                                      [[AlipaySDK defaultService] payOrder:dictSignData[@"sign_param"] fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
+                                                          NSLog(@"reslut = %@",resultDic);
+                                                          
+                                                      }];
+                                                      //** 钱包支付
+                                                  }else if ([responseDictionary[@"chargecard"] isEqualToString:@"chargecard"]){
+                                                      
+                                                  }
+                                                  
+                                                  
+                                                  
+                                              }
+                                              failure:^{
+                                                  
+                                              } networkFailure:^{
+                                                  
+                                              }
+                                          showLoading:YES
+         ];
+    }];
+    
+    
+
+
+    
+}
+
+
+-(void)actionGoAlipayWithData{
+    //** 添加支付宝Demo 验证
+    [NetworkHandle loadDataFromServerWithParamDic:nil
+                                          signDic:nil
+                                    interfaceName:@"http://121.197.10.218/app.alipay.net/alipay.php"
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              
+                                                NSDictionary *dictSignData = [responseDictionary objectForKey:@"data"];
+                                                  
+                                                  [[AlipaySDK defaultService] payOrder:dictSignData[@"sign_param"] fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
+                                                      NSLog(@"reslut = %@",resultDic);
+                                                      
+                                                  }];
+                                          
+                                          }
+                                          failure:^{
+                                              
+                                          } networkFailure:^{
+                                              
+                                          }
+                                      showLoading:YES
+     ];
+}
+
+
+
 
 
 
