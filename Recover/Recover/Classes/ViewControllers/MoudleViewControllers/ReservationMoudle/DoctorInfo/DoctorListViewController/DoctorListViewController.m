@@ -60,13 +60,12 @@
     [cell setCellData:_muArrDoctorList[indexPath.row]];
     WEAKSELF
     //** 添加点击回调事件
-    [cell.btnReservation bk_addEventHandler:^(id sender) {
-        if (self.doctorViewBlock) {
-            self.doctorViewBlock(_muArrDoctorList[indexPath.row]);
+    cell.doctorListCellBlock = ^(){
+        if (weakSelf.doctorViewBlock) {
+            weakSelf.doctorViewBlock(_muArrDoctorList[indexPath.row]);
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
-        
-    } forControlEvents:UIControlEventTouchUpInside];
+    };
     
     return cell;
 }

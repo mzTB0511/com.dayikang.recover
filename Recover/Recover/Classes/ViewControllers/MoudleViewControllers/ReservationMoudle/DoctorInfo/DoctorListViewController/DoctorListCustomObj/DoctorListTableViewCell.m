@@ -29,6 +29,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbLikeCount;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnReservation;
 
 @end
 
@@ -37,6 +38,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    _imgDoctIco.layer.cornerRadius = _imgDoctIco.frame.size.width / 2;
+    _imgDoctIco.layer.masksToBounds = YES;
+    
 }
 
 
@@ -44,12 +48,12 @@
     if(_cellData == cellData) return;
     
     [_lbDocName setText:cellData[@"name"]];
-    [_lbSex setText:cellData[@"sex"]];
-    [_lbJobTitle setText:cellData[@"levelname"]];
-    [_lbWorkExperience setText:cellData[@"work_year"]];
-    [_lbPrice setText:cellData[@"je"]];
-    [_lbTime setText:cellData[@"service_time"]];
-    [_lbOrderCount setText:cellData[@"nums"]];
+    [_lbSex setText:[cellData[@"sex"] intValue] == 0 ? @"男" : @"女"];
+    [_lbJobTitle setText:getStringAppendingStr(@"| ", cellData[@"levelname"])];
+    [_lbWorkExperience setText:getStringAppendingStr(@"| ", (@[cellData[@"work_year"],@"年工作经验"]))];
+    [_lbPrice setText:cellData[@"price"]];
+    [_lbTime setText:getStringAppendingStr(cellData[@"service_time"],@"分钟")];
+    [_lbOrderCount setText:getStringAppendingStr(cellData[@"nums"],@"单")];
     [_lbLikeCount setText:cellData[@"comment_count"]];
     
     UIImage *image = [cellData[@"sex"] isEqualToString:@"男"] ? getImageWithRes(@"img_DoctorMoudle_DoctorIco_Boy") : getImageWithRes(@"img_DoctorMoudle_DoctorIco_Girl");
@@ -60,6 +64,18 @@
     else
     {
         [_imgDoctIco setImage:image];
+    }
+    
+    
+    [_btnReservation addTarget:self action:@selector(actionSetParentViewBolock) forControlEvents:UIControlEventTouchUpInside];
+
+    
+}
+
+
+-(void)actionSetParentViewBolock{
+    if (self.doctorListCellBlock) {
+        self.doctorListCellBlock();
     }
     
 }

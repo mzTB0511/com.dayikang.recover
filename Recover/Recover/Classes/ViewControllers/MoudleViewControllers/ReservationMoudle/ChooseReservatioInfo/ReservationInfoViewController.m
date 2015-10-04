@@ -104,8 +104,6 @@
             DoctorListViewController *addressView = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorListViewController);
             addressView.viewObject = _dictUploadData;
             addressView.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:addressView animated:YES];
-            
             addressView.doctorViewBlock = ^(NSDictionary *doctorInfo){
                 [_dictUploadData setObject:doctorInfo[@"did"] forKey:@"doctor_id"];
                 
@@ -113,6 +111,10 @@
                 [weakSelf.tbvReservationInfo reloadData];
             };
          
+            [self.navigationController pushViewController:addressView animated:YES];
+            
+
+            
         }
             break;
         default:
