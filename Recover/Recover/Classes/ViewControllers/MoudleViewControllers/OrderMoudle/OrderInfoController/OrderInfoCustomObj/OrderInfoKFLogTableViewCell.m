@@ -22,8 +22,8 @@
 -(void)setCellData:(NSDictionary *)cellData{
     [super setCellData:cellData];
     
-    [_lbItemlogName setText:cellData[@""]];
-    [_lbContent setText:cellData[@""]];
+    [_lbItemlogName setText:cellData[@"title"]];
+    [_lbContent setText:cellData[@"content"]];
 }
 
 @end

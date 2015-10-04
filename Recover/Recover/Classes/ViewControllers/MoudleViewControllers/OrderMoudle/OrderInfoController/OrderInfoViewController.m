@@ -29,6 +29,11 @@
 
 
 #pragma mark --UITabelVeiwDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 22;
+}
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.section) {
         case 0:
@@ -42,10 +47,14 @@
             break;
         case 3:
         case 4:{
-           OrderInfoKFLogTableViewCell *cell = getDequeueReusableCellWithClass(OrderInfoKFLogTableViewCell);
+            OrderInfoKFLogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrderInfoKFLogTableViewCell"];
            [cell setCellData:_muArrDataSource[indexPath.section][indexPath.row]];
             CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-            return size.height = 1;
+           
+            if ( size.height + 1 <= 85) {
+                return 85;
+            }
+            return size.height + 1;
         }
             break;
     }
@@ -115,32 +124,37 @@
         NSMutableArray *retArr = [NSMutableArray array];
         if (orderData.count > 0) {
             //** 康复项目
-            NSDictionary *dictPorgram = @{@"programs":getValueIfNilReturnStr(orderData[@"programs"]),
-                                          @"name":getValueIfNilReturnStr(orderData[@"name"]),
+            NSDictionary *dictPorgram = @{@"service_name":getValueIfNilReturnStr(orderData[@"service_name"]),
+                                          @"doctor_name":getValueIfNilReturnStr(orderData[@"doctor_name"]),
                                           @"amount":getValueIfNilReturnStr(orderData[@"amount"])};
             
-            NSString *address = getStringAppendingStr(getValueIfNilReturnStr(orderData[@"province"]), (@[getValueIfNilReturnStr(orderData[@"province"]),getValueIfNilReturnStr(orderData[@"city"]),getValueIfNilReturnStr(orderData[@"area"]),getValueIfNilReturnStr(orderData[@"address"])]));
+            NSDictionary *dictAddress  = orderData[@"contact_data"];
             
-            NSDictionary *dictOrder = @{@"name":getValueIfNilReturnStr(orderData[@"name"]),
-                                        @"phone":getValueIfNilReturnStr(orderData[@"phone"]),
+            NSString *address = getStringAppendingStr(getValueIfNilReturnStr(dictAddress[@"province"]), (@[@" ",getValueIfNilReturnStr(dictAddress[@"city"]),@" ",getValueIfNilReturnStr(dictAddress[@"area"]),@" ",getValueIfNilReturnStr(dictAddress[@"address"])]));
+            
+            NSDictionary *dictOrder = @{@"name":getValueIfNilReturnStr(dictAddress[@"name"]),
+                                        @"phone":getValueIfNilReturnStr(dictAddress[@"phone"]),
                                         @"address":address,
                                         @"desc":getValueIfNilReturnStr(orderData[@"desc"])};
             
-            NSDictionary *dictOrderTime = @{@"bh":getValueIfNilReturnStr(orderData[@"bh"]),
-                                            @"order_time":getValueIfNilReturnStr(orderData[@"order_time"]), @"start_time":getValueIfNilReturnStr(orderData[@"start_time"])};
+            NSDictionary *dictOrderTime = @{@"orders_bh":getValueIfNilReturnStr(orderData[@"orders_bh"]),
+                                            @"order_time":getValueIfNilReturnStr(orderData[@"order_time"]), @"service_start_time":getValueIfNilReturnStr(orderData[@"service_start_time"])};
+            
+            NSString *doctorLog = [orderData[@"doctor_log"] isEqualToString:@""] ?  @"康复师尚未留言" :orderData[@"doctor_log"];
             
             NSDictionary *dictKfLog = @{@"title":@"康复日志",
-                                            @"content":getValueIfNilReturnStr(orderData[@"doctor_log"])};
+                                            @"content":doctorLog};
             
+            NSString *usrCommend = [orderData[@"comment"] isEqualToString:@""] ? @"用户尚未做出评价" : orderData[@"comment"] ;
             
             NSDictionary *dictCommend = @{@"title":@"客户评价",
-                                             @"content":getValueIfNilReturnStr(orderData[@"comment"])};
+                                             @"content":usrCommend};
         
-            [retArr addObject:dictPorgram];
-            [retArr addObject:dictOrder];
-            [retArr addObject:dictOrderTime];
-            [retArr addObject:dictKfLog];
-            [retArr addObject:dictCommend];
+            [retArr addObject:@[dictPorgram]];
+            [retArr addObject:@[dictOrder]];
+            [retArr addObject:@[dictOrderTime]];
+            [retArr addObject:@[dictKfLog]];
+            [retArr addObject:@[dictCommend]];
             
         }
         
@@ -159,15 +173,7 @@
                                                   weakSelf.muArrDataSource = makeTableViewDataSourceWith(data);
                                                   [weakSelf.tbvOrderInfo reloadData];
                                                   
-                                                  ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
-                                                  [view.btn_Ok setTitle:@"再次预约" forState:UIControlStateNormal];
-                                                  
-                                                  //** 再次预约点击事件
-                                                  [view.btn_Ok bk_addEventHandler:^(id sender) {
-                                                     
-                                                      
-                                                  } forControlEvents:UIControlEventTouchUpInside];
-                                                  
+                                                  [weakSelf actionSetTableviewFooterViewWith:data];
                                                   
                                               }
                                               
@@ -184,6 +190,25 @@
     
 }
 
+
+-(void)actionSetTableviewFooterViewWith:(NSDictionary *)dict{
+    WEAKSELF
+    ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
+    [view.btn_Ok setTitle:@"再次预约" forState:UIControlStateNormal];
+    if ([dict[@"orders_status"] intValue] >= 4) {
+        //** 再次预约点击事件
+        [view.btn_Ok bk_addEventHandler:^(id sender) {
+            
+            
+        } forControlEvents:UIControlEventTouchUpInside];
+
+    }else{
+        [view.btn_Ok setBackgroundColor:[UIColor lightGrayColor]];
+    }
+    
+    [weakSelf.tbvOrderInfo setTableFooterView:view];
+
+}
 
 
 

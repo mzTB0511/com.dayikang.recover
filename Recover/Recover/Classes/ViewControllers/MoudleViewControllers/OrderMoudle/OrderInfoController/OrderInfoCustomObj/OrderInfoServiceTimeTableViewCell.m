@@ -22,9 +22,9 @@
 -(void)setCellData:(NSDictionary *)cellData{
     [super setCellData:cellData];
     
-    [_lbOrderNo setText:cellData[@"bh"]];
+    [_lbOrderNo setText:cellData[@"orders_bh"]];
     [_lbCreateTime setText:cellData[@"order_time"]];
-    [_lbOrderedTime setText:cellData[@"start_time"]];
+    [_lbOrderedTime setText:cellData[@"service_start_time"]];
 }
 
 @end

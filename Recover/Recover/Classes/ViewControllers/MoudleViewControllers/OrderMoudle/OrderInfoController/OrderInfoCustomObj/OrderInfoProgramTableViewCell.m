@@ -24,9 +24,9 @@
 
 -(void)setCellData:(NSDictionary *)cellData{
     [super setCellData:cellData];
-    [_lbProgramName setText:cellData[@"programs"]];
-    [_lbDoctorName setText:cellData[@"name"]];
-    [_lbPrice setText:cellData[@"amount"]];
+    [_lbProgramName setText:cellData[@"service_name"]];
+    [_lbDoctorName setText:cellData[@"doctor_name"]];
+    [_lbPrice setText:getStringAppendingStr(cellData[@"amount"], @"元") ];
 }
 
 @end

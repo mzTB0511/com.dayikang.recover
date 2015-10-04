@@ -20,9 +20,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="151" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="S4c-Y0-V0K">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderInfoProgramTableViewCell" rowHeight="151" id="ufk-7w-2P4" customClass="OrderInfoProgramTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderInfoProgramTableViewCell" rowHeight="151" id="ufk-7w-2P4" customClass="OrderInfoProgramTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ufk-7w-2P4" id="EuS-iK-vNd">
@@ -35,14 +35,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gs3-gD-doB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gs3-gD-doB">
                                                     <rect key="frame" x="8" y="53" width="38" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="康复治疗师姓名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSJ-oZ-0kK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="康复治疗师姓名:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSJ-oZ-0kK">
                                                     <rect key="frame" x="8" y="74" width="110" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -71,14 +71,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="145" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQY-0y-k3y">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="145" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQY-0y-k3y">
                                                     <rect key="frame" x="8" y="117" width="29" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.96862745100000003" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张三" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfD-Bp-g1D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张三" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfD-Bp-g1D">
                                                     <rect key="frame" x="126" y="74" width="30" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -89,13 +89,21 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="AHF-DB-cvX" firstAttribute="top" secondItem="EuS-iK-vNd" secondAttribute="top" constant="44" id="1ZP-ZS-aks"/>
+                                                <constraint firstItem="gs3-gD-doB" firstAttribute="top" secondItem="NbF-SI-MfL" secondAttribute="bottom" constant="22" id="4r0-4R-3At"/>
                                                 <constraint firstItem="NbF-SI-MfL" firstAttribute="top" secondItem="EuS-iK-vNd" secondAttribute="top" constant="13" id="9Yv-iH-aE8"/>
                                                 <constraint firstAttribute="bottom" secondItem="zCR-cF-LNZ" secondAttribute="bottom" constant="44.5" id="D8j-SB-pTD"/>
+                                                <constraint firstItem="LSJ-oZ-0kK" firstAttribute="leading" secondItem="gs3-gD-doB" secondAttribute="leading" id="JbL-E8-BsC"/>
                                                 <constraint firstAttribute="trailing" secondItem="zCR-cF-LNZ" secondAttribute="trailing" id="QaT-Hr-iAw"/>
                                                 <constraint firstAttribute="trailing" secondItem="AHF-DB-cvX" secondAttribute="trailing" id="ajs-6O-5Gu"/>
+                                                <constraint firstItem="HfD-Bp-g1D" firstAttribute="leading" secondItem="LSJ-oZ-0kK" secondAttribute="trailing" constant="8" id="cby-fk-6zx"/>
                                                 <constraint firstItem="NbF-SI-MfL" firstAttribute="leading" secondItem="EuS-iK-vNd" secondAttribute="leading" constant="8" id="clD-pX-gaq"/>
+                                                <constraint firstItem="HfD-Bp-g1D" firstAttribute="top" secondItem="NbF-SI-MfL" secondAttribute="bottom" constant="43" id="eAD-Xz-2Gh"/>
+                                                <constraint firstItem="gs3-gD-doB" firstAttribute="leading" secondItem="EuS-iK-vNd" secondAttribute="leading" constant="8" id="ejN-q2-At1"/>
+                                                <constraint firstItem="eQY-0y-k3y" firstAttribute="top" secondItem="LSJ-oZ-0kK" secondAttribute="bottom" constant="25" id="glA-UA-xLy"/>
                                                 <constraint firstItem="zCR-cF-LNZ" firstAttribute="leading" secondItem="EuS-iK-vNd" secondAttribute="leading" id="oWo-gr-gnS"/>
+                                                <constraint firstItem="LSJ-oZ-0kK" firstAttribute="top" secondItem="gs3-gD-doB" secondAttribute="bottom" constant="3" id="pui-Y8-wdK"/>
                                                 <constraint firstItem="AHF-DB-cvX" firstAttribute="leading" secondItem="EuS-iK-vNd" secondAttribute="leading" id="tzq-TM-v9K"/>
+                                                <constraint firstItem="LSJ-oZ-0kK" firstAttribute="leading" secondItem="eQY-0y-k3y" secondAttribute="leading" id="zIp-As-kpd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -104,7 +112,7 @@
                                             <outlet property="lbProgramName" destination="gs3-gD-doB" id="rrC-At-mn0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderInfoOrderDetailTableViewCell" rowHeight="151" id="v7v-wJ-vvZ" customClass="OrderInfoOrderDetailTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderInfoOrderDetailTableViewCell" rowHeight="151" id="v7v-wJ-vvZ" customClass="OrderInfoOrderDetailTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v7v-wJ-vvZ" id="QLc-of-Owp">
@@ -212,7 +220,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderInfoServiceTimeTableViewCell" rowHeight="105" id="DA1-1q-6BA" customClass="OrderInfoServiceTimeTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderInfoServiceTimeTableViewCell" rowHeight="105" id="DA1-1q-6BA" customClass="OrderInfoServiceTimeTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DA1-1q-6BA" id="GBa-ts-VIH">
@@ -293,7 +301,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderInfoKFLogTableViewCell" rowHeight="85" id="RKZ-iH-atr" customClass="OrderInfoKFLogTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderInfoKFLogTableViewCell" rowHeight="85" id="RKZ-iH-atr" customClass="OrderInfoKFLogTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RKZ-iH-atr" id="Ty9-Us-TGC">
@@ -306,10 +314,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-qP-2L4">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务时间:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="584" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-qP-2L4">
                                                     <rect key="frame" x="8" y="43" width="584" height="25"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -325,6 +333,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="lbContent" destination="S1z-qP-2L4" id="sJ0-3F-2OR"/>
+                                            <outlet property="lbItemlogName" destination="k2t-1Y-zkk" id="h8I-2B-y6V"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
