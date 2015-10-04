@@ -102,20 +102,29 @@
     LXRelevantPickView *lxDatePicker = [LXRelevantPickView babysantePickerContainerView];
     
     UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, lxDatePicker.frame.size.width, LXDatePickerToolBarHeight)];
-    toolBar.backgroundColor = Color_System_Tint_Color;
-    
+   
     UIButton *buttonCancel = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonCancel.frame = CGRectMake(0, 0, 60, LXDatePickerToolBarHeight);
     [buttonCancel setTitle:@"取消" forState:UIControlStateNormal];
     [buttonCancel addTarget:lxDatePicker action:@selector(action_backgroundViewTouched) forControlEvents:UIControlEventTouchUpInside];
+    [buttonCancel setHidden:YES];
+    
+    UILabel *remindTxt = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, LXDatePickerToolBarHeight)];
+    [remindTxt setTextColor:Color_System_Main_Color];
+    [remindTxt setTextAlignment:NSTextAlignmentCenter];
+    [remindTxt setCenter:toolBar.center];
+    [remindTxt setText:@"预约康复时间"];
     
     UIButton *buttonComfirm = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonComfirm.frame = CGRectMake(lxDatePicker.frame.size.width - 60, 0, 60,LXDatePickerToolBarHeight);
     [buttonComfirm setTitle:@"确定" forState:UIControlStateNormal];
+
+    [buttonComfirm setTitleColor:Color_System_Main_Color forState:UIControlStateNormal];
     [buttonComfirm addTarget:lxDatePicker action:@selector(action_comfirmViewTouched) forControlEvents:UIControlEventTouchUpInside];
     
     [toolBar addSubview:buttonCancel];
     [toolBar addSubview:buttonComfirm];
+    [toolBar addSubview:remindTxt];
     
     lxDatePicker.pickerView = pickerView;
     
