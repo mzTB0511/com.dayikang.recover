@@ -233,6 +233,14 @@
  
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _tbvReservationInfo.indexPathForSelectedRow ? [_tbvReservationInfo deselectRowAtIndexPath:_tbvReservationInfo.indexPathForSelectedRow animated:YES] : nil;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

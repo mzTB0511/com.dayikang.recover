@@ -77,7 +77,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     switch (section) {
         case 0:
-            return 22;
+            return 66;
             break;
     }
     
