@@ -15,12 +15,16 @@
 #import "MJRefresh.h"
 #import "ChooseAddressCustomView.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
+#import "AddDoctorCommendViewController.h"
+
 
 @interface OrderInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(weak,nonatomic) IBOutlet UITableView *tbvOrderInfo;
 
 @property(strong,nonatomic) NSMutableArray *muArrDataSource;
+
+@property(strong,nonatomic) NSDictionary *dictOrderInfo;
 
 
 @end
@@ -169,6 +173,7 @@
                                               
                                               if ([responseDictionary objectForKey:@"data"]) {
                                                   NSDictionary *data = [responseDictionary objectForKey:@"data"];
+                                                  weakSelf.dictOrderInfo = data;
                                                   
                                                   weakSelf.muArrDataSource = makeTableViewDataSourceWith(data);
                                                   [weakSelf.tbvOrderInfo reloadData];
@@ -193,20 +198,57 @@
 
 -(void)actionSetTableviewFooterViewWith:(NSDictionary *)dict{
     WEAKSELF
-    ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
-    [view.btn_Ok setTitle:@"再次预约" forState:UIControlStateNormal];
-    if ([dict[@"orders_status"] intValue] >= 4) {
-        //** 再次预约点击事件
-        [view.btn_Ok bk_addEventHandler:^(id sender) {
-            
-            
-        } forControlEvents:UIControlEventTouchUpInside];
-
-    }else{
-        [view.btn_Ok setBackgroundColor:[UIColor lightGrayColor]];
-    }
+    void(^actionNextStepWithType)(int) = ^(int type){
+        switch (type) {
+            case 5:  // 再次预约
+            case 6:{
+                
+            }
+                break;
+            case 4:{// 去评价
+                
+            }
+                break;
+            case 3:{// 确认服务
+                
+            }
+                break;
+            case 2:
+            case 1:{// 去支付
+                pushViewControllerWith(StoryBoard_Doctor, AddDoctorCommendViewController, _dictOrderInfo);
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+    };
     
+    ChooseAddressCustomView *view = getViewByNib(ChooseAddressCustomView, self);
+    
+    NSString *btnTitle = @"";
+        switch ([dict[@"orders_status"] intValue]) {
+            case 5:
+            case 6: btnTitle = @"再次预约";
+                break;
+            case 4: btnTitle = @"去评价";
+                break;
+            case 3: btnTitle = @"确认服务";
+                break;
+            case 2:
+            case 1: btnTitle = @"去支付";
+                break;
+            default:
+                break;
+        }
+
+    [view.btn_Ok setTitle:btnTitle forState:UIControlStateNormal];
     [weakSelf.tbvOrderInfo setTableFooterView:view];
+    //** 再次预约点击事件
+    [view.btn_Ok bk_addEventHandler:^(id sender) {
+        actionNextStepWithType([dict[@"orders_status"] intValue]);
+    } forControlEvents:UIControlEventTouchUpInside];
 
 }
 

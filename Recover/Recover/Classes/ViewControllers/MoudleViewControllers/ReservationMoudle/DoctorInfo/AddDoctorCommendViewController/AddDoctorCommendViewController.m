@@ -12,7 +12,7 @@
 #import "AddDoctorCommendContentTableViewCell.h"
 #import "NetworkHandle.h"
 
-@interface AddDoctorCommendViewController ()
+@interface AddDoctorCommendViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tbvAddRommend;
@@ -28,22 +28,17 @@
 
 
 #pragma mark --UITabelVeiwDelegate
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    
-    switch (section) {
-        case 1:{
-            AddDoctorCommendHeadView *view = getViewByNib(AddDoctorCommendHeadView, self);
-            if (self.viewObject) {
-                [view setCellData:(NSDictionary *)self.viewObject];
-            }
-            
-            return view;
-        }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.section) {
+        case 0:
+            return 124;
             break;
+        case 1:
+            return 100;
+            break;
+    
     }
-    
-    return nil;
-    
+    return 0;
 }
 
 
@@ -97,13 +92,15 @@
 
 
 -(void)addCommendDataToServerWithData:(NSDictionary *)data{
-    
+    WEAKSELF
     [NetworkHandle loadDataFromServerWithParamDic:data
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"orders/commentadd")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               
-                                            
+                                          [CommonHUD showHudWithMessage:@"评论成功,谢谢参与" delay:1.5f completion:^{
+                                              [weakSelf.navigationController popViewControllerAnimated:YES];
+                                          }];
                                               
                                           }
                                           failure:^{
@@ -120,8 +117,8 @@
 
 -(void)navigationRightItemEvent{
     if (![_dictUploadData objectForKey:@"type_1"] ||
-        [_dictUploadData objectForKey:@"type_2"] ||
-        [_dictUploadData objectForKey:@"type_3"]) {
+        ! [_dictUploadData objectForKey:@"type_2"] ||
+        ! [_dictUploadData objectForKey:@"type_3"]) {
         [CommonHUD showHudWithMessage:@"请给康复师打分" delay:1.0f completion:nil];
         return;
     }
@@ -150,8 +147,15 @@
     _dictUploadData = [NSMutableDictionary dictionary];
     
     NSDictionary *dictOrder = (NSDictionary *)self.viewObject;
-    [_dictUploadData setObject:dictOrder[@"orders_id"] forKey:@"order_id"];
+    [_dictUploadData setObject:dictOrder[@"orders_id"] forKey:@"orders_id"];
     [_dictUploadData setObject:dictOrder[@"doctor_id"] forKey:@"doctor_id"];
+    
+    AddDoctorCommendHeadView *view = getViewByNib(AddDoctorCommendHeadView, self);
+    if (self.viewObject) {
+        [view setCellData:(NSDictionary *)self.viewObject];
+    }
+    [self.tbvAddRommend setTableHeaderView:view];
+    [self.tbvAddRommend setTableFooterView:[UIView new]];
     
 }
 

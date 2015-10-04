@@ -41,12 +41,13 @@
     int starSec = 10;
     for (int i = 0; i<nums; i++) {
         UIButton *btnStr = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btnStr setImage:getImageWithRes(@"") forState:UIControlStateNormal];
-        [btnStr setImage:getImageWithRes(@"") forState:UIControlStateSelected];
+        [btnStr setImage:getImageWithRes(@"img_Commend_Moudle_Star") forState:UIControlStateNormal];
+        [btnStr setImage:getImageWithRes(@"img_Commend_Moudle_Star_Sel") forState:UIControlStateSelected];
         [btnStr setTag:i+1];
         [btnStr setFrame:CGRectMake(i*starSec + i*starW, (frame.size.height - starH) / 2, starW, starH)];
         [btnStr addTarget:self action:@selector(actionStarTouchEvent:) forControlEvents:UIControlEventTouchUpInside];
         [_muArrStar addObject:btnStr];
+        [self addSubview:btnStr];
     }
     
 }
@@ -63,7 +64,7 @@
         if (btnStar.tag <= btn.tag) {
             [btnStar setSelected:YES];
         }else{
-           [btn setSelected:NO];
+           [btnStar setSelected:NO];
         }
         
     }];

@@ -32,13 +32,13 @@
 -(void)setCellData:(NSDictionary *)cellData{
     if (_cellData == cellData) return;
     
-    NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"ico"]);
+    NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"doctor_ico"]);
     
-    [_img_DocIco sd_setImageWithURL:[NSURL URLWithString:baoIco] placeholderImage:nil];
+    [_img_DocIco sd_setImageWithURL:[NSURL URLWithString:baoIco] placeholderImage:getImageWithRes(@"img_Default_UserIco_Boys")];
 
-    [_lb_ServiceItem setText:[cellData objectForKey:@"item_name"]];
-    [_lb_DocName setText:[cellData objectForKey:@""]];
-    [_lb_ServiceTime setText:[cellData objectForKey:@"time"]];
+    [_lb_ServiceItem setText:[cellData objectForKey:@"service_name"]];
+    [_lb_DocName setText:[cellData objectForKey:@"doctor_name"]];
+    [_lb_ServiceTime setText:[cellData objectForKey:@"orders_status_name"]];
     
 
     

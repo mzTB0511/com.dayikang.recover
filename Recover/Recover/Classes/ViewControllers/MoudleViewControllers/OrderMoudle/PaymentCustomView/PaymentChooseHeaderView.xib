@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -11,20 +11,29 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="付款确认" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwz-DL-aZo">
-                    <rect key="frame" x="126" y="8" width="68" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="付款确认" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwz-DL-aZo">
+                    <rect key="frame" x="126" y="8" width="68" height="20.5"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1561****7762" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM3-9U-Io9">
-                    <rect key="frame" x="118" y="29" width="85" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1561****7762" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM3-9U-Io9">
+                    <rect key="frame" x="118" y="30" width="85" height="17"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="hwz-DL-aZo" secondAttribute="centerX" id="Jdh-yP-RFm"/>
+                <constraint firstItem="hwz-DL-aZo" firstAttribute="top" secondItem="3J1-gk-NYj" secondAttribute="top" constant="8" id="Mpo-0d-f81"/>
+                <constraint firstItem="xM3-9U-Io9" firstAttribute="centerX" secondItem="hwz-DL-aZo" secondAttribute="centerX" id="QS9-uk-kgi"/>
+                <constraint firstItem="xM3-9U-Io9" firstAttribute="top" secondItem="hwz-DL-aZo" secondAttribute="bottom" constant="1.5" id="sq9-1b-wzG"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

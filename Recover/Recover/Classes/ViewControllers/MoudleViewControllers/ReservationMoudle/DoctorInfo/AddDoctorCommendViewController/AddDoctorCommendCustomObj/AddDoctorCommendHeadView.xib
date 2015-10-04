@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -13,6 +13,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="康复项目:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vA3-OA-Goy">
                     <rect key="frame" x="69" y="8" width="65" height="18"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="65" id="fTP-m2-fpx"/>
                     </constraints>
@@ -22,30 +23,35 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSi-05-97A">
                     <rect key="frame" x="144" y="8" width="37.5" height="18"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p32-sZ-UMR">
                     <rect key="frame" x="158" y="30" width="37.5" height="18"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="康复治疗师:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGz-ru-r3t">
                     <rect key="frame" x="69" y="30" width="79.5" height="18"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="康复时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNi-iz-rdF">
                     <rect key="frame" x="69" y="51" width="64.5" height="18"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ssw-s6-tK9" customClass="LXCircleImageView">
                     <rect key="frame" x="13" y="17" width="48" height="48"/>
+                    <animations/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="KQV-V5-djI"/>
@@ -54,11 +60,13 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dN5-Yh-mJj">
                     <rect key="frame" x="142" y="51" width="37.5" height="18"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="JNi-iz-rdF" firstAttribute="top" secondItem="IGz-ru-r3t" secondAttribute="bottom" constant="3" id="5Bg-f0-Wva"/>
@@ -78,6 +86,12 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="img_DocIco" destination="Ssw-s6-tK9" id="F7d-K1-BHe"/>
+                <outlet property="lb_DocName" destination="p32-sZ-UMR" id="Kkw-xI-3Wz"/>
+                <outlet property="lb_ServiceItem" destination="fSi-05-97A" id="TxD-OY-SJg"/>
+                <outlet property="lb_ServiceTime" destination="dN5-Yh-mJj" id="eza-zd-TjJ"/>
+            </connections>
             <point key="canvasLocation" x="221" y="272"/>
         </view>
     </objects>
