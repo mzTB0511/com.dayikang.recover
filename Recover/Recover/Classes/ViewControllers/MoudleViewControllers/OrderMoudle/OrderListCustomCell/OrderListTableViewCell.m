@@ -32,6 +32,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbKFSLogContent;
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_ReservationStatus;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnCommend;
+
+
+@property(nonatomic,copy)CommonBlock compleateBlock;
+@property(nonatomic,copy)CommonBlock commendBlock;
+
 
 @end
 
@@ -44,7 +52,7 @@
 
 
 
--(void)actionSetCellData:(NSDictionary *)cellData WithType:(NSInteger)type{
+-(void)actionSetCellData:(NSDictionary *)cellData WithType:(NSInteger)type CompleateBlock:(CommonBlock)compleateBlock AndCommendBlock:(CommonBlock)commendBlock{
 
     NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"doctor_ico"]);
     
@@ -134,8 +142,31 @@
     }
     
     [_lbKFSLogContent setText:[cellData objectForKey:@"content_desc"]];
+    self.compleateBlock = compleateBlock;
+    self.commendBlock = commendBlock;
+    
+    [_btn_ReservationStatus addTarget:self action:@selector(actionCompleateOrder) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_btnCommend addTarget:self action:@selector(actionCommended) forControlEvents:UIControlEventTouchUpInside];
     
 }
+
+
+
+-(void)actionCompleateOrder{
+    if (self.compleateBlock) {
+        self.compleateBlock();
+    }
+}
+
+
+-(void)actionCommended{
+    if (self.commendBlock) {
+        self.commendBlock();
+    }
+}
+
+
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

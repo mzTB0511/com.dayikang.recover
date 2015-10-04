@@ -113,7 +113,7 @@
  WEAKSELF
     NSMutableArray * (^makeTableViewDataSourceWith)(NSDictionary *) = ^(NSDictionary *orderData){
         NSMutableArray *retArr = [NSMutableArray array];
-        if (orderData) {
+        if (orderData.count > 0) {
             //** 康复项目
             NSDictionary *dictPorgram = @{@"programs":getValueIfNilReturnStr(orderData[@"programs"]),
                                           @"name":getValueIfNilReturnStr(orderData[@"name"]),
@@ -148,7 +148,7 @@
     };
     
     
-    [NetworkHandle loadDataFromServerWithParamDic:@{@"order_id":orderID}
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"orders_id":orderID}
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"orders/info")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {

@@ -55,20 +55,19 @@
     WEAKSELF
     OrderListTableViewCell *cell = getDequeueReusableCellWithClass(OrderListTableViewCell);
     
-    [cell actionSetCellData:_muArr_OrderList[indexPath.row] WithType:chooseType];
-    [cell.btn_ReservationStatus bk_addEventHandler:^(id sender) {
+    [cell actionSetCellData:_muArr_OrderList[indexPath.row] WithType:chooseType CompleateBlock:^{
         //确认服务，去评价，再次预约
-        NSInteger orderStatus = [_muArr_OrderList[indexPath.row][@"status"] intValue];
+        NSInteger orderStatus = [_muArr_OrderList[indexPath.row][@"orders_status"] intValue];
         switch (orderStatus) {
-            case 1:{// 确认服务
+            case 3:{// 确认服务
                 [weakSelf actionConfirmServiceWithOrder:[_muArr_OrderList[indexPath.row] objectForKey:@"orders_id"] AndStatus:@"2"];
             }
                 break;
-            case 2:{// 去评价
+            case 4:{// 去评价
                 pushViewControllerWith(StoryBoard_Doctor, AddDoctorCommendViewController, (_muArr_OrderList[indexPath.row]));
             }
                 break;
-            case 3:{// 再次预约
+            case 6:{// 再次预约
                 
             }
                 break;
@@ -76,22 +75,35 @@
             default:
                 break;
         }
+    } AndCommendBlock:^{
+         pushViewControllerWith(StoryBoard_Doctor, AddDoctorCommendViewController, (_muArr_OrderList[indexPath.row]));
+    }];
+   
+    
+  /*
+    
+    [cell.btn_ReservationStatus bk_addEventHandler:^(id sender) {
+        
         
         
     } forControlEvents:UIControlEventTouchUpInside];
     
     // ** 去评价
     [cell.btnCommend bk_addEventHandler:^(id sender) {
-        pushViewControllerWith(StoryBoard_Doctor, AddDoctorCommendViewController, (_muArr_OrderList[indexPath.row]));
+       
         
     } forControlEvents:UIControlEventTouchUpInside];
     
+    */
     return cell;
 }
 
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     pushViewControllerWith(StoryBoard_Order, OrderInfoViewController, _muArr_OrderList[indexPath.row][@"orders_id"])
 }
+
 
 
 -(void)setupMJTableView{
@@ -177,7 +189,7 @@
     
     _vHideView = [UIView new];
     [_vHideView setBackgroundColor:[UIColor blackColor]];
-    _vHideView.alpha = 0;
+    _vHideView.alpha = 1;
     
     MenuMoudle *menuMoudle = [MenuMoudle new];
     [menuMoudle setItemColor:[UIColor blackColor]];
@@ -240,11 +252,11 @@
         
         if ([menuIndex isEqualToString:@""] && [subMenuIndex isEqualToString:@""] ) {
             // ** 有二级子项菜单 下拉二级菜单
-            animationSubMenu(_babysanteView,YES);
+           // animationSubMenu(_babysanteView,YES);
             
         }else if (![menuIndex isEqualToString:@""] && ![subMenuIndex isEqualToString:@""]){
             //** 当前选中子项菜单 。进行数据筛选
-            animationSubMenu(_babysanteView,NO);
+           // animationSubMenu(_babysanteView,NO);
         }else{
             //** 没有二级子项菜单 根据一级菜单过滤数据
             animationSubMenu(_babysanteView,NO);
@@ -257,7 +269,7 @@
     }];
 
     [_babysanteView setDefaultSecItem:segItem1];
-    [self.vSegmentView addSubview:_babysanteView];
+    [self.view addSubview:_babysanteView];
 }
 
 
@@ -276,7 +288,7 @@
     
     [self setupMJTableView];
     
-    _tbv_OrderListView.tableHeaderView = [UIView new];
+  //  _tbv_OrderListView.tableHeaderView = [UIView new];
     
 }
 
