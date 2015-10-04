@@ -152,11 +152,16 @@ WEAKSELF
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
-    DoctorCommendViewController *recommendInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorCommendViewController);
-    recommendInfo.viewObject = (NSString *)self.viewObject;
-    [self.navigationController pushViewController:recommendInfo animated:YES];
-    
+    switch (indexPath.section ) {
+        case 0:{
+            if (indexPath.row == 1){
+                DoctorCommendViewController *recommendInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorCommendViewController);
+                recommendInfo.viewObject = (NSString *)self.viewObject;
+                [self.navigationController pushViewController:recommendInfo animated:YES];
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            }
+        }
+    }
 }
 
 

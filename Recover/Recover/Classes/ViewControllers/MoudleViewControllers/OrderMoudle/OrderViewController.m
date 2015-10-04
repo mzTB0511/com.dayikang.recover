@@ -40,7 +40,7 @@
 
 #pragma mark --UITabelVeiwDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 145;
+    return 174;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -120,8 +120,8 @@
                                     interfaceName:InterfaceAddressName(@"orders/list")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               
-                                              if ([responseDictionary objectForKey:@"list"]) {
-                                                  NSArray *data = [responseDictionary objectForKey:@"list"];
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSArray *data = [responseDictionary objectForKey:@"data"];
                                                  
                                                   page == 1 ? [weakSelf.muArr_OrderList removeAllObjects]: nil;
                                                  
@@ -130,6 +130,7 @@
                                                   weakSelf.muArr_OrderList.count == 0 ?
                                                   [self setEmptyRemindImageWithRes:@""] : [self removeEmptyRemindImage];
                                                  
+                                                  [weakSelf.tbv_OrderListView reloadData];
                                               }
                                               
                                             stopTableViewRefreshAnimation(_tbv_OrderListView);
@@ -159,6 +160,7 @@
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"orders/updatestatus")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              
                                               [weakSelf.tbv_OrderListView reloadData];
                                           }
                                           failure:nil networkFailure:nil

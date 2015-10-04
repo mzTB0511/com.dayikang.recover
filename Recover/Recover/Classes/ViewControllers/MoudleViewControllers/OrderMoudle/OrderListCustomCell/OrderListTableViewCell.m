@@ -46,19 +46,21 @@
 
 -(void)actionSetCellData:(NSDictionary *)cellData WithType:(NSInteger)type{
 
-    NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"ico"]);
+    NSString *baoIco =getValueIfNilReturnStr([cellData objectForKey:@"doctor_ico"]);
     
     [_img_DocIco sd_setImageWithURL:[NSURL URLWithString:baoIco] placeholderImage:nil];
 
     [_lb_OrderTime setText:[cellData objectForKey:@"date"]];
-    [_lb_ServiceItem setText:[cellData objectForKey:@"item_name"]];
-    [_lb_DocName setText:[cellData objectForKey:@""]];
-    [_lb_ServiceTime setText:[cellData objectForKey:@"time"]];
-    [_lb_Price setText:[cellData objectForKey:@"amount"]];
-
-    
-    int orderStatus = [cellData[@"status"] intValue];
-  
+    [_lb_ServiceItem setText:[cellData objectForKey:@"r_date"]];
+    [_lb_DocName setText:[cellData objectForKey:@"doctor_name"]];
+    [_lb_ServiceTime setText:[cellData objectForKey:@"service_start_time"]];
+    [_lb_Price setText:getStringAppendingStr([cellData objectForKey:@"amount"], @"元") ];
+    [_lb_OrderStatus setText:[cellData objectForKey:@"orders_status_name"]];
+   
+   
+    int orderStatus = [cellData[@"orders_status"] intValue];
+    WEAKSELF
+    /*
     WEAKSELF
     //** 设置订单状态
     void(^setOrderStatus)(int) = ^(int orderStatus){
@@ -80,18 +82,26 @@
         [weakSelf.lb_OrderStatus setText:statusDesc];
     };
     
+    */
+    
     
     //** 设置订单服务状态
     void(^setOrderServiceStatus)(int) = ^(int serviceStatus){
         NSString *statusDesc = @"";
         switch (serviceStatus) {
             case 1:
-                statusDesc = @"确认服务";
+                statusDesc = @"去支付";
                 break;
             case 2:
-                statusDesc = @"去评价";
+                statusDesc = @"待服务";
                 break;
             case 3:
+                statusDesc = @"确认服务";
+                break;
+            case 4:
+                statusDesc = @"去评价";
+                break;
+            case 6:
                 statusDesc = @"再次预约";
                 break;
             default:
@@ -101,7 +111,7 @@
          [weakSelf.btn_ReservationStatus setTitle:statusDesc forState:UIControlStateNormal];
     };
     
-    setOrderStatus(orderStatus);
+  //  setOrderStatus(orderStatus);
     
     setOrderServiceStatus(orderStatus);
     

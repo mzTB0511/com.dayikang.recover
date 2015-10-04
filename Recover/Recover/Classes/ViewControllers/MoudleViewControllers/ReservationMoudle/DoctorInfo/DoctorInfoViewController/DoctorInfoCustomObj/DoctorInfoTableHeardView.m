@@ -36,11 +36,11 @@
     if(_viewData == viewData) return;
     
     [_lbDocName setText:viewData[@"name"]];
-    [_lbSex setText:viewData[@"sex"]];
+    [_lbSex setText:[viewData[@"sex"] intValue] == 0 ? @"男" : @"女"];
     [_lbJobTitle setText:viewData[@"levelname"]];
-    [_lbAge setText:viewData[@"age"]];
-    [_lbPrice setText:viewData[@"price"]];
-    [_lbOrderCount setText:viewData[@"nums"]];
+    [_lbAge setText:getStringAppendingStr(viewData[@"age"], @"岁") ];
+    [_lbPrice setText:getStringAppendingStr(viewData[@"price"],@"元")];
+    [_lbOrderCount setText:getStringAppendingStr(viewData[@"nums"],@"次")];
   
     
     UIImage *image = [viewData[@"sex"] isEqualToString:@"男"] ? getImageWithRes(@"img_DoctorMoudle_DoctorIco_Boy") : getImageWithRes(@"img_DoctorMoudle_DoctorIco_Girl");
