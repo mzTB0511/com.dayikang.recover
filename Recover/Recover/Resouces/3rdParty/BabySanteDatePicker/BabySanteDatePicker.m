@@ -249,16 +249,18 @@
     BabySanteDatePicker *babySanteDatePicker = [BabySanteDatePicker babysantePickerContainerView];
     
     UIView *toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, babySanteDatePicker.frame.size.width, BabySanteDatePickerToolBarHeight)];
-    toolBar.backgroundColor = Color_System_Tint_Color;
+    toolBar.backgroundColor = [UIColor whiteColor];
     
     UIButton *buttonCancel = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonCancel.frame = CGRectMake(0, 0, 60, BabySanteDatePickerToolBarHeight);
     [buttonCancel setTitle:@"取消" forState:UIControlStateNormal];
+    [buttonCancel setTitleColor:Color_System_Main_Color forState:UIControlStateNormal];
     [buttonCancel addTarget:babySanteDatePicker action:@selector(action_backgroundViewTouched) forControlEvents:UIControlEventTouchUpInside];
 
     UIButton *buttonComfirm = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonComfirm.frame = CGRectMake(babySanteDatePicker.frame.size.width - 60, 0, 60, BabySanteDatePickerToolBarHeight);
     [buttonComfirm setTitle:@"确定" forState:UIControlStateNormal];
+    [buttonComfirm setTitleColor:Color_System_Main_Color forState:UIControlStateNormal];
     [buttonComfirm addTarget:babySanteDatePicker action:@selector(action_comfirmViewTouched) forControlEvents:UIControlEventTouchUpInside];
 
     [toolBar addSubview:buttonCancel];

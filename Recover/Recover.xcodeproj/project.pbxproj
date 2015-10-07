@@ -72,6 +72,7 @@
 		E952CD381BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */; };
 		E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */; };
 		E95706B71BB979F80044E351 /* SBLoginRegsiter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */; };
+		E95ADA541BC572390014C620 /* MyReocrdSymptomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95ADA531BC572390014C620 /* MyReocrdSymptomViewController.m */; };
 		E96A24081BBD823600255CC7 /* PaymentChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E96A24071BBD823600255CC7 /* PaymentChooseView.m */; };
 		E96A240A1BBD823F00255CC7 /* PaymentChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96A24091BBD823F00255CC7 /* PaymentChooseView.xib */; };
 		E96A240C1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96A240B1BBD98FB00255CC7 /* PaymentChooseHeaderView.xib */; };
@@ -305,6 +306,8 @@
 		E95396791BAA8F5100D4ABCD /* LXRelevantPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRelevantPickView.h; sourceTree = "<group>"; };
 		E953967A1BAA8F5100D4ABCD /* LXRelevantPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRelevantPickView.m; sourceTree = "<group>"; };
 		E95706B61BB979F80044E351 /* SBLoginRegsiter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBLoginRegsiter.storyboard; sourceTree = "<group>"; };
+		E95ADA521BC572390014C620 /* MyReocrdSymptomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReocrdSymptomViewController.h; sourceTree = "<group>"; };
+		E95ADA531BC572390014C620 /* MyReocrdSymptomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReocrdSymptomViewController.m; sourceTree = "<group>"; };
 		E96A24061BBD823600255CC7 /* PaymentChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentChooseView.h; sourceTree = "<group>"; };
 		E96A24071BBD823600255CC7 /* PaymentChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentChooseView.m; sourceTree = "<group>"; };
 		E96A24091BBD823F00255CC7 /* PaymentChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentChooseView.xib; sourceTree = "<group>"; };
@@ -654,6 +657,7 @@
 		E935BF3F1B9F2F85002D6BE6 /* MyRecord */ = {
 			isa = PBXGroup;
 			children = (
+				E95ADA511BC571DB0014C620 /* MyRecordSymptom */,
 				E90EA72D1B9F3C3E006FE8E6 /* MyRecordCustomObj */,
 				E935BF521B9F3097002D6BE6 /* MyRecordViewController.h */,
 				E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */,
@@ -842,6 +846,15 @@
 				E952CD361BAF04C3002EB2C9 /* MyWalletViewTableViewCell.xib */,
 			);
 			path = MyWalletViewCustomObj;
+			sourceTree = "<group>";
+		};
+		E95ADA511BC571DB0014C620 /* MyRecordSymptom */ = {
+			isa = PBXGroup;
+			children = (
+				E95ADA521BC572390014C620 /* MyReocrdSymptomViewController.h */,
+				E95ADA531BC572390014C620 /* MyReocrdSymptomViewController.m */,
+			);
+			path = MyRecordSymptom;
 			sourceTree = "<group>";
 		};
 		E96A24051BBD818D00255CC7 /* PaymentCustomView */ = {
@@ -1863,6 +1876,7 @@
 				E99A91A31B9362A900299B60 /* NSObject+RuntimeMethods.m in Sources */,
 				E919443F1BA70BC200D58A4A /* ChoooseAddressViewController.m in Sources */,
 				E984EAB01B9B0CD800FF7B88 /* MoudleUserLoginViewController.m in Sources */,
+				E95ADA541BC572390014C620 /* MyReocrdSymptomViewController.m in Sources */,
 				E90EA72B1B9F3B8C006FE8E6 /* MyCouponsTableViewCell.m in Sources */,
 				E99A90571B93624900299B60 /* UserInfo.m in Sources */,
 				E919443C1BA70B9600D58A4A /* ReservationInfoViewController.m in Sources */,

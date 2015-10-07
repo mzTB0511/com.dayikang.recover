@@ -13,6 +13,8 @@
 #import "BabySanteDatePicker.h"
 #import "UIViewController+ImagePicker.h"
 #import "ChooseAddressCustomCell.h"
+#import "MyReocrdSymptomViewController.h"
+#import <SBJson4Writer.h>
 
 
 @interface MyRecordViewController ()<UITableViewDataSource,UITableViewDelegate>{
@@ -27,6 +29,10 @@
 @property (nonatomic, strong) UIImage *avatarImage;
 
 @property (nonatomic, assign) int user_Status;
+
+@property (nonatomic, strong) NSMutableArray *muArrSysptomList;
+
+
 
 @end
 
@@ -181,7 +187,16 @@
                 case 0:
                 {
                     // 常见症状
-                  
+                    MyReocrdSymptomViewController *symptomView = getViewControllFromStoryBoard(StoryBoard_MySelf, MyReocrdSymptomViewController);
+                    symptomView.block = ^(NSMutableArray *selSymptomList){
+                        //处理为json 数据提交
+                        SBJson4Writer *jsWrite = [SBJson4Writer new];
+                        NSString *jsonSymptom = [jsWrite stringWithObject:selSymptomList];
+                        _data[@"symptom"] = jsonSymptom;
+                        
+                        [weakSelf action_saveData];
+                    };
+                    [self.navigationController pushViewController:symptomView animated:YES];
                 }
                     break;
                 
@@ -198,8 +213,9 @@
     if (indexPath.section == 0) {
         
         UserInfoAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UserInfoAvatarCell class]) forIndexPath:indexPath];
-        
-        [cell action_setupCellWithTitle:_arr_dataSource[indexPath.section][indexPath.row] imageUrl:_data[@"ico"]];
+        NSString *userPhone = _data[@"phone"];
+        userPhone = [userPhone stringByReplacingCharactersInRange:NSMakeRange(5,4) withString:@"****"];
+        [cell action_setupCellWithTitle:userPhone imageUrl:_data[@"ico"]];
         
         return cell;
     }
@@ -277,7 +293,14 @@
                 case 0:
                 {
                     //常见症状
-                    detail = ([_data[@"symptom"] isKindOfClass:[NSString class]] && ((NSString *)_data[@"symptom"]).length)?_data[@"symptom"]:@"";
+                    detail = @"请选择";
+                }
+                    break;
+                default:{
+                    UITableViewCell *cell = getDequeueReusableCellWithIdentifier(@"MyRecordViewSympomCell");
+                    [cell.textLabel setText:_arr_dataSource[indexPath.section][indexPath.row][@"name"]];
+                    [_muArrSysptomList addObject:_arr_dataSource[indexPath.section][indexPath.row]];
+                    return cell;
                 }
                     break;
             }
@@ -323,10 +346,12 @@
     self.navigationItem.title = @"我的档案";
     WEAKSELF
     
+    NSMutableArray *muArrSympom = [NSMutableArray arrayWithArray:@[@"常见症状"]];
+    
     self.arr_dataSource = @[@[@"头像"],
                             @[@"姓名",@"性别",@"出生年月",@"手机号"],
                             @[@"从事行业",@"公司职业"],
-                            @[@"常见症状"]];
+                            muArrSympom];
     
     
     mRegisterNib_TableView(_tbvTableView, UserInfoAvatarCell);
@@ -340,11 +365,16 @@
                                                                                  action:@selector(action_saveData)];
     
     
-    [NetworkHandle loadDataFromServerWithParamDic:nil
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"user_id":@"2"}
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"my/record")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               weakSelf.data = [NSMutableDictionary dictionaryWithDictionary:responseDictionary[@"data"]];
+                                              if ([weakSelf.data[@"symptom"] isKindOfClass:[NSArray class]]) {
+                                                  if ([weakSelf.data[@"symptom"] count]>0) {
+                                                      [_arr_dataSource[3] addObjectsFromArray:weakSelf.data[@"symptom"]];
+                                                  }
+                                              }
                                               [weakSelf.tbvTableView reloadData];
                                           }
                                           failure:nil
