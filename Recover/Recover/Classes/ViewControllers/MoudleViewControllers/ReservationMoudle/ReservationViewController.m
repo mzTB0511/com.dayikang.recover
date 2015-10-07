@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *ctv_ReservationView;
 
-@property (strong, nonatomic) NSMutableArray *muArr_ServiceItems;
+@property (strong, nonatomic) NSArray *arrServiceItems;
 
 
 
@@ -36,14 +36,14 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _muArr_ServiceItems.count;
+    return _arrServiceItems.count;
 }
 
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ServiceItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ServiceItemCollectionViewCell" forIndexPath:indexPath];
     
-    [cell setCellData:_muArr_ServiceItems[indexPath.row]];
+    [cell setCellData:_arrServiceItems[indexPath.row]];
     
     return cell;
 }
@@ -51,9 +51,33 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, _muArr_ServiceItems[indexPath.row][@"id"]);
+    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, _arrServiceItems[indexPath.row][@"id"]);
     
 }
+
+
+
+-(void)actionGetServiceItemFromServerWithType:(int)type{
+    WEAKSELF
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"servicetype":[NSString stringWithFormat:@"%i",type]}
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"index/serviceitems")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              NSArray *arrList = responseDictionary[@"data"];
+                                              weakSelf.arrServiceItems = arrList ? arrList : @[];
+                                              [weakSelf.ctv_ReservationView reloadData];
+                                          }
+                                          failure:^{
+                                              
+                                          } networkFailure:^{
+                                              
+                                          }
+                                      showLoading:YES
+     ];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -61,16 +85,7 @@
     
     mRegisterNib_CollectionView(_ctv_ReservationView, ServiceItemCollectionViewCell);
     
-    NSArray *arrServiceItems = @[@{@"id":@"3",@"ico":@"",@"name":@"颈痛"},
-                                 @{@"id":@"4",@"ico":@"",@"name":@"头痛"},
-                                 @{@"id":@"5",@"ico":@"",@"name":@"落枕"},
-                                 @{@"id":@"6",@"ico":@"",@"name":@"头晕"},
-                                 @{@"id":@"7",@"ico":@"",@"name":@"失眠"},
-                                 @{@"id":@"7",@"ico":@"",@"name":@"腰痛"},
-                                 @{@"id":@"8",@"ico":@"",@"name":@"落枕"},
-                                 @{@"id":@"9",@"ico":@"",@"name":@"足跟痛"}];
-    _muArr_ServiceItems = [NSMutableArray arrayWithArray:arrServiceItems];
-    
+    [self actionGetServiceItemFromServerWithType:0];
 }
 
 - (void)didReceiveMemoryWarning {
