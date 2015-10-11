@@ -30,6 +30,8 @@
 
 @property(nonatomic,strong) NSMutableArray *arrTimeSecList;
 
+@property(nonatomic,strong) NSDictionary *dictPassObj;
+
 
 @end
 
@@ -101,6 +103,9 @@
             break;
         case 2:{// goto康复师选择
          
+            //** 如果是从康复师收藏进来，直接返回
+            if (_dictPassObj) return;
+            
             DoctorListViewController *addressView = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorListViewController);
             addressView.viewObject = _dictUploadData;
             addressView.hidesBottomBarWhenPushed = YES;
@@ -251,7 +256,6 @@
     [self.tbvReservationInfo setTableFooterView:[UIView new]];
     
     [self customerRightNavigationBarItemWithTitle:@"确定" andImageRes:nil];
-
     
     NSArray *arrDataSource = @[[NSMutableDictionary dictionaryWithDictionary:@{@"title":@"预约时间",@"subtitle":@"请选择康复时间"}] ,
                                 [NSMutableDictionary dictionaryWithDictionary:@{@"title":@"预约地址",@"subtitle":@"联系人,联系方式,地址"}],
@@ -262,9 +266,22 @@
     _dictUploadData = [NSMutableDictionary dictionary];
     
     // 设置服务项目ID 信息
-    [_dictUploadData setObject:(NSString *)self.viewObject forKey:@"service_id"];
-    
-    [self getServiceTimeSectionWithDocID:nil];
+    if ([self.viewObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dictObj = (NSDictionary *)self.viewObject;
+        if ([dictObj[ViewName] isEqualToString:@"收藏"]) {
+            _dictPassObj = dictObj[PassObj];
+            //** 设置医生信息
+            [_muArrDataList[2] setObject:_dictPassObj[@"name"] forKey:@"subtitle"];
+            [_dictUploadData setObject:_dictPassObj[@"did"] forKey:@"doctor_id"];
+            [_dictUploadData setObject:_dictPassObj[@"sid"] forKey:@"service_id"];
+            
+        }else{
+            [_dictUploadData setObject:(NSString *)self.viewObject forKey:@"service_id"];
+        }
+    }
+   
+    NSString *doctID =_dictPassObj ? _dictPassObj[@"did"] : nil;
+    [self getServiceTimeSectionWithDocID:doctID];
     
     
 }

@@ -301,7 +301,17 @@
                                                       
                                                       [[AlipaySDK defaultService] payOrder:dictSignData[@"sign_param"] fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
                                                           NSLog(@"reslut = %@",resultDic);
-                                                          
+                                                          //** 支付成功后跳转到 订单页面
+                                                          if (resultDic[@"ResultStatus"]) {
+                                                              if ([resultDic[@"resultDic"] intValue] == 9000) {
+                                                                  [CommonHUD showHudWithMessage:@"支付成功" delay:1.0 completion:^{
+                                                                      [weakSelf.navigationController popToRootViewControllerAnimated:NO];
+                                                                      UITabBarController *bar = [CommonUser mainTabBarViewController];
+                                                                      [bar setSelectedIndex:1];
+                                                                      
+                                                                  }];
+                                                              }
+                                                          }
                                                       }];
                                                       //** 钱包支付
                                                   }else if ([responseDictionary[@"chargecard"] isEqualToString:@"chargecard"]){
@@ -325,35 +335,6 @@
 
     
 }
-
-
--(void)actionGoAlipayWithData{
-    //** 添加支付宝Demo 验证
-    [NetworkHandle loadDataFromServerWithParamDic:nil
-                                          signDic:nil
-                                    interfaceName:@"http://121.197.10.218/app.alipay.net/alipay.php"
-                                          success:^(NSDictionary *responseDictionary, NSString *message) {
-                                              
-                                                NSDictionary *dictSignData = [responseDictionary objectForKey:@"data"];
-                                                  
-                                                  [[AlipaySDK defaultService] payOrder:dictSignData[@"sign_param"] fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
-                                                      NSLog(@"reslut = %@",resultDic);
-                                                      
-                                                  }];
-                                          
-                                          }
-                                          failure:^{
-                                              
-                                          } networkFailure:^{
-                                              
-                                          }
-                                      showLoading:YES
-     ];
-}
-
-
-
-
 
 
 - (void)viewDidLoad {

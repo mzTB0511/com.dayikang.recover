@@ -83,40 +83,18 @@
 
 
 -(void)actionUploadOrderInfoToServer:(NSDictionary *)data{
-    //** 选择支付方式再提交订单
-    PaymentChooseView *paymentChooseView = getViewByNib(PaymentChooseView, self);
-    PaymentMoudle *payMoudle = [PaymentMoudle new];
-    [payMoudle setPayAmont:1];
-    [payMoudle setTotalAmount:100];
-    [payMoudle setUserPhone:@"15618297762"];
-    [paymentChooseView actionSetViewWith:payMoudle ChooseBlock:^(id data) {
-       // NSString *payType = [data intValue] == 1 ? @"alipay" : @"chargecard";
-       // [_muDictUploadData setObject:payType forKey:@"paytool"];
-        
-    }];
-    
-    [BabysanteAlertView BabysanteAlertViewShow:paymentChooseView CancelBtn:@"取消" OtherBtns:@[@"确定"] CalelBlock:^{
-        
-    } OthersBlock:^(NSInteger btnIndex) {
-        [NetworkHandle loadDataFromServerWithParamDic:data
+    [NetworkHandle loadDataFromServerWithParamDic:data
                                               signDic:nil
                                         interfaceName:InterfaceAddressName(@"my/recharge")
                                               success:^(NSDictionary *responseDictionary, NSString *message) {
                                                   //**支付成功确定是否跳转支付宝钱包
-                                                  if ([responseDictionary[@"paytool"] isEqualToString:@"alipay"]) {
-                                                      //**调用支付宝钱包付款
+                                                 //**调用支付宝钱包付款
                                                       NSDictionary *dictSignData = [responseDictionary objectForKey:@"data"];
                                                       
                                                       [[AlipaySDK defaultService] payOrder:dictSignData[@"sign_param"] fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
                                                           NSLog(@"reslut = %@",resultDic);
                                                           
                                                       }];
-                                                      //** 钱包支付
-                                                  }else if ([responseDictionary[@"chargecard"] isEqualToString:@"chargecard"]){
-                                                      
-                                                  }
-                                                  
-                                                  
                                                   
                                               }
                                               failure:^{
@@ -126,12 +104,7 @@
                                               }
                                           showLoading:YES
          ];
-    }];
-    
-    
-    
-    
-    
+
 }
 
 

@@ -11,12 +11,13 @@
 #import "ServiceItemCollectionViewCell.h"
 #import "ReservationInfoViewController.h"
 
-@interface ReservationViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface ReservationViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
+    BOOL presentModule;
+}
 
 @property (weak, nonatomic) IBOutlet UICollectionView *ctv_ReservationView;
 
 @property (strong, nonatomic) NSArray *arrServiceItems;
-
 
 
 @end
@@ -50,16 +51,26 @@
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+  WEAKSELF
+    if (presentModule) {
+        if (self.block) {
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            self.block(_arrServiceItems[indexPath.row][@"id"]);
+        }
+        return;
+    }
     
-    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, _arrServiceItems[indexPath.row][@"id"]);
+    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController,(@{ViewName:@"",PassObj:_arrServiceItems[indexPath.row][@"id"]}));
+    
     
 }
 
 
 
--(void)actionGetServiceItemFromServerWithType:(int)type{
+-(void)actionGetServiceItemFromServerWithType:(int)type AndDoctorID:(NSString *)docID{
     WEAKSELF
-    [NetworkHandle loadDataFromServerWithParamDic:@{@"servicetype":[NSString stringWithFormat:@"%i",type]}
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"servicetype":[NSString stringWithFormat:@"%i",type],
+                                                    @"doctor_id":docID}
                                           signDic:nil
                                     interfaceName:InterfaceAddressName(@"index/serviceitems")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
@@ -77,6 +88,18 @@
 }
 
 
+-(void)actionShowDismissButton {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(action_cancel)];
+}
+
+- (void) action_cancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,7 +108,18 @@
     
     mRegisterNib_CollectionView(_ctv_ReservationView, ServiceItemCollectionViewCell);
     
-    [self actionGetServiceItemFromServerWithType:0];
+    if (!self.viewObject) {
+       [self actionGetServiceItemFromServerWithType:0 AndDoctorID:@""];
+    }else{
+        presentModule = YES;
+        NSDictionary *dict = (NSDictionary *)self.viewObject;
+        if (![dict[@"sid"] isEqualToString:@"0"]) {
+          [self actionGetServiceItemFromServerWithType:[dict[@"sid"] intValue] AndDoctorID:@""];
+        }else if (![dict[@"did"] isEqualToString:@""]){
+          [self actionGetServiceItemFromServerWithType:0 AndDoctorID:dict[@"did"]];
+        }
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {

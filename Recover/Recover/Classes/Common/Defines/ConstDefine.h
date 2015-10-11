@@ -40,6 +40,11 @@
 #define BD_PUSH_App_ID                          @"SMGx2wz6TbdRqr3d8CjpsYs9"
 
 
+#define ViewName    @"viewName"
+#define PassObj     @"passObj"
+
+
+
 //故事板
 #define sStoryBoard_Main                        @"Main"
 #define sbStoryBoard_Main                       [UIStoryboard storyboardWithName:sStoryBoard_Main bundle:nil]
@@ -72,6 +77,10 @@
 #define StoryBoard_Doctor      @"SBDoctor"
 //【登录注册】模块
 #define StoryBoard_LoginRegsiter      @"SBLoginRegsiter"
+
+//【Main】模块
+#define StoryBoard_Main       @"Main"
+
 
 
 //**************************** 消息通知名称 键宏定义***********************************************/

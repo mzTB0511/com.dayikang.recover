@@ -209,15 +209,41 @@ WEAKSELF
 }
 
 
+-(void)navigationRightItemEvent{
+    
+    // 收藏医生
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"doctor_id":(NSString *)self.viewObject,@"type":@"1"}
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"doctor/editfavourite")
+                                          success:^(NSDictionary *responseDictionary, NSString *message) {
+                                              [CommonHUD showHudWithMessage:@"收藏成功" delay:1.0 completion:nil];
+                                          }
+                                          failure:nil networkFailure:nil
+                                      showLoading:YES
+     ];
+     
+     
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.navigationItem setTitle:@"康复治疗师详情"];
-    [self customerRightNavigationBarItemWithTitle:@"收藏" andImageRes:nil];
+    
     mRegisterNib_TableView(_tbvDoctorInfo, DoctorInfoDescCell);
     mRegisterNib_TableView(_tbvDoctorInfo, DoctorInfoZhengShuCell);
     
-    [self loadDataFromServerWithDoctInfo:(NSString *)self.viewObject];
+    if ([self.viewObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dictObj = (NSDictionary *)self.viewObject;
+        if (![dictObj[ViewName] isEqualToString:@"收藏"]) {
+            [self customerRightNavigationBarItemWithTitle:@"收藏" andImageRes:nil];
+        }
+        [self loadDataFromServerWithDoctInfo:dictObj[PassObj]];
+    }
+    
+    
 }
 
 

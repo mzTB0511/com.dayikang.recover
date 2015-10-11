@@ -8,6 +8,11 @@
 
 #import "BaseViewController.h"
 
+
 @interface ReservationViewController : BaseViewController
+
+@property(nonatomic,copy) CommonReturnDataBlock block;
+
+-(void)actionShowDismissButton;
 
 @end

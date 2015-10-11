@@ -143,6 +143,18 @@ retStr;\
 #define getViewByNib(Class, own) [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([Class class]) owner:own options:nil] lastObject]
 
 
+/**
+ *  设置表视图对象的头尾
+ *
+ *  @param tableView 表视图
+ *
+ *  @return nil
+ */
+#define setTableViewHeaderView(tableView)   [tableView setTableHeaderView:[UIView new]]
+#define setTableViewFooterView(tableView)   [tableView setTableFooterView:[UIView new]]
+
+
+#define setTableViewCellDeselect(tableView)[tableView indexPathForSelectedRow] ? [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES] : nil
 
 
 /**

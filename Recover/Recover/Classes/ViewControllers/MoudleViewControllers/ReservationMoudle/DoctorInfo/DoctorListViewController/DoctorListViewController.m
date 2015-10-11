@@ -73,7 +73,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     WEAKSELF
     DoctorInfoViewController *doctorInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorInfoViewController);
-    doctorInfo.viewObject = _muArrDoctorList[indexPath.row][@"did"];
+    doctorInfo.viewObject = @{ViewName:@"",PassObj:_muArrDoctorList[indexPath.row][@"did"]} ;
+    
     doctorInfo.doctorInfoBlock = ^(NSDictionary *docInfo){
         
         if (weakSelf.doctorViewBlock) {
