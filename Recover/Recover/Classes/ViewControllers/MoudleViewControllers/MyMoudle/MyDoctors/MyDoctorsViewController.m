@@ -12,7 +12,9 @@
 #import "DoctorListTableViewCell.h"
 #import "DoctorInfoViewController.h"
 #import <BlocksKit/UIControl+BlocksKit.h>
-
+#import "ReservationViewController.h"
+#import "BaseNavigationViewController.h"
+#import "ReservationInfoViewController.h"
 
 @interface MyDoctorsViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSInteger pageIndex;
@@ -49,21 +51,47 @@
     
     [cell setCellData:_muArrDoctorList[indexPath.row]];
     
+    WEAKSELF
     //** 添加点击回调事件
-
+    cell.doctorListCellBlock = ^(){
+        //**去预约订单 页面
+        ReservationViewController *reservationInfoView = getViewControllFromStoryBoard(StoryBoard_Main, ReservationViewController);
+        [reservationInfoView setViewObject:@{@"sid":@"0",@"did":_muArrDoctorList[indexPath.row][@"did"]}];
+        [reservationInfoView actionShowDismissButton];
+        reservationInfoView.block = ^(NSString *service){
+            //** 选中后回调事件
+            NSMutableDictionary *dictDoctro = [NSMutableDictionary dictionaryWithDictionary:_muArrDoctorList[indexPath.row]] ;
+            [dictDoctro setObject:service forKey:@"sid"];
+            pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, (@{ViewName:@"收藏",PassObj:dictDoctro}));
+        };
+        
+        BaseNavigationViewController *navBase = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
+        navBase.viewControllers = @[reservationInfoView];
+        [weakSelf presentViewController:navBase animated:YES completion:nil];
+        
+    };
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     WEAKSELF
     DoctorInfoViewController *doctorInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorInfoViewController);
+    doctorInfo.viewObject = @{ViewName:@"收藏",PassObj:_muArrDoctorList[indexPath.row][@"did"]} ;
     doctorInfo.doctorInfoBlock = ^(NSDictionary *docInfo){
-        
-        //        if (weakSelf.doctorViewBlock) {
-        //            weakSelf.doctorViewBlock(docInfo);
-        //            [self.navigationController popToRootViewControllerAnimated:YES];
-        //        }
-        
+        //**去预约订单 页面
+        ReservationViewController *reservationInfoView = getViewControllFromStoryBoard(StoryBoard_Main, ReservationViewController);
+        [reservationInfoView setViewObject:@{@"sid":@"0",@"did":docInfo[@"did"]}];
+        [reservationInfoView actionShowDismissButton];
+        reservationInfoView.block = ^(NSString *service){
+            //** 选中后回调事件
+            NSMutableDictionary *dictDoctro = [NSMutableDictionary dictionaryWithDictionary:_muArrDoctorList[indexPath.row]] ;
+            [dictDoctro setObject:service forKey:@"sid"];
+            pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, (@{ViewName:@"收藏",PassObj:dictDoctro}));
+        };
+        BaseNavigationViewController *navBase = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
+        navBase.viewControllers = @[reservationInfoView];
+        [weakSelf presentViewController:navBase animated:YES completion:nil];
     };
     [self.navigationController pushViewController:doctorInfo animated:YES];
     
@@ -77,27 +105,26 @@
         [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:nil];
     }];
     
-    
+    /*
     [_tbvTableView addFooterWithCallback:^{
         pageIndex++;
         [weakSelf reloadTableViewWithPage:pageIndex AndSearchCondation:nil];
     }];
-    
+    */
     
     [_tbvTableView headerBeginRefreshing];
 }
 
 
 -(void)reloadTableViewWithPage:(NSInteger)page AndSearchCondation:(NSDictionary *)condation{
-    NSString *interfaceName = viewType == 1 ? InterfaceAddressName(@"my/favourite") : InterfaceAddressName(@"my/doctors");
     WEAKSELF
     [NetworkHandle loadDataFromServerWithParamDic:nil
                                           signDic:nil
-                                    interfaceName:interfaceName
+                                    interfaceName:InterfaceAddressName(@"my/doctor")
                                           success:^(NSDictionary *responseDictionary, NSString *message) {
                                               
-                                              if ([responseDictionary objectForKey:@"list"]) {
-                                                  NSArray *data = [responseDictionary objectForKey:@"list"];
+                                              if ([responseDictionary objectForKey:@"data"]) {
+                                                  NSArray *data = [responseDictionary objectForKey:@"data"];
                                                   
                                                   page == 1 ? [weakSelf.muArrDoctorList removeAllObjects]: nil;
                                                   
@@ -105,7 +132,7 @@
                                                   
                                                   weakSelf.muArrDoctorList.count == 0 ?
                                                   [self setEmptyRemindImageWithRes:@""] : [self removeEmptyRemindImage];
-                                                  
+                                                  [weakSelf.tbvTableView reloadData];
                                               }
                                               
                                               stopTableViewRefreshAnimation(weakSelf.tbvTableView);
@@ -125,10 +152,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    viewType = [(NSString *)self.viewObject intValue];
-    NSString *viewTitle =  viewType == 1 ? @"我的收藏" : @"我的康复师";
-    [self.navigationItem setTitle:viewTitle];
+    [self.navigationItem setTitle:@"我的康复师"];
+    mRegisterNib_TableView(_tbvTableView, DoctorListTableViewCell);
+    setTableViewFooterView(_tbvTableView);
+    _muArrDoctorList = [NSMutableArray array];
     
     [self setupMJTableView];
 

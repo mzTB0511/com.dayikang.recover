@@ -40,7 +40,7 @@ WEAKSELF
             //** 添加点击事件
             [view.btn_Ok bk_addEventHandler:^(id sender) {
                 if (self.doctorInfoBlock) {
-                    [_muDictDoctorInfo setObject:(NSString *)self.viewObject forKey:@"did"];
+                    [_muDictDoctorInfo setObject:((NSDictionary *)self.viewObject)[PassObj] forKey:@"did"];
                     [weakSelf.navigationController popViewControllerAnimated:NO];
                     self.doctorInfoBlock(_muDictDoctorInfo);
                     
@@ -156,7 +156,7 @@ WEAKSELF
         case 0:{
             if (indexPath.row == 1){
                 DoctorCommendViewController *recommendInfo = getViewControllFromStoryBoard(StoryBoard_Doctor, DoctorCommendViewController);
-                recommendInfo.viewObject = (NSString *)self.viewObject;
+                recommendInfo.viewObject = ((NSDictionary *)self.viewObject)[PassObj];
                 [self.navigationController pushViewController:recommendInfo animated:YES];
                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
             }
