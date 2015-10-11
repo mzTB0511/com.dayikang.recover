@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="MainViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Rjy-Cj-tox"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -34,7 +34,7 @@
         <scene sceneID="0O2-Xi-GjS">
             <objects>
                 <navigationController id="nhb-rg-7Tb" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="img_Tablebar_item_Index" selectedImage="img_Tablebar_item_Index_Sel" id="TIk-ud-aDQ">
+                    <tabBarItem key="tabBarItem" title="首页" image="img_Tablebar_item_Index" selectedImage="img_Tablebar_item_Index_Sel" id="TIk-ud-aDQ" colorLabel="IBBuiltInLabel-Orange">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_Index_Sel"/>
                         </userDefinedRuntimeAttributes>

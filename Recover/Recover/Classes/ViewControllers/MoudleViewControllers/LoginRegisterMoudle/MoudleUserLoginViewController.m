@@ -133,6 +133,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    
+    self.navigationItem.title =@"登录";
 
 }
 

@@ -15,7 +15,7 @@
 @implementation MainViewController
 
 -(void)awakeFromNib {
-    self.tabBar.tintColor = Color_System_Tint_Color;
+    self.tabBar.tintColor = Color_System_Main_Color;
 }
 
 - (void)viewDidLoad {

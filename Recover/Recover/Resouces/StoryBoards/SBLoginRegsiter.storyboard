@@ -9,7 +9,8 @@
         <scene sceneID="ee9-4I-ehH">
             <objects>
                 <navigationController storyboardIdentifier="BaseNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="92r-IL-uqM" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUT-tf-oGT">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bUT-tf-oGT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
