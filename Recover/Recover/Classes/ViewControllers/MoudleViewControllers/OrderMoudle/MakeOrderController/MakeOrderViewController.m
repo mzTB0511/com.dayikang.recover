@@ -300,10 +300,11 @@
                                                       NSDictionary *dictSignData = [responseDictionary objectForKey:@"data"];
                                                       
                                                       [[AlipaySDK defaultService] payOrder:dictSignData[@"sign_param"] fromScheme:@"aliypay" callback:^(NSDictionary *resultDic) {
+                                                     
                                                           NSLog(@"reslut = %@",resultDic);
                                                           //** 支付成功后跳转到 订单页面
                                                           if (resultDic[@"ResultStatus"]) {
-                                                              if ([resultDic[@"resultDic"] intValue] == 9000) {
+                                                              if ([resultDic[@"resultStatus"] intValue] == 9000) {
                                                                   [CommonHUD showHudWithMessage:@"支付成功" delay:1.0 completion:^{
                                                                       [weakSelf.navigationController popToRootViewControllerAnimated:NO];
                                                                       UITabBarController *bar = [CommonUser mainTabBarViewController];

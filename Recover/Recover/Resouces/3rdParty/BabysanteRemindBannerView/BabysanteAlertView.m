@@ -14,7 +14,6 @@
 #define BabysanteAlertViewItem_Space  20
 #define BabySanteDatePickerAnimationDuration        0.25
 
-
 @interface BabysanteAlertView()
 
 @property (nonatomic, strong) UIControl *backgroundView;
@@ -48,7 +47,7 @@
     [alertView addSubview:alertView.alertView];
     
     alertView.AlertViewBlock = block;
-    
+    [alertView setTag:AlertViewTag];
     [mWindow addSubview:alertView];
     
     [alertView showBackgroundView];

@@ -109,6 +109,9 @@
             case 4:
                 statusDesc = @"去评价";
                 break;
+            case 5:
+                statusDesc = @"再次预约";
+                break;
             case 6:
                 statusDesc = @"再次预约";
                 break;

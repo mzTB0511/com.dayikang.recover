@@ -15,7 +15,8 @@
 #import <BlocksKit/UIView+BlocksKit.h>
 #import <AlipaySDK/AlipaySDK.h>
 #import "ReservationInfoViewController.h"
-
+#import "ReservationViewController.h"
+#import "BaseNavigationViewController.h"
 
 @interface IndexViewController ()<LXCycleScrollViewDatasource,LXCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -133,7 +134,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //** goto ReservationViewControlelr
-    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, _arrCtvDataSource[indexPath.row][@"id"]);
+    pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController,(@{ViewName:@"",PassObj:_arrCtvDataSource[indexPath.row][@"id"]}));
 
 }
 
@@ -265,18 +266,34 @@
 
 
 -(void)actionMainServerTapEvent{
+  WEAKSELF
+    void(^actionGoToChooseServiceItem)(NSString *) = ^(NSString *serverType){
+        //**去预约订单 页面
+        ReservationViewController *reservationInfoView = getViewControllFromStoryBoard(StoryBoard_Main, ReservationViewController);
+        [reservationInfoView setViewObject:@{@"sid":serverType,@"did":@""}];
+        [reservationInfoView actionShowDismissButton];
+        reservationInfoView.block = ^(NSString *service){
+           
+            pushViewControllerWith(StoryBoard_Reservation, ReservationInfoViewController, (@{ViewName:@"",PassObj:service}));
+        };
+        
+        BaseNavigationViewController *navBase = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
+        navBase.viewControllers = @[reservationInfoView];
+        [weakSelf presentViewController:navBase animated:YES completion:nil];
+    };
+    
     
     //** 亚健康类型服务
     [_v_TypeYjk bk_whenTapped:^{
-    
-        [CommonHUD showHudWithMessage:@"请稍后..." delay:1.0f completion:nil];
+        actionGoToChooseServiceItem(@"1");
+        
     }];
     
     
     //** 病后术后类型服务
     [_v_TypeBHSH bk_whenTapped:^{
-       [CommonHUD showHudWithMessage:@"请稍后..." delay:1.0f completion:nil];
-        
+       
+        actionGoToChooseServiceItem(@"2");
     }];
     
 }

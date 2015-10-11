@@ -126,7 +126,7 @@
     //** 获得评论内容
     AddDoctorCommendContentTableViewCell *contentCell =  (AddDoctorCommendContentTableViewCell *)_cellCommendContent;
     
-    if (![contentCell.tvContent.text isEqualToString:@""]) {
+    if ([contentCell.tvContent.text isEqualToString:@""]) {
         [CommonHUD showHudWithMessage:@"请输入评论内容" delay:1.0f completion:nil];
         return;
     }

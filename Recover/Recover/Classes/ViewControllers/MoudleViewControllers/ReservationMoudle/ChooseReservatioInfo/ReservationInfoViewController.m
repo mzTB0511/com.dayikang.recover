@@ -268,7 +268,8 @@
     // 设置服务项目ID 信息
     if ([self.viewObject isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dictObj = (NSDictionary *)self.viewObject;
-        if ([dictObj[ViewName] isEqualToString:@"收藏"]) {
+        if ([dictObj[ViewName] isEqualToString:@"收藏"] ||
+            [dictObj[ViewName] isEqualToString:@"订单"]) {
             _dictPassObj = dictObj[PassObj];
             //** 设置医生信息
             [_muArrDataList[2] setObject:_dictPassObj[@"name"] forKey:@"subtitle"];
@@ -276,7 +277,7 @@
             [_dictUploadData setObject:_dictPassObj[@"sid"] forKey:@"service_id"];
             
         }else{
-            [_dictUploadData setObject:(NSString *)self.viewObject forKey:@"service_id"];
+            [_dictUploadData setObject:dictObj[PassObj] forKey:@"service_id"];
         }
     }
    

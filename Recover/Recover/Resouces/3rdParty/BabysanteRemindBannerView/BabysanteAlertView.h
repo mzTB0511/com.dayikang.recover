@@ -5,6 +5,7 @@
 //  Created by 刘轩 on 15/8/14.
 //  Copyright (c) 2015年 Amesante. All rights reserved.
 //
+#define AlertViewTag    9999
 
 #import <UIKit/UIKit.h>
 
