@@ -136,8 +136,11 @@ WEAKSELF
             break;
         case 1:{
             DoctorInfoZhengShuCell *cell = getDequeueReusableCellWithClass(DoctorInfoZhengShuCell);
-            [cell actionSetCellData:_muDictDoctorInfo[@"imgs"] CollectionViewBlock:^(NSInteger selIndex) {
+            [cell actionSetCellData:_muDictDoctorInfo[@"imgs"] CollectionViewBlock:^(UIImageView *selImge) {
                 NSLog(@"当前点击了那个图片");
+                if (selImge.image) {
+                    [CommonIO showImage:selImge.image bgColor:[UIColor blackColor]];
+                }
                 
             }];
             

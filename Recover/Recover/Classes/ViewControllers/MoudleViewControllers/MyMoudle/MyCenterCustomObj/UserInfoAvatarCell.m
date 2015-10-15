@@ -25,9 +25,7 @@
     
     _lbl_title.text = title;
     
-    if (imageUrl.length) {
         [_imv_image sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:getImageWithRes(@"img_Default_UserIco_Boys")];
-    }
 }
 
 -(void)action_setImage:(UIImage *)image {

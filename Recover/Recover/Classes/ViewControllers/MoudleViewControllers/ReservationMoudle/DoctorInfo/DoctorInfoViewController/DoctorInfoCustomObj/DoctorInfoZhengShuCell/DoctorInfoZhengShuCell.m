@@ -46,8 +46,10 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (self.doctorZSBlock) {
-        self.doctorZSBlock(indexPath.row);
+    DoctorInfoZhengShuCollectionViewCell *cell = (DoctorInfoZhengShuCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    if (self.doctorZSBlock && cell.imgDocZhengShu) {
+        self.doctorZSBlock(cell.imgDocZhengShu);
     }
     
 }

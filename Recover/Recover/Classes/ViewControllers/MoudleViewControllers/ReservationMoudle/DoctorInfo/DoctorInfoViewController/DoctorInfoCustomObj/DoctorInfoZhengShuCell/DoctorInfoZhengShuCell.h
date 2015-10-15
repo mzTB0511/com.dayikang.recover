@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^DoctorInfoZhzengShuBlock)(NSInteger selIndex);
+typedef void (^DoctorInfoZhzengShuBlock)(UIImageView *image);
 
 @interface DoctorInfoZhengShuCell : UITableViewCell
 
