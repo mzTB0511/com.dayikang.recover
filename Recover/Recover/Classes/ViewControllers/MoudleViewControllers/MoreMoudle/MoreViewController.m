@@ -72,12 +72,12 @@
         case 0:
         {
             //康复师傅入住
-            pushViewControllerWith(StoryBoard_More, DoctroJoinViewController, nil);
+           // pushViewControllerWith(StoryBoard_More, DoctroJoinViewController, nil);
         }
             break;
         case 1:{
             //** 服务范围
-             pushViewControllerWith(StoryBoard_More, ServiceAreaViewController, nil);
+            // pushViewControllerWith(StoryBoard_More, ServiceAreaViewController, nil);
         }
             break;
         case 2:{
@@ -87,7 +87,7 @@
             break;
         case 3:{
             //** 关于我们
-             pushViewControllerWith(StoryBoard_More, CopyrightViewController, nil);
+            // pushViewControllerWith(StoryBoard_More, CopyrightViewController, nil);
         }
             break;
         case 4:{
