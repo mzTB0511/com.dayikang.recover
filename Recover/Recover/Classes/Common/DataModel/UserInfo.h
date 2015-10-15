@@ -36,20 +36,6 @@
  */
 @property (nonatomic, copy) NSString *nickName;
 
-/**
- *  是否临时用户 0:否 1:是
- */
-@property (nonatomic, copy) NSString *isTempUser;
-
-/**
- *  用户身高
- */
-@property (nonatomic, copy) NSString *height;
-
-/**
- *  用户体重
- */
-@property (nonatomic, copy) NSString *weight;
 
 
 

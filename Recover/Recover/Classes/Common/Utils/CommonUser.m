@@ -341,7 +341,7 @@
  *  用户是否登录了
  */
 + (BOOL) ifUserHasLogin {
-    return [[CommonUser userInfo].isTempUser isEqualToString:@"0"];
+    return [CommonUser userInfo]? YES : NO;
 }
 
 

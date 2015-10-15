@@ -201,7 +201,7 @@
         <scene sceneID="L3W-Km-Eh2">
             <objects>
                 <navigationController id="aAm-xk-Wyo" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="订单" image="img_Tablebar_item_Order" selectedImage="img_Tablebar_item_Order_Sel" id="yyL-nm-UHJ">
+                    <tabBarItem key="tabBarItem" tag="1" title="订单" image="img_Tablebar_item_Order" selectedImage="img_Tablebar_item_Order_Sel" id="yyL-nm-UHJ">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_Order_Sel"/>
                         </userDefinedRuntimeAttributes>
@@ -278,7 +278,7 @@
         <scene sceneID="Mpp-kq-GBk">
             <objects>
                 <navigationController id="Y7M-O0-pFM" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="预约" id="gKJ-cg-fsU"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="预约" id="gKJ-cg-fsU"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NqW-Ty-4dw">
@@ -345,7 +345,7 @@
         <scene sceneID="lLi-4L-kWQ">
             <objects>
                 <navigationController id="zmO-H8-qzg" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="img_Tablebar_item_My" selectedImage="img_Tablebar_item_My_Sel" id="oRU-2l-JMw">
+                    <tabBarItem key="tabBarItem" tag="3" title="我的" image="img_Tablebar_item_My" selectedImage="img_Tablebar_item_My_Sel" id="oRU-2l-JMw">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_My_Sel"/>
@@ -435,7 +435,7 @@
         <scene sceneID="4zE-F6-bK6">
             <objects>
                 <navigationController id="boz-rI-KK6" customClass="BaseNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="更多" image="img_Tablebar_item_More" selectedImage="img_Tablebar_item_More_Sel" id="9xk-QR-SH5">
+                    <tabBarItem key="tabBarItem" tag="4" title="更多" image="img_Tablebar_item_More" selectedImage="img_Tablebar_item_More_Sel" id="9xk-QR-SH5">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="img_Tablebar_item_More_Sel"/>
