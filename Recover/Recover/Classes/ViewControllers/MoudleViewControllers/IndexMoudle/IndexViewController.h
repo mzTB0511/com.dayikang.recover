@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 刘轩. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "RootViewController.h"
 
-@interface IndexViewController : BaseViewController
+@interface IndexViewController : RootViewController
 
 @end

@@ -31,6 +31,7 @@
 		E935BF4E1B9F3078002D6BE6 /* MyDoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4D1B9F3078002D6BE6 /* MyDoctorsViewController.m */; };
 		E935BF511B9F3089002D6BE6 /* MyFavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */; };
 		E935BF541B9F3097002D6BE6 /* MyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */; };
+		E937916A1BCFF926004E7D0A /* ServiceCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93791691BCFF926004E7D0A /* ServiceCityViewController.m */; };
 		E9477C751BAD41FA00964348 /* DoctorListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C711BAD41FA00964348 /* DoctorListTableViewCell.m */; };
 		E9477C761BAD41FA00964348 /* DoctorListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9477C721BAD41FA00964348 /* DoctorListTableViewCell.xib */; };
 		E9477C771BAD41FA00964348 /* DoctorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9477C741BAD41FA00964348 /* DoctorListViewController.m */; };
@@ -236,6 +237,8 @@
 		E935BF501B9F3089002D6BE6 /* MyFavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavouriteViewController.m; sourceTree = "<group>"; };
 		E935BF521B9F3097002D6BE6 /* MyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecordViewController.h; sourceTree = "<group>"; };
 		E935BF531B9F3097002D6BE6 /* MyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecordViewController.m; sourceTree = "<group>"; };
+		E93791681BCFF926004E7D0A /* ServiceCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceCityViewController.h; sourceTree = "<group>"; };
+		E93791691BCFF926004E7D0A /* ServiceCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceCityViewController.m; sourceTree = "<group>"; };
 		E9477C701BAD41FA00964348 /* DoctorListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListTableViewCell.h; sourceTree = "<group>"; };
 		E9477C711BAD41FA00964348 /* DoctorListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListTableViewCell.m; sourceTree = "<group>"; };
 		E9477C721BAD41FA00964348 /* DoctorListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorListTableViewCell.xib; sourceTree = "<group>"; };
@@ -683,6 +686,15 @@
 				E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */,
 			);
 			path = MyCenterCustomObj;
+			sourceTree = "<group>";
+		};
+		E93791671BCFF8E4004E7D0A /* ServiceCityController */ = {
+			isa = PBXGroup;
+			children = (
+				E93791681BCFF926004E7D0A /* ServiceCityViewController.h */,
+				E93791691BCFF926004E7D0A /* ServiceCityViewController.m */,
+			);
+			path = ServiceCityController;
 			sourceTree = "<group>";
 		};
 		E9477C6E1BAD41FA00964348 /* DoctorListViewController */ = {
@@ -1554,6 +1566,7 @@
 		E99DFD161B94A79B000DEDCB /* IndexMoudle */ = {
 			isa = PBXGroup;
 			children = (
+				E93791671BCFF8E4004E7D0A /* ServiceCityController */,
 				E984EAB11B9B10CF00FF7B88 /* IndexMoudleCustomersObj */,
 				E99DFD2B1B94AA57000DEDCB /* IndexViewController.h */,
 				E99DFD2C1B94AA57000DEDCB /* IndexViewController.m */,
@@ -1917,6 +1930,7 @@
 				E952CD261BAEB21D002EB2C9 /* OrderInfoViewController.m in Sources */,
 				E9477C7D1BAD432D00964348 /* DoctorInfoViewController.m in Sources */,
 				E99A91A71B9362A900299B60 /* UINavigationBar+BackgroundColor.m in Sources */,
+				E937916A1BCFF926004E7D0A /* ServiceCityViewController.m in Sources */,
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
 				E99A90611B93624900299B60 /* UMTrack.m in Sources */,
 				E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */,

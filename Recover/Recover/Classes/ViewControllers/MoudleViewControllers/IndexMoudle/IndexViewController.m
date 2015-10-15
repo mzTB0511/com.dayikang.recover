@@ -17,6 +17,9 @@
 #import "ReservationInfoViewController.h"
 #import "ReservationViewController.h"
 #import "BaseNavigationViewController.h"
+#import "AMapFunction.h"
+#import "ServiceCityViewController.h"
+
 
 @interface IndexViewController ()<LXCycleScrollViewDatasource,LXCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -245,26 +248,6 @@
 
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationItem.title = @"首页";
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    
-    [self loadBannerData];
-    
-    mRegisterNib_CollectionView(_ctv_ServiceItem, ServiceItemCollectionViewCell);
-    
-    //**亚健康人群，病后术后人群
-    [self actionMainServerTapEvent];
-    
-    [self actionGetServiceItemFromServerWithType:3];
-    
-    
-}
-
-
-
 -(void)actionMainServerTapEvent{
   WEAKSELF
     void(^actionGoToChooseServiceItem)(NSString *) = ^(NSString *serverType){
@@ -298,6 +281,71 @@
     
 }
 
+
+
+-(void)uploadUserPositionWith:(NSString *)posLa PosLon:(NSString *)posLon CityName:(NSString *)cityName CityID:(NSString *)cityID{
+    [NetworkHandle loadDataFromServerWithParamDic:@{@"posLa":posLa,@"posLon":posLon,@"in_city_name":cityName}
+                                          signDic:nil
+                                    interfaceName:InterfaceAddressName(@"user/uploadposition")
+                                          success:nil
+                                          failure:nil
+                                   networkFailure:nil
+                                      showLoading:NO];
+    //*记录城市位置
+    [CommonUser setUserLocation:cityName];
+    [self customerLeftNavigationBarItemWithTitle:getValueIfNilReturnStr(cityName) andImageRes:nil];
+}
+
+
+
+-(void)startGpsGetLocation{
+   WEAKSELF
+    [AMapFunction action_getUserLocationAndCityWithBlock:^(NSString *latitude, NSString *longitude, NSString *city) {
+        
+        [weakSelf uploadUserPositionWith:latitude PosLon:longitude CityName:city CityID:@"0"];
+        
+    } failure:^{
+        
+        [weakSelf navigationRightItemEvent];
+    }];
+}
+
+
+
+-(void)navigationRightItemEvent{
+    //**开启已开启城市列表选择城市
+    BaseNavigationViewController *navBase  = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
+    
+    ServiceCityViewController *serviceView = getViewControllFromStoryBoard(StoryBoard_HomePage, ServiceCityViewController);
+    serviceView.block = ^(NSDictionary *cityDict){
+        [CommonUser setUserLocation:cityDict[@"name"]];
+        [self customerLeftNavigationBarItemWithTitle:getValueIfNilReturnStr(cityDict[@"name"]) andImageRes:nil];
+        
+    };
+    
+    navBase.viewControllers = @[serviceView];
+    
+    [self presentViewController:navBase animated:YES completion:nil];
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"首页";
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    
+    [self loadBannerData];
+    
+    mRegisterNib_CollectionView(_ctv_ServiceItem, ServiceItemCollectionViewCell);
+    
+    //**亚健康人群，病后术后人群
+    [self actionMainServerTapEvent];
+    
+    [self actionGetServiceItemFromServerWithType:3];
+    
+    
+}
 
 
 
