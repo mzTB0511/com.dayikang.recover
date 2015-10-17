@@ -46,6 +46,7 @@
 
 
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    
     WEAKSELF
     if (viewController.tabBarItem.tag == 1 || viewController.tabBarItem.tag == 3 ) {
         // **已经登录，直接返回

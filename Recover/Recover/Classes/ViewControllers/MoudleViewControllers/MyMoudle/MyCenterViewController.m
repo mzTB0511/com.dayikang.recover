@@ -175,8 +175,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self actionShowLoginView];
-    
     self.navigationItem.title = @"我";
     
     mRegisterNib_TableView(_tbv_UserInfoTableView, UserInfoAvatarCell);
@@ -187,23 +185,6 @@
     
     [self makeTBVDataSource];
 }
-
-
--(void)actionShowLoginView{
-    WEAKSELF
-    BaseNavigationViewController *navBase  = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, BaseNavigationViewController);
-    
-    MoudleUserLoginViewController *loginView = getViewControllFromStoryBoard(StoryBoard_LoginRegsiter, MoudleUserLoginViewController);
-    loginView.completionBlock = ^{
-        [weakSelf dismissViewControllerAnimated:YES completion:nil];
-    };
-    [loginView action_showDismissButton];
-    navBase.viewControllers = @[loginView];
-    
-    [self presentViewController:navBase animated:YES completion:nil];
-    
-}
-
 
 
 

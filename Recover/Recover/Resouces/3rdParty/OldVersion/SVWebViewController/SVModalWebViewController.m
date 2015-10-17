@@ -49,6 +49,7 @@
                                                                        style:UIBarButtonItemStylePlain
                                                                       target:self.webViewController
                                                                       action:@selector(doneButtonTapped:)];
+        [doneButton setTintColor:[UIColor blackColor]];
         self.webViewController.navigationItem.leftBarButtonItem = doneButton;
     }
     return self;
@@ -60,7 +61,7 @@
     
 //   [self.navigationBar setBarTintColor:SlideMenu_Color ];
     
-    [self.navigationBar setBackgroundImage:[CommonIO imageWithColor:Color_System_Tint_Color size:CGSizeMake(mScreenWidth, 64)] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[CommonIO imageWithColor:[UIColor whiteColor] size:CGSizeMake(mScreenWidth, 64)] forBarMetrics:UIBarMetricsDefault];
     
     //     self.webViewController.title =self.title;
     self.navigationBar.tintColor = self.barsTintColor;

@@ -12,6 +12,9 @@
 #import "WXApi.h"
 #import "UIAlertView+Blocks.h"
 #import "UIButton+Verify.h"
+#import "CommonWebView.h"
+#import "SVModalWebViewController.h"
+
 
 @interface MoudleUserLoginViewController ()<UITextFieldDelegate>
 
@@ -125,6 +128,21 @@
                                           failure:nil
                                    networkFailure:nil];
 }
+
+
+
+
+
+- (IBAction)action_service_xieya:(id)sender {
+    
+    NSString *webUrl = [CommonWebView actionMakeWebUrl:InterfaceAddressName(@"service/webpage") AndParamDict:@{@"page_id":@"1"}];
+        SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithURL:[NSURL URLWithString:webUrl]];
+    webViewController.barsTintColor= [UIColor blackColor];
+    [webViewController setViewTitle:@"免责声明"];
+    [self presentViewController:webViewController animated:YES completion:nil];
+
+}
+
 
 
 #pragma mark - Life Cycle

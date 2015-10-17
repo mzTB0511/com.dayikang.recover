@@ -25,6 +25,7 @@
 		E92A77381BA8670600A48B08 /* ChooseAddressCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92A77371BA8670600A48B08 /* ChooseAddressCustomView.xib */; };
 		E92A773C1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E92A773A1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m */; };
 		E92A773D1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92A773B1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib */; };
+		E931F1E81BD21CD700FB431A /* TopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E931F1E71BD21CD700FB431A /* TopScrollView.m */; };
 		E935BF471B9F2FB9002D6BE6 /* UserInfoAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */; };
 		E935BF481B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */; };
 		E935BF4B1B9F3052002D6BE6 /* MyCouponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E935BF4A1B9F3052002D6BE6 /* MyCouponsViewController.m */; };
@@ -226,6 +227,8 @@
 		E92A77391BA86B2C00A48B08 /* ChooseAddressHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseAddressHistoryCell.h; sourceTree = "<group>"; };
 		E92A773A1BA86B2C00A48B08 /* ChooseAddressHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseAddressHistoryCell.m; sourceTree = "<group>"; };
 		E92A773B1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseAddressHistoryCell.xib; sourceTree = "<group>"; };
+		E931F1E61BD21CD700FB431A /* TopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopScrollView.h; sourceTree = "<group>"; };
+		E931F1E71BD21CD700FB431A /* TopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopScrollView.m; sourceTree = "<group>"; };
 		E935BF441B9F2FB9002D6BE6 /* UserInfoAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoAvatarCell.h; sourceTree = "<group>"; };
 		E935BF451B9F2FB9002D6BE6 /* UserInfoAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoAvatarCell.m; sourceTree = "<group>"; };
 		E935BF461B9F2FB9002D6BE6 /* UserInfoAvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoAvatarCell.xib; sourceTree = "<group>"; };
@@ -627,6 +630,15 @@
 				E92A773B1BA86B2C00A48B08 /* ChooseAddressHistoryCell.xib */,
 			);
 			path = ChooseAddressCustomObj;
+			sourceTree = "<group>";
+		};
+		E931F1E51BD21CD700FB431A /* HomeTopScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E931F1E61BD21CD700FB431A /* TopScrollView.h */,
+				E931F1E71BD21CD700FB431A /* TopScrollView.m */,
+			);
+			path = HomeTopScrollView;
 			sourceTree = "<group>";
 		};
 		E935BF3C1B9F2F85002D6BE6 /* MyCoupons */ = {
@@ -1229,6 +1241,7 @@
 		E99A90681B9362A900299B60 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E931F1E51BD21CD700FB431A /* HomeTopScrollView */,
 				E948D99D1BBA398000F082C1 /* AliPay */,
 				E94E5BDC1BA46A71003EA7F8 /* BabysanteSegment */,
 				E99A90691B9362A900299B60 /* AMapFunction */,
@@ -1934,6 +1947,7 @@
 				E99A91941B9362A900299B60 /* OpenUDID.m in Sources */,
 				E99A90611B93624900299B60 /* UMTrack.m in Sources */,
 				E91CC93E1B9B2E55006B330B /* OrderListTableViewCell.m in Sources */,
+				E931F1E81BD21CD700FB431A /* TopScrollView.m in Sources */,
 				E953967B1BAA8F5100D4ABCD /* LXRelevantPickView.m in Sources */,
 				E99A90541B93624900299B60 /* BaseModel.m in Sources */,
 				E96A240F1BBD990500255CC7 /* PaymentChooseHeaderView.m in Sources */,
@@ -2131,6 +2145,7 @@
 			baseConfigurationReference = 953D4F3F3052C028F366A25F /* Pods-Recover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2157,6 +2172,7 @@
 			baseConfigurationReference = 55F8FF62C70BBB01902CA259 /* Pods-Recover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

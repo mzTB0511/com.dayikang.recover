@@ -286,7 +286,7 @@ const float Network_Handle_HUD_Duration = 1.0;
     NSMutableDictionary *mutableSign = [NSMutableDictionary dictionaryWithDictionary:signDict];
     [mutableSign setValue:[CommonIO appVersion] forKey:@"version"];
     [mutableSign setValue:[CommonUser udid] forKey:@"udid"];
-    [mutableSign setValue:@"2" forKey:@"userID"];//[CommonUser userID]
+    [mutableSign setValue:[CommonUser userID] forKey:@"userID"];//
     [mutableSign setValue:@"1" forKey:@"platformID"];
     
     [postDictionary setValuesForKeysWithDictionary:[SignTool makeSignDict:mutableSign secret:App_Secrect signKey:App_Sign]];

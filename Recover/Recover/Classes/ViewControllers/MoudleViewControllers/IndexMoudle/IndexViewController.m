@@ -19,9 +19,11 @@
 #import "BaseNavigationViewController.h"
 #import "AMapFunction.h"
 #import "ServiceCityViewController.h"
+#import "TopScrollView.h"
 
-
-@interface IndexViewController ()<LXCycleScrollViewDatasource,LXCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface IndexViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,EScrollerViewDelegate>{
+    TopScrollView *homeTopScrollView;
+}
 
 // 记录banner 信息
 @property (nonatomic, copy) NSArray *arrBanner;
@@ -54,8 +56,6 @@
 
 
 
-
-
 @end
 
 @implementation IndexViewController
@@ -63,31 +63,44 @@
 
 
 #pragma mark -- CycleScrollVeiwDelegate
-- (NSInteger)numberOfPages{
-    return _arrBanner.count;
-}
-- (UIView *)pageAtIndex:(NSInteger)index{
-    
-    NSDictionary *dict = [_arrBanner objectAtIndex:index];
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
-    //image.contentMode  = UIViewContentModeScaleAspectFill;
-    [image sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"img_url"]] placeholderImage:nil];
-    
-    return  image;
-    
-    
-}
+//- (NSInteger)numberOfPages{
+//    return _arrBanner.count;
+//}
+//- (UIView *)pageAtIndex:(NSInteger)index{
+//    
+//    NSDictionary *dict = [_arrBanner objectAtIndex:index];
+//    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
+//    //image.contentMode  = UIViewContentModeScaleAspectFill;
+//    [image sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"img_url"]] placeholderImage:nil];
+//    
+//    return  image;
+//    
+//    
+//}
+//
+//
+//- (void)didClickPage:(LXCycleScrollView *)csView atIndex:(NSInteger)index{
+//
+//    NSDictionary *dict = [_arrBanner objectAtIndex:index];
+//    
+//    NSString *webUrl = [CommonWebView actionMakeWebUrl:getValueFromDictionary(dict, @"gotourl") AndParamDict:nil];
+//    [CommonWebView actionPresentWebViewControllerWithURL:webUrl NavigationTitle:getValueFromDictionary(dict, @"title") allowShare:getValueFromDictionary(dict, @"is_share") shareImage:getValueFromDictionary(dict, @"shareimg") shareTitle:getValueFromDictionary(dict, @"sharetitle") shareContent:getValueFromDictionary(dict, @"sharecontent") LinkUrl:getValueFromDictionary(dict, @"shareurl")];//getValueFromDictionary(dict, @"shareimg")
+//    
+//    
+//}
 
 
-- (void)didClickPage:(LXCycleScrollView *)csView atIndex:(NSInteger)index{
-
-    NSDictionary *dict = [_arrBanner objectAtIndex:index];
+// 首页轮播图点击事件
+- (void)EScrollerViewDidClicked:(NSString *)index{
     
-    NSString *webUrl = [CommonWebView actionMakeWebUrl:getValueFromDictionary(dict, @"gotourl") AndParamDict:nil];
+    NSDictionary *dict = [_arrBanner objectAtIndex:[index intValue]];
+    
+    NSString *webUrl = [CommonWebView actionMakeWebUrl:getValueFromDictionary(dict, @"img_link_url") AndParamDict:nil];
     [CommonWebView actionPresentWebViewControllerWithURL:webUrl NavigationTitle:getValueFromDictionary(dict, @"title") allowShare:getValueFromDictionary(dict, @"is_share") shareImage:getValueFromDictionary(dict, @"shareimg") shareTitle:getValueFromDictionary(dict, @"sharetitle") shareContent:getValueFromDictionary(dict, @"sharecontent") LinkUrl:getValueFromDictionary(dict, @"shareurl")];//getValueFromDictionary(dict, @"shareimg")
     
     
 }
+
 
 
 /**
@@ -175,6 +188,14 @@
 
 -(void)loadBannerData{
     
+    NSMutableArray *(^getImgUrlList)(NSArray *) = ^(NSArray *list){
+        NSMutableArray *muArrImgList = [NSMutableArray array];
+        [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [muArrImgList addObject:getValueIfNilReturnStr(obj[@"img_url"])];
+        }];
+        return muArrImgList;
+    };
+    
     WEAKSELF
     [NetworkHandle loadDataFromServerWithParamDic:nil
                                           signDic:nil
@@ -186,15 +207,20 @@
                                                   
                                                   weakSelf.arrBanner = data;
                                                   if ([data count] > 0) {
-                                                      LXCycleScrollView *view = [[LXCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
                                                       
-                                                      //** 初始化ScrollVeiw
-                                                      view.delegate = self ;
-                                                      view.datasource = self;
                                                       
-                                                      [data count] ==1 ? [view.scrollView setScrollEnabled:NO] : nil;
+                                                    homeTopScrollView = [[TopScrollView alloc]initWithFrameRect:CGRectMake(0, 0, mScreenWidth, mScreenHeight * 0.216) ImageArray:getImgUrlList(data) changeTimes:3];
+                                                      homeTopScrollView.delegate = self;
                                                       
-                                                      [_v_BannerView addSubview:view];
+//                                                      LXCycleScrollView *view = [[LXCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, mScreenWidth, _v_BannerView.frame.size.height)];
+//                                                      
+//                                                      //** 初始化ScrollVeiw
+//                                                      view.delegate = self ;
+//                                                      view.datasource = self;
+//                                                      
+//                                                      [data count] ==1 ? [view.scrollView setScrollEnabled:NO] : nil;
+//                                                      
+                                                      [_v_BannerView addSubview:homeTopScrollView];
                                                   }
                                                   
                                               }

@@ -10,6 +10,8 @@
 #import "DoctroJoinViewController.h"
 #import "ServiceAreaViewController.h"
 #import "CopyrightViewController.h"
+#import "SVWebViewController.h"
+#import "CommonWebView.h"
 
 
 @interface MoreViewController ()
@@ -68,6 +70,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+
     switch (indexPath.section) {
         case 0:
         {
@@ -76,18 +79,25 @@
         }
             break;
         case 1:{
-            //** 服务范围
-            // pushViewControllerWith(StoryBoard_More, ServiceAreaViewController, nil);
+            NSString *webUrl = [CommonWebView actionMakeWebUrl:InterfaceAddressName(@"service/webpage") AndParamDict:@{@"page_id":@"3"}];
+            SVWebViewController *viewView =  [[SVWebViewController alloc] initWithAddress:webUrl];
+            [viewView setTitle:@"服务范围"];
+            viewView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewView animated:YES];
+        }
+            break;
+        case 3:{
+            //** 关于奎科
+            NSString *webUrl = [CommonWebView actionMakeWebUrl:InterfaceAddressName(@"service/webpage") AndParamDict:@{@"page_id":@"4"}];
+            SVWebViewController *viewView =  [[SVWebViewController alloc] initWithAddress:webUrl];
+            [viewView setTitle:@"关于我们"];
+            viewView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewView animated:YES];
         }
             break;
         case 2:{
             //** 当前版本
             
-        }
-            break;
-        case 3:{
-            //** 关于我们
-            // pushViewControllerWith(StoryBoard_More, CopyrightViewController, nil);
         }
             break;
         case 4:{
@@ -98,6 +108,7 @@
 
     }
     
+   
     //** 取消Cell高亮效果
     [_tbv_MoreTableView deselectRowAtIndexPath:indexPath animated:YES];
     

@@ -214,7 +214,10 @@
         
         UserInfoAvatarCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UserInfoAvatarCell class]) forIndexPath:indexPath];
         NSString *userPhone = _data[@"phone"];
-        userPhone = [userPhone stringByReplacingCharactersInRange:NSMakeRange(5,4) withString:@"****"];
+        if (![userPhone isEqualToString:@""]) {
+            userPhone = [userPhone stringByReplacingCharactersInRange:NSMakeRange(5,4) withString:@"****"];
+        }
+        //userPhone = [userPhone stringByReplacingCharactersInRange:NSMakeRange(5,4) withString:@"****"];
         [cell action_setupCellWithTitle:userPhone imageUrl:_data[@"ico"]];
         
         return cell;
